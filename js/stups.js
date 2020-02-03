@@ -5,3 +5,9 @@
  * Auteur: X. Carrel
  * Date: Février 2020
  **/
+var input;
+
+function changeColor(input) {
+
+    input.style.backgroundColor = "#004300";
+}

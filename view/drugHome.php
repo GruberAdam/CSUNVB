@@ -6,8 +6,9 @@ $title = "CSU-NVB - Stupéfiants";
     <h1>Stupéfiants</h1>
     <form>
     <table>
-        <thead><tr><th></th><th>Col 1</th></tr></thead>
+        <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
         <tbody><tr><td>Ligne 1</td><td onclick="changeColor(this)"></td></tr></tbody>
+
     </table>
     </form>
 </div>

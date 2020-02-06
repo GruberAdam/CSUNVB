@@ -17,8 +17,13 @@ $title = "CSU-NVB - Stupéfiants";
         </tr></tbody>
         <tbody><tr><td> ...</td>
             <?php
-            for($compteur=1;$compteur<63;$compteur++){
+            for($compteur2=1;$compteur2<63;$compteur2++){
                 echo "<td>[___]</td>";
+
+
+                if ($compteur2==1){
+                    echo " <td rowspan='2'></td>";
+                }
             }
             ?>
         </tr></tbody>

@@ -5,7 +5,7 @@ require "controler/shiftEndControler.php";
 require "controler/todoListControler.php";
 require "controler/drugControler.php";
 
-$action = $_GET['action'];
+$action = @$_GET['action'];
 
 switch ($action)
 {

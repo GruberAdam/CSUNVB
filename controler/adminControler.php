@@ -11,4 +11,5 @@ function adminHomePage()
 {
     require_once 'view/adminHome.php';
 }
+
 ?>

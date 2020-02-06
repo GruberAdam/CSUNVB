@@ -12,7 +12,7 @@ $title = "CSU-NVB - Stupéfiants";
             <?php
             $compteur3 = 0;
             $compteur4 = 0;
-            for($compteur=0;$compteur<13;$compteur++){
+            for($compteur=0;$compteur<14;$compteur++){
 
 
                 if ($compteur==$compteur3){
@@ -35,7 +35,7 @@ $title = "CSU-NVB - Stupéfiants";
         </tr>
         <tr>
             <?php
-            for($compteur2=0;$compteur2<63;$compteur2++){
+            for($compteur2=0;$compteur2<50;$compteur2++){
 
 
 

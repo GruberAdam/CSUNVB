@@ -11,30 +11,19 @@ $title = "CSU-NVB - Stupéfiants";
             <td>Morphine N*</td>
             <?php
             $compteur3 = 0;
-            for($compteur=0;$compteur<63;$compteur++){
+            $compteur4 = 0;
+            for($compteur=0;$compteur<13;$compteur++){
 
 
                 if ($compteur==$compteur3){
                     echo " <td rowspan='2'>[___]</td>";
-                    $compteur3 = $compteur3 + 8;
+                    $compteur3 = $compteur3 + 2;
                 }
 
-                if ($compteur==0){
+                if ($compteur==$compteur4){
                     echo " <td colspan='5'>[___]</td>";
 
-                    if ($compteur==0){
-                        echo " <td colspan='5'>[___]</td>";
-                        if ($compteur==0){
-                            echo " <td colspan='5'>[___]</td>";
-                            if ($compteur==0){
-                                echo " <td colspan='5'>[___]</td>";
-                                if ($compteur==0){
-                                    echo " <td colspan='5'>[___]</td>";
-
-                                }
-                            }
-                        }
-                    }
+                   $compteur4 = $compteur4 + 2;
 
                 }
 
@@ -44,7 +33,7 @@ $title = "CSU-NVB - Stupéfiants";
             }
             ?>
         </tr>
-        <tr><td> ...</td>
+        <tr>
             <?php
             for($compteur2=0;$compteur2<63;$compteur2++){
 

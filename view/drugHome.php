@@ -19,8 +19,23 @@ $title = "CSU-NVB - Stupéfiants";
                     $compteur3 = $compteur3 + 8;
                 }
 
-                if ($compteur==1){
+                if ($compteur==0){
                     echo " <td colspan='5'>[___]</td>";
+
+                    if ($compteur==0){
+                        echo " <td colspan='5'>[___]</td>";
+                        if ($compteur==0){
+                            echo " <td colspan='5'>[___]</td>";
+                            if ($compteur==0){
+                                echo " <td colspan='5'>[___]</td>";
+                                if ($compteur==0){
+                                    echo " <td colspan='5'>[___]</td>";
+
+                                }
+                            }
+                        }
+                    }
+
                 }
 
                 echo "<td>[___]</td>";

@@ -1,4 +1,5 @@
 <?php
+//Goes to login2
 // Include all controllers
 require "controler/adminControler.php";
 require "controler/shiftEndControler.php";

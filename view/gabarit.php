@@ -8,11 +8,13 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="/css/styles.css" rel="stylesheet">
 
     <!-- Icons -->
-    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
+    <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet"
+          type="text/css"/>
     <link href="assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
 
     <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
@@ -43,7 +45,23 @@
         <div class="row banner">
             <img class="col-2" src="/assets/images/logo.png">
             <a href="index.php" class="col-10 text-center mt-5 text-decoration-none"><h1>CSU-NVB</h1></a>
-            <a href="?action=login" class="btn btn-primary m-1 pull-right">Login</a>
+
+            <!-- Changes action if connected -->
+            <a href="
+            <?php if (isset($_SESSION['mail'])) : ?>
+            ?action=logout
+            <?php else : ?>
+            ?action=login
+            <?php endif; ?>
+            " class="btn btn-primary m-1 pull-right">
+
+                <!-- Write Logout if connected -->
+                <?php if (isset($_SESSION['mail'])) : ?>
+                    Logout
+                <?php else: ?>
+                    Login
+                <?php endif; ?>
+            </a>
         </div>
     </header>
 

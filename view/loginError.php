@@ -1,7 +1,7 @@
 <?php
 /*  Autor : Adam Gruber
     Date : Insert date
-    Version : 1.0 
+    Version : 1.0
     Project : Insert Project Name
 */
 ob_start();
@@ -10,6 +10,7 @@ $title = "CSU-NVB - Administration";
     <br><br><br>
     <form method="post" action="index.php?action=login">
         <div class="form-group">
+            <div class="alert alert-danger" role="alert">Erreur sur le login / mot de passe</div>
             <label for="user-email">Adresse E-mail</label>
             <input type="email" name="user-email" class="form-control" id="user-email" aria-describedby="emailHelp"
                    placeholder="Enter email" required>

@@ -9,8 +9,7 @@ require "controler/loginControler.php";
 
 $action = @$_GET['action'];
 
-switch ($action)
-{
+switch ($action) {
     case 'admin':
         adminHomePage();
         break;
@@ -25,6 +24,9 @@ switch ($action)
         break;
     case 'login':
         login();
+        break;
+    case 'logout' :
+        logout();
         break;
     default: // unknown action
         require_once 'view/home.php';

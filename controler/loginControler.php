@@ -28,7 +28,7 @@ function login()
         if ($connexion) {
             // Credentials right
             $_SESSION['mail'] = $email;
-            require_once "view/home.php";
+            require_once "view/loginCongratulations.php";
         } else {
             //Credentials wrong
             require_once "view/loginError.php";

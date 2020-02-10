@@ -43,10 +43,14 @@ function login()
 
 }
 
+/* This function will destroy the session */
 function logout()
 {
-    $_GET["action"] = "logout";
     $_SESSION = session_destroy();
     require_once 'view/home.php';
 
+}
+
+function register(){
+    require_once "view/registerHome.php";
 }

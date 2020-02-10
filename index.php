@@ -5,7 +5,7 @@ require "controler/adminControler.php";
 require "controler/shiftEndControler.php";
 require "controler/todoListControler.php";
 require "controler/drugControler.php";
-require "controler/loginControler.php";
+require "controler/userControler.php";
 
 $action = @$_GET['action'];
 
@@ -27,6 +27,9 @@ switch ($action) {
         break;
     case 'logout' :
         logout();
+        break;
+    case 'register' :
+        register();
         break;
     default: // unknown action
         require_once 'view/home.php';

@@ -1,6 +1,8 @@
 [
   {
     "email" : "adamgruber@bluewin.ch",
-    "password" : 1234
+    "password" : 1234,
+    "admin" : true
   }
+
 ]

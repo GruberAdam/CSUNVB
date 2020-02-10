@@ -62,6 +62,11 @@
                     Login
                 <?php endif; ?>
             </a>
+
+            <!-- If user is an admin display another button -->
+            <?php if (@$_SESSION['admin'] == true) : ?>
+                <a href="#" class="btn btn-primary m-1 pull-right">Créer un utilisateur</a>
+            <?php endif; ?>
         </div>
     </header>
 

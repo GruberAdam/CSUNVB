@@ -26,9 +26,12 @@ function login()
         /* Checks the login */
         $connexion = check_login($email, $password);
         if ($connexion) {
+
             // Credentials right
+            $admin = adminCheck($email); // Checks if user is an admin
             $_SESSION['mail'] = $email;
-            require_once "view/loginCongratulations.php";
+            $_SESSION['admin'] = $admin;
+            require "view/loginCongratulations.php";
         } else {
             //Credentials wrong
             $_GET['error'] = true;

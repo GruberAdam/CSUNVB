@@ -5,13 +5,18 @@
     Project : Insert Project Name
 */
 
+//Decodes the json of the login
+function jsonDecodeLogin(){
+    $userArray = file_get_contents("model/dataStorage/login.json");
+    $userArray = json_decode($userArray, true);
 
+    return $userArray; // Returns json array
+}
 
 /* Check if the password and the email are correct */
 function check_login($mail, $psw){
     //Get the user in the json file
-    $userArray = file_get_contents("model/dataStorage/login.json");
-    $userArray = json_decode($userArray, true);
+    $userArray = jsonDecodeLogin();
 
     //Checks if the email exists
     foreach ($userArray as $user) {
@@ -20,6 +25,17 @@ function check_login($mail, $psw){
         }
     }
     return false; //Returns false if credentials are wrong
+}
+
+function adminCheck($mail){
+    $userArray = jsonDecodeLogin();
+
+    foreach ($userArray as $user){
+        if ($user['email'] == $mail && $user['admin'] == true){
+            return true;
+        }
+    }
+    return false;
 }
 
 ?>

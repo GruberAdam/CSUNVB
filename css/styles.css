@@ -7,3 +7,8 @@
     background-color: aliceblue;
     font-size: xx-large;
 }
+.sideway{
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    color: crimson;
+}

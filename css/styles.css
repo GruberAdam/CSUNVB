@@ -8,7 +8,11 @@
     font-size: xx-large;
 }
 .sideway{
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
+    transform: rotate(-90deg);
+    width: 100%;
     color: crimson;
+}
+.input{
+
+    width: 75%;
 }

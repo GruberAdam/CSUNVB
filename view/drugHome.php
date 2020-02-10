@@ -6,7 +6,7 @@ $title = "CSU-NVB - Stupéfiants";
 <div class="row m-2">
 
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
-    <button class="btn btn-primary m-1 pull-right">Ajouter</button>
+    <a href="index.php?action=drugAdd"><button class="btn btn-primary m-1 pull-right">Ajouter</button></a>
     <form hidden>
     <table>
         <thead><tr><th></th><th>Stupéfiants</th></tr></thead>

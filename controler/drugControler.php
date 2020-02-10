@@ -11,4 +11,9 @@ function drugHomePage()
 {
     require_once 'view/drugHome.php';
 }
+function drugAdd(){
+
+
+    require_once  'view/drugAdd.php';
+}
 ?>

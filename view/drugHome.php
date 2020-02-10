@@ -17,18 +17,18 @@ $title = "CSU-NVB - Stupéfiants";
 
 
                 if ($compteur==$compteur3){
-                    echo " <td class='cel' rowspan='2'>[___]</td>";
+                    echo " <td id='rowh1cel$compteur3' rowspan='2'>[___]</td>";
                     $compteur3 = $compteur3 + 2;
                 }
 
                 if ($compteur==$compteur4){
-                    echo " <td class='cel' colspan='5'>[___]</td>";
+                    echo " <td id='colh1cel$compteur4' colspan='5'>[___]</td>";
 
                    $compteur4 = $compteur4 + 2;
 
                 }
 
-                echo "<td class='cel'>[___]</td>";
+                echo "<td id='h1cel$compteur'>[___]</td>";
 
 
             }
@@ -41,7 +41,7 @@ $title = "CSU-NVB - Stupéfiants";
 
 
 
-                echo "<td class='cel'>[___]</td>";
+                echo "<td id='h2cel$compteur2'>[___]</td>";
 
 
 
@@ -56,7 +56,7 @@ $title = "CSU-NVB - Stupéfiants";
                 for ($compteur = 0; $compteur < 57; $compteur++) {
 
 
-                    echo "<td class='cel'>[___]</td>";
+                    echo "<td id='lig{$compteur5}cel{$compteur}' >[___]</td>";
 
                 }
                 echo  "</tr>";

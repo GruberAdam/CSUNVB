@@ -4,8 +4,10 @@ $title = "CSU-NVB - Stupéfiants";
 ?>
 
 <div class="row m-2">
-    <h1>Contrôle de stupéfiants Hebdomadaire</h1>
-    <form>
+
+    <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
+    <button class="btn btn-primary m-1 pull-right">Ajouter</button>
+    <form hidden>
     <table>
         <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
         <tbody><tr style="height: 100px;">

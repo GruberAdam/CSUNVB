@@ -62,6 +62,7 @@
                     Login
                 <?php endif; ?>
             </a>
+            <a class="btn btn-primary m-1 pull-right" href="?action=adminError"></a>
         </div>
     </header>
 

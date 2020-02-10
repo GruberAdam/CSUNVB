@@ -28,6 +28,9 @@ switch ($action) {
     case 'logout' :
         logout();
         break;
+    case 'adminError':
+        require_once "view/adminError.php";
+        break;
     default: // unknown action
         require_once 'view/home.php';
         break;

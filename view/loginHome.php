@@ -20,7 +20,7 @@ $title = "CSU-NVB - Administration";
                    required>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+
 <?php
 $content = ob_get_clean();
 require "gabarit.php";

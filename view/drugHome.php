@@ -10,7 +10,7 @@ $title = "CSU-NVB - Stupéfiants";
     <form hidden>
     <table>
         <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
-        <tbody><tr style="height: 100px;">
+        <tbody><tr >
             <td>Morphine N*</td>
             <?php
             $compteur3 = 0;
@@ -19,7 +19,7 @@ $title = "CSU-NVB - Stupéfiants";
 
 
                 if ($compteur==$compteur3){
-                    echo " <td id='rowh1cel$compteur3' rowspan='2'><p class='sideway'>Pharmacie</p></td>";
+                    echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway'>Pharmacie</p></td>";
                     $compteur3 = $compteur3 + 2;
                 }
 
@@ -37,7 +37,7 @@ $title = "CSU-NVB - Stupéfiants";
         </tr>
         <tr>
             <?php
-            for($compteur2=0;$compteur2<50;$compteur2++){
+            for($compteur2=0;$compteur2<6;$compteur2++){
 
 
 

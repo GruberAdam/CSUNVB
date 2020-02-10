@@ -21,21 +21,23 @@ $title = "CSU-NVB - Stupéfiants";
     <form >
     <table>
         <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
-        <tbody><tr style="height: 100px;">
+        <tbody><tr class="trh">
             <td>Morphine N*</td>
             <?php
+
+
             $compteur3 = 0;
             $compteur4 = 0;
-            for($compteur=0;$compteur<7;$compteur++){
+            for($compteur=0;$compteur<9;$compteur++){
 
 
                 if ($compteur==$compteur3){
-                    echo " <td id='rowh1cel$compteur3' rowspan='2'><p class='sideway'>Pharmacie</p></td>";
+                    echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway' >Pharmacie</p></td>";
 
                 }
 
                 if ($compteur==$compteur4){
-                    echo " <td id='colh1cel$compteur4' colspan='7' onmouseover='getDate(this)' ><p id='pcolh1cel$compteur4' ></p></td>";
+                    echo " <td id='colh1cel$compteur4' colspan='7' onmouseover='getDate(this)' class='center cellh100 big-text' height='100'  >". date("l d M y") . " <p id='pcolh1cel$compteur4' ></p></td>";
                     
 
                 }
@@ -47,7 +49,7 @@ $title = "CSU-NVB - Stupéfiants";
         </tr>
         <tr>
             <?php
-            for($compteur2=0;$compteur2<50
+            for($compteur2=0;$compteur2<7
             ;$compteur2++){
 
 
@@ -62,10 +64,10 @@ $title = "CSU-NVB - Stupéfiants";
         </tr>
 
             <?php
-            for ($compteur5=0;$compteur5<1;$compteur5++) {
+            for ($compteur5=0;$compteur5<27;$compteur5++) {
 
               echo  "<tr>";
-                for ($compteur = 0; $compteur < 7; $compteur++) {
+                for ($compteur = 0; $compteur < 8; $compteur++) {
 
 
                     echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input'></td>";
@@ -77,6 +79,8 @@ $title = "CSU-NVB - Stupéfiants";
         </tbody>
 
     </table>
+
+        <input type="submit">
     </form>
 </div>
 <?php

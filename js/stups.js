@@ -12,9 +12,3 @@ function changeColor(input) {
     input.style.backgroundColor = "#004300";
 }
 
-function getDate(input) {
-
-    var today = new Date();
-    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    input.innerText = date;
-}

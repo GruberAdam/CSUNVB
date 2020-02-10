@@ -9,10 +9,27 @@
 }
 .sideway{
     transform: rotate(-90deg);
-    width: 100%;
+    width: 60%;
     color: crimson;
 }
 .input{
 
     width: 75%;
+}
+.cellh100{
+    height: 100%;
+}
+.center{
+
+    text-align: center;
+
+}
+.trh{
+
+    height: 80%;
+}
+
+.big-text{
+
+    font-size: 300%;
 }

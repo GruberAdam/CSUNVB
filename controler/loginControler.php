@@ -31,7 +31,8 @@ function login()
             require_once "view/loginCongratulations.php";
         } else {
             //Credentials wrong
-            require_once "view/loginError.php";
+            $_GET['error'] = true;
+            require_once "view/loginHome.php";
         }
     } else {
         require_once "view/loginHome.php";

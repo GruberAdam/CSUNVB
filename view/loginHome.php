@@ -10,6 +10,9 @@ $title = "CSU-NVB - Administration";
     <br><br><br>
     <form method="post" action="index.php?action=login">
         <div class="form-group">
+            <?php if (@$_GET['error'] == true) : ?>
+            <div class="alert alert-danger" role="alert">Erreur sur le login / mot de passe</div>
+            <?php endif; ?>
             <label for="user-email">Adresse E-mail</label>
             <input type="email" name="user-email" class="form-control" id="user-email" aria-describedby="emailHelp"
                    placeholder="Enter email" required>

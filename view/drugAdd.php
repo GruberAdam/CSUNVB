@@ -31,13 +31,12 @@ $title = "CSU-NVB - Stupéfiants";
 
                 if ($compteur==$compteur3){
                     echo " <td id='rowh1cel$compteur3' rowspan='2'><p class='sideway'>Pharmacie</p></td>";
-                  
+
                 }
 
                 if ($compteur==$compteur4){
                     echo " <td id='colh1cel$compteur4' colspan='7' onmouseover='getDate(this)' ><p id='pcolh1cel$compteur4' ></p></td>";
-
-                   $compteur4 = $compteur4 + 2;
+                    
 
                 }
 

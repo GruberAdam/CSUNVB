@@ -1,7 +1,10 @@
-/**
- * Le fichier admin.js contient les fonctionnalités javascript qui ne sont utilisées que pour l'administration
- *
- * Ce cartouche vaudra quelques points en moins au groupe qui osera le laisser là tel quel ...
- * Auteur: X. Carrel
- * Date: Février 2020
- **/
+/* Author : Adam Gruber
+   Date : 11.02.2020
+   Version : 1.0
+ */
+
+var button = document.getElementById("register-button-validation");
+
+document.addEventListener("click", function () {
+   console.log("in");
+});

@@ -52,5 +52,12 @@ function logout()
 }
 
 function register(){
-    require_once "view/registerHome.php";
+
+    if (@$_SESSION['admin'] == true){
+        require_once "view/registerHome.php";
+    }
+    else{
+        require_once "view/adminError.php";
+    }
+
 }

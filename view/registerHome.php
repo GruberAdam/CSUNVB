@@ -8,33 +8,33 @@ ob_start();
 $title = "CSU-NVB - Administration";
 ?>
 
-<form>
-    <div class="form-group">
-        <label for="exampleFormControlSelect1">Type de compte</label>
-        <select class="form-control" id="exampleFormControlSelect1">
-            <option>Utilisateur</option>
-            <option>Administrateur</option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label for="register-email">Email-adresse</label>
-        <input type="email" class="form-control" id="register-email" placeholder="name@example.com" name="register-email">
-    </div>
-    <div class="form-group">
-        <label for="register-password">Mot de passe</label>
-        <input type="password" class="form-control" id="register-password" name="register-password">
-    </div>
+    <form id="register-form" action="index.php">
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Type de compte</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option>Utilisateur</option>
+                <option>Administrateur</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="register-email">Email-adresse</label>
+            <input type="email" class="form-control" id="register-email" placeholder="name@example.com" name="register-email" required>
+        </div>
+        <div class="form-group">
+            <label for="register-password">Mot de passe</label>
+            <input type="password" class="form-control" id="register-password" name="register-password" required>
+        </div>
 
-    <div class="form-group">
-        <label for="register-password-confirmation">Confirmation du mot de passe</label>
-        <input type="password" class="form-control" id="register-password-confirmation" name="register-password-confirmation">
-    </div>
+        <div class="form-group">
+            <label for="register-password-confirmation">Confirmation du mot de passe</label>
+            <input type="password" class="form-control" id="register-password-confirmation"
+                   name="register-password-confirmation">
+        </div>
 
-    <button type="submit" class="btn btn-primary" id="register-button-validation">Valider</button>
+        <input type="submit" class="btn btn-primary" id="register-button-validation">
 
-    <script src="js/admin.js"></script>
-
-</form>
+    </form>
+    <script src="js/admin.js" type="text/javascript" rel="script"></script>
 <?php
 $content = ob_get_clean();
 require "gabarit.php";

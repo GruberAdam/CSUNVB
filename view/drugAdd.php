@@ -44,8 +44,7 @@ $title = "CSU-NVB - Stupéfiants";
                 }
 
                 if ($compteur==$compteur4){
-                    echo " <td id='colh1cel$compteur4' colspan='7' onmouseover='getDate(this)' class='center cellh100 big-text' height='100'  >". date("l d M y") . " <p id='pcolh1cel$compteur4' ></p></td>";
-                    
+
 
                 }
 

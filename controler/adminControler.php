@@ -7,8 +7,10 @@
 
 require_once 'model/adminModel.php';
 
+
 function adminHomePage()
 {
+    /* User has to be an admin the have access */
     if (@$_SESSION['admin'] == true){
         require_once "view/adminHome.php";
     }

@@ -27,15 +27,17 @@ function check_login($mail, $psw){
     return false; //Returns false if credentials are wrong
 }
 
+// Check if user is an admin
 function adminCheck($mail){
     $userArray = jsonDecodeLogin();
 
+    // Read the hole json file and checks if the session is an admin
     foreach ($userArray as $user){
         if ($user['email'] == $mail && $user['admin'] == true){
-            return true;
+            return true; // Returns true if admin
         }
     }
-    return false;
+    return false; // Returns false if not admin
 }
 
 ?>

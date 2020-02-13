@@ -26,7 +26,7 @@ $title = "CSU-NVB - Administration";
     </div>
 
     <div class="form-group">
-        <label for="register-password-confirmation">Mot de passe</label>
+        <label for="register-password-confirmation">Confirmation du mot de passe</label>
         <input type="password" class="form-control" id="register-password-confirmation" name="register-password-confirmation">
     </div>
 

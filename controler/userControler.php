@@ -29,6 +29,8 @@ function login()
 
             // Credentials right
             $admin = adminCheck($email); // Checks if user is an admin
+
+            // Creates session on EMAIL and if he is an admin
             $_SESSION['mail'] = $email;
             $_SESSION['admin'] = $admin;
             require "view/loginCongratulations.php";
@@ -53,6 +55,7 @@ function logout()
 
 function register(){
 
+    /* Security in case URL is copied, the user still has to be an admin */
     if (@$_SESSION['admin'] == true){
         require_once "view/registerHome.php";
     }

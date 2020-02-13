@@ -9,7 +9,6 @@ $title = "CSU-NVB - Stupéfiants";
     <a href="index.php?action=drugAdd"><button class="btn btn-primary m-1 pull-right">Ajouter</button></a>
     <form hidden>
     <table>
-        <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
         <tbody><tr >
             <td>Morphine N*</td>
             <?php

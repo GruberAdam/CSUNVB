@@ -19,9 +19,16 @@ $title = "CSU-NVB - Stupéfiants";
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <button class="btn btn-primary m-1 pull-right">Ajouter</button>
     <form >
-    <table>
-        <thead><tr><th></th><th>Stupéfiants</th></tr></thead>
-        <tbody><tr class="trh">
+        <div class="center">
+        <label>Site:</label><select onchange="ambulances(this)">
+            <option name="Payerne">Payerne</option>
+            <option name="Sainte-croix">Sainte-croix</option>
+            <option name="Yverdon">Yverdon</option>
+        </select>
+        </div>
+    <table id="tableAdd">
+
+        <tbody id="tbodyAdd"><tr class="trh">
             <td>Morphine N*</td>
             <?php
 
@@ -51,11 +58,13 @@ $title = "CSU-NVB - Stupéfiants";
             <?php
             for($compteur2=0;$compteur2<7
             ;$compteur2++){
+                if($compteur2 > 0) {
+                    $ambulance = $compteur2 + 50;
+                }else{
+                    $ambulance = "";
+                }
 
-
-
-
-                echo "<td id='h2cel$compteur2'><p id='ph2cel$compteur'></p></td>";
+                echo "<td id='h2cel$compteur2'><p id='ph2cel$compteur'>$ambulance</p></td>";
 
 
 
@@ -64,7 +73,7 @@ $title = "CSU-NVB - Stupéfiants";
         </tr>
 
             <?php
-            for ($compteur5=0;$compteur5<27;$compteur5++) {
+            for ($compteur5=0;$compteur5<1;$compteur5++) {
 
               echo  "<tr>";
                 for ($compteur = 0; $compteur < 8; $compteur++) {
@@ -82,6 +91,7 @@ $title = "CSU-NVB - Stupéfiants";
 
         <input type="submit">
     </form>
+    <button  onclick="addRows()">Ajouter ligne</button>
 </div>
 <?php
 $content = ob_get_clean();

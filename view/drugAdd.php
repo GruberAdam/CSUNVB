@@ -18,7 +18,7 @@ $title = "CSU-NVB - Stupéfiants";
 
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <button class="btn btn-primary m-1 pull-right">Ajouter</button>
-    <form action="" >
+    <form action="index.php?action=drugs"  method="post">
         <div class="center">
         <label>Site:</label><select onchange="ambulances(this)">
             <option name="Payerne">Payerne</option>

@@ -18,7 +18,7 @@ $title = "CSU-NVB - Stupéfiants";
 
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <button class="btn btn-primary m-1 pull-right">Ajouter</button>
-    <form >
+    <form action="" >
         <div class="center">
         <label>Site:</label><select onchange="ambulances(this)">
             <option name="Payerne">Payerne</option>
@@ -39,7 +39,7 @@ $title = "CSU-NVB - Stupéfiants";
 
 
                 if ($compteur==$compteur3){
-                    echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway' >Pharmacie</p></td>";
+                    echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway center' >Pharmacie</p></td>";
 
                 }
 

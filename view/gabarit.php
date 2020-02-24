@@ -35,7 +35,7 @@
     <script src="js/todoList.js"></script>
 
 </head>
-<body onload="initAmbulance()">
+<body onload="initAmbulance(); showData($_POST)">
 
 <div class="container">
 

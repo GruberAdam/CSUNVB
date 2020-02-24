@@ -83,3 +83,7 @@ function addRows() {
         new_cell.id = "lig" + line + "col" + i;
     }
 }
+
+function showData(input) {
+    alert(input + "A");
+}

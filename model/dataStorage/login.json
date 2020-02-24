@@ -1,13 +1,12 @@
 [
   {
-    "email" : "adamgruber@bluewin.ch",
-    "password" : 1234,
-    "admin" : true
+    "email": "adamgruber@bluewin.ch",
+    "password": 1234,
+    "admin": true
   },
   {
-    "email" : "adamgruber@bluwin.ch",
-    "password" : 1234,
-    "admin" : false
+    "email": "adamgruber@bluwin.ch",
+    "password": 1234,
+    "admin": false
   }
-
 ]

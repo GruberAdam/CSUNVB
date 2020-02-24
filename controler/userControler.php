@@ -5,7 +5,7 @@
     Project : Insert Project Name
 */
 
-require_once "model/loginModel.php";
+require_once "model/userModel.php";
 
 
 session_start();
@@ -53,13 +53,24 @@ function logout()
 
 }
 
-function register(){
-
+function register()
+{
     /* Security in case URL is copied, the user still has to be an admin */
-    if (@$_SESSION['admin'] == true){
-        require_once "view/registerHome.php";
-    }
-    else{
+    if (@$_SESSION['admin'] == true) {
+        /* Get the form inputs */
+        $userType = @$_POST['register-account_type'];
+        $email = strtolower(@$_POST['register-email']);
+        $password = @$_POST['register-password'];
+
+        if (isset($userType)) {
+            addUser($userType, $email, $password);
+            $_SESSION['test'] = "in";
+        } else {
+            require_once "view/registerHome.php";
+            $_SESSION['test'] = "out";
+        }
+
+    } else {
         require_once "view/adminError.php";
     }
 

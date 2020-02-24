@@ -32,6 +32,12 @@
 
 </head>
 <body>
+<?php
+echo "SESSION : ". @$_SESSION['test'] .'<br>';
+echo "type :".@$_POST['register-account_type']. '<br>';
+echo "email : ".@$_POST['register-email']. '<br>';
+echo "password :". @$_POST['register-password'];
+?>
 
 <div class="container">
 

@@ -8,10 +8,10 @@ ob_start();
 $title = "CSU-NVB - Administration";
 ?>
 
-    <form id="register-form" action="index.php">
+    <form id="register-form" action="index.php" method="post">
         <div class="form-group">
             <label for="exampleFormControlSelect1">Type de compte</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="exampleFormControlSelect1" name="register-account_type">
                 <option>Utilisateur</option>
                 <option>Administrateur</option>
             </select>

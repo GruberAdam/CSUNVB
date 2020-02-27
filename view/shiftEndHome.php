@@ -48,7 +48,7 @@ ob_start()
 
         <div class="overflow-auto border" style="height: 400px; width: 1200px">     <!-- Mini scroll page -->
 
-            <h3 style="margin-left: 25px">Matériaux & Télécom</h3>
+            <h3 style="margin-left: 25px; margin-top: 10px">Matériaux & Télécom</h3>
             <br>
             <div class="border" style="margin-left: 25px">
                 <p class="col-md-4 mb-3">Radio</p>
@@ -262,7 +262,7 @@ ob_start()
         <div class="overflow-auto border" style="height: 400px; width: 1200px">     <!-- Mini scroll page -->
 
             <!--        --------------------------------------------                Véhicules & Interventions                --------------------------------------------        -->
-            <h3 style="margin-left: 25px">Véhicules & Interventions</h3>
+            <h3 style="margin-left: 25px; margin-top: 10px">Véhicules & Interventions</h3>
             <br>
             <div class="border" style="margin-left: 25px">
                 <p class="col-md-4 mb-3">Plein essence</p>

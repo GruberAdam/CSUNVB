@@ -10,7 +10,7 @@ $title = "CSU-NVB - Stupéfiants";
     <form>
         <table class="input">
             <tbody><tr >
-                <td style="padding: 20px ;">Morphine N*</td>
+                <td style="weight=100px ;">Morphine N*</td>
                 <?php
 
                 $file = 'model/dataStorage/daystups.json';

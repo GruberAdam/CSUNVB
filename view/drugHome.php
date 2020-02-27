@@ -8,9 +8,9 @@ $title = "CSU-NVB - Stupéfiants";
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <a href="index.php?action=drugAdd"><button class="btn btn-primary m-1 pull-right">Ajouter</button></a>
     <form>
-        <table>
+        <table class="input">
             <tbody><tr >
-                <td>Morphine N*</td>
+                <td style="width: 100px;">Morphine N*</td>
                 <?php
 
                 $file = 'model/dataStorage/daystups.json';
@@ -37,7 +37,7 @@ $title = "CSU-NVB - Stupéfiants";
                     }
 
                     if ($compteur==$compteur4){
-                        echo " <td id='colh1cel$compteur4' colspan='7' onmouseover='getDate(this)' ><p id='pcolh1cel$compteur4' ></p></td>";
+                        echo " <td id='colh1cel$compteur4' colspan='8' onmouseover='getDate(this)' class='input2'><p id='pcolh1cel$compteur4' ></p></td>";
 
                         $compteur4 = $compteur4 + 2;
 
@@ -50,12 +50,12 @@ $title = "CSU-NVB - Stupéfiants";
             </tr>
             <tr>
                 <?php
-                for($compteur2=0;$compteur2<50;$compteur2++){
+                for($compteur2=0;$compteur2<56;$compteur2++){
 
 
 
 
-                    echo "<td id='h2cel$compteur2' style='width: 1000px;'><p id='ph2cel$compteur' class='input'></p></td>";
+                    echo "<td id='h2cel$compteur2' class='input'><p id='ph2cel$compteur' class='input'></p></td>";
 
 
 
@@ -67,7 +67,7 @@ $title = "CSU-NVB - Stupéfiants";
             for ($compteur5=0;$compteur5<27;$compteur5++) {
 
                 echo  "<tr>";
-                for ($compteur = 0; $compteur < 57; $compteur++) {
+                for ($compteur = 0; $compteur < 64; $compteur++) {
 
                     if(!isset( $data["inputlig{$compteur5}cel{$compteur}"])){
                         echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='0'></td>";

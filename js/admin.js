@@ -10,13 +10,18 @@ var button = document.getElementById('register-button-validation');
 var password = document.getElementById('register-password');
 var passwordConfirmation = document.getElementById('register-password-confirmation');
 
-/* Checks if password field and confirmation field are equal */
-button.addEventListener('click',function (e) {
-    e.preventDefault(); // Doesnt refresh the page with the submit button
-    if (password.value === passwordConfirmation.value){
-        form.submit() // Submits the form
+password.addEventListener("keyup", passwordConfirmationChecker);
+passwordConfirmation.addEventListener("keyup", passwordConfirmationChecker);
+
+
+/* This will check that both password inputs maches */
+function passwordConfirmationChecker() {
+
+    if (password.value === passwordConfirmation.value && password.value != "") {
+        passwordConfirmation.className = "form-control is-valid";// Shows an error
+        button.disabled = false;
+    } else {
+        button.disabled = true;
+        passwordConfirmation.className = "form-control is-invalid"; // Shows an error
     }
-    else{
-        passwordConfirmation.className = "form-control is-invalid" // Shows an error
-    }
-});
+}

@@ -8,16 +8,15 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-grid.css" rel="stylesheet">
     <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="/css/styles.css" rel="stylesheet" type="text/css">
 
     <!-- Icons -->
     <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet"
           type="text/css"/>
     <link href="assets/icons/social/stylesheets/social_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/css/font-awesome.min.css" type="text/css">
 
     <link href="http://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Abel" rel="stylesheet" type="text/css">
@@ -32,15 +31,7 @@
 
 </head>
 <body>
-<?php
-echo "SESSION : ". @$_SESSION['test'] .'<br>';
-echo "type :".@$_POST['register-account_type']. '<br>';
-echo "email : ".@$_POST['register-email']. '<br>';
-echo "password :". @$_POST['register-password'];
-?>
-
 <div class="container">
-
     <header>
         <div class="row banner">
             <img class="col-2" src="/assets/images/logo.png">
@@ -68,6 +59,7 @@ echo "password :". @$_POST['register-password'];
     <div>
         <?= $content; ?>
     </div>
-
+</div>
 </body>
+
 </html>

@@ -1,12 +1,1 @@
-[
-  {
-    "email": "adamgruber@bluewin.ch",
-    "password": 1234,
-    "admin": true
-  },
-  {
-    "email": "adamgruber@bluwin.ch",
-    "password": 1234,
-    "admin": false
-  }
-]
+[{"email":"adamgruber@bluewin.ch","password":1234,"admin":true},{"email":"adamgruber@bluwin.ch","password":1234,"admin":false},{"email":"kaarththigan.eaaswaralingam@cpnv.ch","password":"1234","admin":false},{"email":"imangruber@bluewin.ch","password":"Pa$$w0rd","admin":true},{"email":"random@gmail.com","password":"random","admin":false}]

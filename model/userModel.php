@@ -6,7 +6,7 @@
 */
 
 //Decodes the json of the login
-function jsonDecodeLogin()
+function jsonDecodeUsers()
 {
     $userArray = file_get_contents("model/dataStorage/login.json");
     $userArray = json_decode($userArray, true);
@@ -18,7 +18,7 @@ function jsonDecodeLogin()
 function check_login($mail, $psw)
 {
     //Get the user in the json file
-    $userArray = jsonDecodeLogin();
+    $userArray = jsonDecodeUsers();
 
     //Checks if the email exists
     foreach ($userArray as $user) {
@@ -32,7 +32,7 @@ function check_login($mail, $psw)
 // Check if user is an admin
 function adminCheck($mail)
 {
-    $userArray = jsonDecodeLogin();
+    $userArray = jsonDecodeUsers();
 
     // Read the hole json file and checks if the session is an admin
     foreach ($userArray as $user) {
@@ -46,6 +46,13 @@ function adminCheck($mail)
 /* This function will add a user to the json file */
 function addUser($type, $mail, $psw)
 {
+    /* This will change user type to true or false (case of admin) */
+    if ($type == "Utilisateur") {
+        $type = false;
+    } else {
+        $type = true;
+    }
+
     $file = 'model/dataStorage/login.json';
 
     // If json file is empty we put the array
@@ -77,6 +84,19 @@ function addUser($type, $mail, $psw)
         $dataArray = json_encode($tempArray, true);
         file_put_contents($file, $dataArray);
     }
+}
+
+/* This function will check if the user that wants to be add has a identical email in the json */
+function checkIfUserInJson($mail)
+{
+    $users = jsonDecodeUsers();
+
+    foreach ($users as $user) {
+        if ($user['email'] == $mail) {
+            return false;
+        }
+    }
+    return true;
 }
 
 ?>

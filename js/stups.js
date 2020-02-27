@@ -6,6 +6,7 @@
  * Date: Février 2020
  **/
 var input;
+var array = [255];
 var line = 0;
 function changeColor(input) {
 
@@ -84,6 +85,3 @@ function addRows() {
     }
 }
 
-function showData(input) {
-    alert(input + "A");
-}

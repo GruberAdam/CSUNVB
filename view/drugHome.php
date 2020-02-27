@@ -10,7 +10,7 @@ $title = "CSU-NVB - Stupéfiants";
     <form>
         <table class="input">
             <tbody><tr >
-                <td style="width: 100px;">Morphine N*</td>
+
                 <?php
 
                 $file = 'model/dataStorage/daystups.json';
@@ -30,18 +30,11 @@ $title = "CSU-NVB - Stupéfiants";
                 var_dump($_POST);
                 for($compteur=0;$compteur<14;$compteur++){
 
-
                     if ($compteur==$compteur3){
-                        echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway center'>Pharmacie</p></td>";
+                        echo " <td id='rowh1cel$compteur3' height='100'><p class='sideway center' onmouseover='getDate(this)'></p></td>";
                         $compteur3 = $compteur3 + 2;
                     }
 
-                    if ($compteur==$compteur4){
-                        echo " <td id='colh1cel$compteur4' colspan='8' onmouseover='getDate(this)' class='input2'><p id='pcolh1cel$compteur4' ></p></td>";
-
-                        $compteur4 = $compteur4 + 2;
-
-                    }
 
 
 
@@ -50,7 +43,7 @@ $title = "CSU-NVB - Stupéfiants";
             </tr>
             <tr>
                 <?php
-                for($compteur2=0;$compteur2<56;$compteur2++){
+                for($compteur2=0;$compteur2<29;$compteur2++){
 
 
 
@@ -67,7 +60,7 @@ $title = "CSU-NVB - Stupéfiants";
             for ($compteur5=0;$compteur5<27;$compteur5++) {
 
                 echo  "<tr>";
-                for ($compteur = 0; $compteur < 64; $compteur++) {
+                for ($compteur = 0; $compteur < 29; $compteur++) {
 
                     if(!isset( $data["inputlig{$compteur5}cel{$compteur}"])){
                         echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='0'></td>";

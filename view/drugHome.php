@@ -34,7 +34,7 @@ $title = "CSU-NVB - Stupéfiants";
                 for($compteur=1;$compteur<15;$compteur++){
 
                     if ($compteur==$compteur3){
-                        echo " <td id='rowh1cel$compteur3' height='100' colspan='4'><p class='  FirstCase' onmouseover='getDate(this)' ></p></td>";
+                        echo " <td id='rowh1cel$compteur3' height='100' colspan='4'><input type='text' class='FirstCase' onmouseover='getDate(this)' ></input></td>";
                         $compteur3 = $compteur3 + 2;
                     }
 
@@ -54,7 +54,7 @@ $title = "CSU-NVB - Stupéfiants";
 
 
 
-                    echo "<td id='h2cel$compteur2' class='input'><p id='ph2cel$compteur' class='input'></p></td>";
+                    echo "<td id='h2cel$compteur2' class='input '><p id='ph2cel$compteur' class='input'></p></td>";
 
 
 

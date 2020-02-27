@@ -36,3 +36,14 @@
 .input2{
     width: 100%;
 }
+
+.FirstCase{
+    border: 2px solid black;
+    padding: 5px;
+    left:10%;
+
+}
+
+.case{
+    padding:25%;
+}

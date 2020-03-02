@@ -1,9 +1,5 @@
 <?php
 
-function remiseAccueil(){
-    $_GET['action'] = "remise";
-    require
-}
 
 function remisewrite()
 {

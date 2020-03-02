@@ -39,7 +39,7 @@
 
 .FirstCase{
     border: 2px solid black;
-    margin-left:10px;
+width: 100%;
 
 }
 
@@ -48,7 +48,14 @@ table{
     table-layout: fixed;
     width: 100%;
 }
+th{
+
+
+}
 
 #site{
     margin-left:100px;
+}
+#lig0cel0{
+    width: 100%;
 }

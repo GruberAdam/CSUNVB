@@ -28,6 +28,7 @@ $title = "CSU-NVB - Stupéfiants";
                 <?php
                 $compteur3 = 1;
                 $compteur4 = 0;
+                $compteur6 = 1;
                 $data = $_POST;
                 var_dump($_POST);
                echo "Semaine N°";   echo "<input id='semaine' type='text'>";  echo"<select id='site' size='1'><option>Saint-loup<option>Payerne<option>Valley-de-Joux<option>Yverdon</select>";
@@ -69,6 +70,7 @@ $title = "CSU-NVB - Stupéfiants";
                 echo  "<tr>";
 
                     for ($compteur = 0; $compteur < 29; $compteur++) {
+
                         if($compteur5 == 0 && $compteur == 0){
                             echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' >Morphine</td>";
                         }else {
@@ -81,13 +83,17 @@ $title = "CSU-NVB - Stupéfiants";
                                 }
 
                                 }else{
+                                if($compteur == $compteur6){
+                                    echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='-' disabled></td>";
+                                    $compteur6 = $compteur6 + 3;
+                                }else{
 
                         if (!isset($data["inputlig{$compteur5}cel{$compteur}"])) {
                             echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='0'></td>";
                         } else {
                             echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                         }
-                        }
+                        }}
 
                     }
                 }

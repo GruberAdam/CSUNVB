@@ -53,7 +53,12 @@
                     Login
                 <?php endif; ?>
             </a>
+
         </div>
+
+        <?php if (isset($_SESSION['mail'])) :?>
+        <p class="text-right">E-mail : <?= @$_SESSION['mail'] ?></p>
+        <?php endif; ?>
     </header>
 
     <div>

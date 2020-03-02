@@ -1,1 +1,12 @@
-[{"email":"adamgruber@bluewin.ch","password":1234,"admin":true},{"email":"adamgruber@bluwin.ch","password":1234,"admin":false},{"email":"kaarththigan.eaaswaralingam@cpnv.ch","password":"1234","admin":false},{"email":"imangruber@bluewin.ch","password":"Pa$$w0rd","admin":true},{"email":"random@gmail.com","password":"random","admin":false}]
+[
+  {
+    "email": "adamgruber@bluewin.ch",
+    "password": "$2y$10$ZOBHzePBmiuo0b03je68CuAEQ9HZL6lebFGrly7Mz\/01QWmsE7E6m",
+    "admin": true
+  },
+  {
+    "email": "imangruber@bluewin.ch",
+    "password": "$2y$10$DcX9yIU1udk2Um2SqPbYeebO6lBwwqfjJtaZeQO4se3KHxUqvhVRS",
+    "admin": false
+  }
+]

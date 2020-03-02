@@ -62,7 +62,7 @@ function register()
         /* Get the form inputs */
         $userType = @$_POST['register-account_type'];
         $email = strtolower(@$_POST['register-email']);
-        $password = @$_POST['register-password'];
+        $password = password_hash(@$_POST['register-password'], PASSWORD_DEFAULT);
 
         /* Checks if inputs were completed */
         if (isset($userType) && isset($email) && isset($password)) {

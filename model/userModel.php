@@ -22,7 +22,7 @@ function check_login($mail, $psw)
 
     //Checks if the email exists
     foreach ($userArray as $user) {
-        if ($user['email'] == $mail && $user['password'] == $psw) {
+        if ($user['email'] == $mail && password_verify($psw, $user['password'])) {
             return true; //Returns true if credentials are right
         }
     }

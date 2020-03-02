@@ -29,7 +29,7 @@ $title = "CSU-NVB - Stupéfiants";
                 $compteur3 = 1;
                 $compteur4 = 0;
                 $data = $_POST;
-               echo "Semaine N°"; echo "<input id='semaine' type='text'>";   echo"<select id='site' size='1'><option>Saint-loup<option>Payerne<option>Valley-de-Joux<option>Yverdon</select>";
+               echo "Semaine N°";   echo "<input id='semaine' type='text'>";  echo "<a id='année'>2012</a>";  echo"<select id='site' size='1'><option>Saint-loup<option>Payerne<option>Valley-de-Joux<option>Yverdon</select>";
                 echo " <td id='rowh1cel0' height='100' ><p class='' onmouseover='getDate(this)' ></p></td>";
                 for($compteur=1;$compteur<14;$compteur++){
 

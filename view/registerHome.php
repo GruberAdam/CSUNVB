@@ -13,9 +13,8 @@ $title = "CSU-NVB - Création de compte";
 
         <!-- Display an error if email was already used -->
         <?php if (@$_GET['register-error']) : ?>
-            <div class="alert alert-error" style="margin-top: 10px" role="alert">
-                <h4 class="alert-heading">Erreur!</h4>
-                <p>L'email du compte est déja utilisée</p>
+            <div class="alert alert-danger" role="alert">
+                L'E-mail du compte a déjà été utilisé!
             </div>
         <?php endif; ?>
 
@@ -28,6 +27,13 @@ $title = "CSU-NVB - Création de compte";
         <?php endif; ?>
 
         <div class="form-group">
+            <label for="exampleFormControlSelect1">Status</label>
+            <select class="form-control" id="exampleFormControlSelect1" name="register-account_status">
+                <option>Nouveau</option>
+                <option>Membre</option>
+            </select>
+
+        <div class="form-group" style="margin-top: 10px">
             <label for="exampleFormControlSelect1">Type de compte</label>
             <select class="form-control" id="exampleFormControlSelect1" name="register-account_type">
                 <option>Utilisateur</option>

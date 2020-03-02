@@ -1,12 +1,20 @@
 [
   {
+    "status": "membre",
     "email": "adamgruber@bluewin.ch",
     "password": "$2y$10$ZOBHzePBmiuo0b03je68CuAEQ9HZL6lebFGrly7Mz\/01QWmsE7E6m",
     "admin": true
   },
   {
+    "status": "membre",
     "email": "imangruber@bluewin.ch",
-    "password": "$2y$10$DcX9yIU1udk2Um2SqPbYeebO6lBwwqfjJtaZeQO4se3KHxUqvhVRS",
+    "password": "$2y$10$4g1xCcukP.iEgmNDcMMPF.oXFR\/OwJqT29IEgkwYc0Ydexk1aRWca",
+    "admin": false
+  },
+  {
+    "status": "nouveau",
+    "email": "kaarththigan.eaaswaralingam@cpnv.ch",
+    "password": "$2y$10$osDBzvnOYXBZgYMYh.84ReTcSBSTaUOr51dQAA2nTXKisgwb2hj8m",
     "admin": false
   }
 ]

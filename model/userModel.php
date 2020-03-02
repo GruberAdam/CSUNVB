@@ -44,7 +44,7 @@ function adminCheck($mail)
 }
 
 /* This function will add a user to the json file */
-function addUser($type, $mail, $psw)
+function addUser($status, $type, $mail, $psw)
 {
     /* This will change user type to true or false (case of admin) */
     if ($type == "Utilisateur") {
@@ -61,6 +61,7 @@ function addUser($type, $mail, $psw)
 
         //Creates an array of the user inputs
         $dataArray = array([
+            'status' => $status,
             'email' => $mail,
             'password' => $psw,
             'admin' => $type]);
@@ -73,6 +74,7 @@ function addUser($type, $mail, $psw)
 
         //Array based on if json file had already data
         $dataArray = array(
+            'status' => $status,
             'email' => $mail,
             'password' => $psw,
             'admin' => $type);
@@ -97,6 +99,19 @@ function checkIfUserInJson($mail)
         }
     }
     return true;
+}
+
+/* Checks witch status has the user */
+/* Returns the name of the status (string) */
+function statusCheck($mail){
+    $users = jsonDecodeUsers();
+
+    foreach ($users as $user){
+        if ($user['status'] == "membre" && $mail == $user['email']){
+            return "membre";
+        }
+    }
+    return "nouveau";
 }
 
 ?>

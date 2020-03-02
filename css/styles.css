@@ -14,7 +14,7 @@
 }
 .input{
 
-    width: 100%;
+    
 }
 .cellh100{
     height: 100%;
@@ -45,7 +45,7 @@ width: 100%;
 
 
 table{
-    table-layout: fixed;
+
     width: 100%;
 }
 th{
@@ -56,6 +56,9 @@ th{
 #site{
     margin-left:100px;
 }
+
 #lig0cel0{
-    width: 100%;
+    max-width:100%;
+    white-space:nowrap;
+
 }

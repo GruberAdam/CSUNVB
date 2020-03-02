@@ -60,27 +60,11 @@ ob_start()
                                 <label class="custom-control-label" for="radio">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="radio2">
                                 <label class="custom-control-label" for="radio2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -101,27 +85,11 @@ ob_start()
                                 <label class="custom-control-label" for="detecteurco">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="detecteurco2">
                                 <label class="custom-control-label" for="detecteurco2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -142,27 +110,11 @@ ob_start()
                                 <label class="custom-control-label" for="telephone">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="telephone2">
                                 <label class="custom-control-label" for="telephone2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -183,27 +135,11 @@ ob_start()
                                 <label class="custom-control-label" for="gtinfoavise">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="gtinfoavise2">
                                 <label class="custom-control-label" for="gtinfoavise2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -224,27 +160,11 @@ ob_start()
                                 <label class="custom-control-label" for="annonce">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="annonce2">
                                 <label class="custom-control-label" for="annonce2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -274,27 +194,11 @@ ob_start()
                                 <label class="custom-control-label" for="pleinessence">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="pleinessence2">
                                 <label class="custom-control-label" for="pleinessence2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -315,27 +219,11 @@ ob_start()
                                 <label class="custom-control-label" for="operationnel">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="operationnel2">
                                 <label class="custom-control-label" for="operationnel2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -356,27 +244,11 @@ ob_start()
                                 <label class="custom-control-label" for="rdvgarage">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="rdvgarage2">
                                 <label class="custom-control-label" for="rdvgarage2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -397,27 +269,11 @@ ob_start()
                                 <label class="custom-control-label" for="gtvhcavise">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="gtvhcavise2">
                                 <label class="custom-control-label" for="gtvhcavise2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -438,27 +294,11 @@ ob_start()
                                 <label class="custom-control-label" for="50chfpresent">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="50chfpresent2">
                                 <label class="custom-control-label" for="50chfpresent2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>
@@ -479,27 +319,11 @@ ob_start()
                                 <label class="custom-control-label" for="gtvhcavise">Oui</label>
                             </div>
                         </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
-                        </div>
                         <div class="col-1">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="gtvhcavise2">
                                 <label class="custom-control-label" for="gtvhcavise2">Non</label>
                             </div>
-                        </div>
-                        <div class="col-3">
-                            <select class="custom-select">
-                                <option selected>Choisissez votre horaire</option>
-                                <option value="1">Jour</option>
-                                <option value="2">Nuit</option>
-                                <option value="3">Jour/Nuit</option>
-                            </select>
                         </div>
                     </div>
                 </div>

@@ -57,9 +57,19 @@ th{
     margin-left:100px;
 }
 
+.cel0 > input{
+    width: 100%;
 
 
-#année{
-    margin-left:15px;
+}
+td > input{
+    width: 100%;
+}
 
+.tdAdd{
+    width: 100%;
+}
+#tableAdd{
+    table-layout: fixed;
+    width: 100%;
 }

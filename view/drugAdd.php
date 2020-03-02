@@ -19,55 +19,21 @@ $title = "CSU-NVB - Stupéfiants";
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <button class="btn btn-primary m-1 pull-right">Ajouter</button>
     <form action="index.php?action=drugs"  method="post">
-        <div class="center">
-        <label>Site:</label><select onchange="ambulances(this)">
-            <option name="Payerne">Payerne</option>
-            <option name="Sainte-croix">Sainte-croix</option>
-            <option name="Yverdon">Yverdon</option>
-        </select>
-        </div>
+
     <table id="tableAdd">
 
         <tbody id="tbodyAdd"><tr class="trh">
-            <td>Morphine N*</td>
             <?php
 
 
             $compteur3 = 0;
             $compteur4 = 0;
-            for($compteur=0;$compteur<9;$compteur++){
 
-
-                if ($compteur==$compteur3){
-                    echo " <td id='rowh1cel$compteur3' rowspan='2' height='100'><p class='sideway center' >Pharmacie</p></td>";
-
-                }
-
-                if ($compteur==$compteur4){
-
-
-                }
-
-
-
-            }
             ?>
         </tr>
         <tr>
             <?php
-            for($compteur2=0;$compteur2<7
-            ;$compteur2++){
-                if($compteur2 > 0) {
-                    $ambulance = $compteur2 + 50;
-                }else{
-                    $ambulance = "";
-                }
 
-                echo "<td id='h2cel$compteur2'><p id='ph2cel$compteur'>$ambulance</p></td>";
-
-
-
-            }
             ?>
         </tr>
 
@@ -75,11 +41,15 @@ $title = "CSU-NVB - Stupéfiants";
             for ($compteur5=0;$compteur5<1;$compteur5++) {
 
               echo  "<tr>";
-                for ($compteur = 0; $compteur < 8; $compteur++) {
+                for ($compteur = 1; $compteur < 5; $compteur++) {
+                    if($compteur == 1){
+                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' disabled value='-'></td>";
+                    }elseif ($compteur == 4){
+                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' disabled value='-'></td>";
+                    }else {
 
-
-                    echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input'></td>";
-
+                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' ></td>";
+                    }
                 }
                 echo  "</tr>";
             }

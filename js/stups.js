@@ -72,16 +72,23 @@ function ambulances(input) {
 
 function addRows() {
     line++;
-    var table = document.getElementById("tableAdd");
-    var new_row =table.insertRow();
-    for (var i = 0; i <=7; i++) {
-        var new_input = document.createElement("input");
-        new_input.type = "text";
-        new_input.name = "input" + "lig" + line + "col" + i;
-        new_input.className = "input";
-        var new_cell = new_row.insertCell(i);
-        new_cell.appendChild(new_input);
-        new_cell.id = "lig" + line + "col" + i;
+    if(line >= 28){
+        alert("nombre de ligne maximum atteinte");
+    }
+    else {
+        var a = 1;
+        var table = document.getElementById("tableAdd");
+        var new_row = table.insertRow();
+        for (var i = 0; i <= 3; i++) {
+            var new_input = document.createElement("input");
+            new_input.type = "text";
+            new_input.name = "input" + "lig" + line + "cel" + a;
+            new_input.className = "input";
+            var new_cell = new_row.insertCell(i);
+            new_cell.appendChild(new_input);
+            new_cell.id = "lig" + line + "cel" + a;
+            a++;
+        }
     }
 }
 

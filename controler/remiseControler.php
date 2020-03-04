@@ -1,5 +1,9 @@
 <?php
 
+function remiseformnuitjour(){
+    $_GET['action'] = "remiseformnuitjour";
+    require "view/remiseFromNuitJour.php";
+}
 
 function remisewrite()
 {

@@ -21,6 +21,8 @@ switch ($action)
         break;
     case 'drugs':
         drugHomePage();
+    case 'remiseformnuitjour':
+        remiseformnuitjour();
     case 'remise':
         remisewrite();
         break;

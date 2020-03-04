@@ -9,6 +9,6 @@ require_once 'model/shiftEndModel.php';
 
 function shiftEndHomePage()
 {
-    require_once 'view/shiftEndHome.php';
+    require_once 'view/AccueilRemise.php';
 }
 ?>

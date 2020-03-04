@@ -11,4 +11,18 @@ function shiftEndHomePage()
 {
     require_once 'view/AccueilRemise.php';
 }
+
+
+function remiseformjour(){
+    $_GET['action'] = "remiseformjour";
+    require "view/FormulaireJour.php";
+}
+
+function remiseformnuit(){
+    $_GET['action'] = "remiseformnuit";
+    require "view/RemiseFormulaireNuit.php";
+}
+
 ?>
+
+function remiseformjour()

@@ -3,7 +3,7 @@ ob_start()
 
 ?>
 
-    <form action="index.php?action=remiseForm">
+    <form action="index.php?action=remiseformnuit">
         <div class="form-row">
             <!-- Date -->
             <div class="col-md-6 mb-3">

@@ -12,7 +12,8 @@ function changeColor(input) {
 
     input.style.backgroundColor = "#004300";
 }
-function initAmbulance() {
+
+/*function initAmbulance() {
     var base_element = 0;
     for (var i = 0; i <= 6; i++){
        base_element =  document.getElementById("h2cel" + i);
@@ -68,7 +69,7 @@ function ambulances(input) {
 
     }
 
-}
+}*/
 
 function addRows() {
     line++;

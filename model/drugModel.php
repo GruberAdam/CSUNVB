@@ -12,6 +12,7 @@
  */
 function readDrugItems()
 {
+
     return json_decode(file_get_contents("model/dataStorage/items.json"),true);
 }
 

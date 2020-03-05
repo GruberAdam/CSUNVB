@@ -12,10 +12,7 @@
     width: 60%;
     color: crimson;
 }
-.input{
 
-    
-}
 .cellh100{
     height: 100%;
 }
@@ -49,7 +46,7 @@ table{
     width: 100%;
 }
 th{
-
+    font-size: 70%;
 
 }
 
@@ -72,4 +69,10 @@ td > input{
 #tableAdd{
     table-layout: fixed;
     width: 100%;
+}
+.celsmall{
+    font-size: 70%;
+    text-align: center;
+
+
 }

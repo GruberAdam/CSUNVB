@@ -21,14 +21,15 @@ switch ($action)
         break;
     case 'drugs':
         drugHomePage();
+        break;
     case 'remiseformnuitjour':
         remiseformnuitjour();
+        break;
     case 'remiseformnuit':
         remiseformnuit();
+        break;
     case 'remiseformjour':
         remiseformjour();
-    case 'remise':
-        remisewrite();
         break;
     default: // unknown action
         require_once 'view/home.php';

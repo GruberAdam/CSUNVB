@@ -73,4 +73,37 @@ function createShiftEndItem($item)
 }
 
 
+function registerToJson($date, $responsablejour, $responsablenuit)
+{
+    $file = 'model/dataStorage/remise.json';
+
+
+    if (file_get_contents($file) == "") {
+
+
+        $dataArray = array([
+            'date' => $date,
+            'responsable jour' => $responsablejour,
+            'responsable nuit' => $responsablenuit]);
+
+        $dataArray = json_encode($dataArray, true);
+        file_put_contents($file, $dataArray);
+
+    } else {
+
+
+        $dataArray = array(
+            'date' => $date,
+            'responsable jour' => $responsablejour,
+            'responsable nuit' => $responsablenuit);
+
+
+        $tempArray = file_get_contents($file);
+        $tempArray = json_decode($tempArray, true);
+        array_push($tempArray, $dataArray);
+        $dataArray = json_encode($tempArray, true);
+        file_put_contents($file, $dataArray);
+    }
+}
+
 ?>

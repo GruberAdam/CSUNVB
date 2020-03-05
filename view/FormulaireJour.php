@@ -3,7 +3,8 @@ ob_start()
 
 ?>
 
-    <form action="index.php?action=remiseForm">
+    <h2>Jour</h2>
+    <form action="index.php?action=remiseForm" method="post">
         <div class="form-row">
             <!-- Date -->
             <div class="col-md-6 mb-3">
@@ -54,17 +55,13 @@ ob_start()
                 <p class="col-md-4 mb-3">Radio</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="radio">
-                                <label class="custom-control-label" for="radio">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="radioRadio1" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="radioRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="radio2">
-                                <label class="custom-control-label" for="radio2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="radioRadio2" name="customRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="radioRadio2">Non</label>
                         </div>
                     </div>
                 </div>
@@ -80,15 +77,15 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="detecteurco">
-                                <label class="custom-control-label" for="detecteurco">Oui</label>
-                            </div>
-                        </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="detecteurco2">
-                                <label class="custom-control-label" for="detecteurco2">Non</label>
+                            <div class="row">
+                                <div class="custom-control custom-radio">
+                                    <input type="radio" id="detecteurRadio1" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="detecteurRadio1">Oui</label>
+                                </div>
+                                <div class="custom-control custom-radio" style="margin-left: 50px">
+                                    <input type="radio" id="detecteurRadio2" name="customRadio" class="custom-control-input">
+                                    <label class="custom-control-label" for="detecteurRadio2">Non</label>
+                                </div>
                             </div>
                         </div>
                     </div>

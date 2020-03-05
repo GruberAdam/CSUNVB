@@ -12,9 +12,15 @@
     "admin": false
   },
   {
-    "status": "nouveau",
+    "status": "membre",
     "email": "kaarththigan.eaaswaralingam@cpnv.ch",
-    "password": "$2y$10$osDBzvnOYXBZgYMYh.84ReTcSBSTaUOr51dQAA2nTXKisgwb2hj8m",
+    "password": "$2y$10$v1ifQtrVRl2xB6EKMBA.ouSYoAafOtESNhIYrcuefgZbjY8sxyNAm",
+    "admin": false
+  },
+  {
+    "status": "membre",
+    "email": "random@gmail.com",
+    "password": "$2y$10$luHviukGlSfcjj5OCzraY.o2p\/9YxbJHb2iHitJld7f.e0VLlLktG",
     "admin": false
   }
 ]

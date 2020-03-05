@@ -31,6 +31,15 @@ switch ($action) {
     case 'register' :
         register();
         break;
+    case 'accountChanges':
+
+        /* Take the query string to see what he wants to modify */
+        $status = $_GET['status'];
+        $email = $_GET['email'];
+        $password = $_GET['password'];
+        $admin = $_GET['admin'];
+        accountChanges($status, $email, $password, $admin);
+        break;
     default: // unknown action
         require_once 'view/home.php';
         break;

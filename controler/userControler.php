@@ -17,7 +17,7 @@ function login()
 {
 
     /* Get the inputs (if there are ? ) */
-    $email = @$_POST['user-email'];
+    $email = strtolower(@$_POST['user-email']);
     $password = @$_POST['user-password'];
 
     /* Checks if email or password has been filled */
@@ -30,16 +30,17 @@ function login()
             // Credentials right
             $admin = adminCheck($email); // Checks if user is an admin
 
+            // Creates session on EMAIL and if he is an admin
+            $_SESSION['mail'] = $email;
+            $_SESSION['admin'] = $admin;
+
+            /* Checks if user is new */
             if (statusCheck($email) == "membre") {
 
-                // Creates session on EMAIL and if he is an admin
-                $_SESSION['mail'] = $email;
-                $_SESSION['admin'] = $admin;
-
-                require "view/loginCongratulations.php";
+                require_once "view/loginCongratulations.php";
             }
             else{
-                require "view/newUserRegister.php";
+                require_once "view/newUserRegister.php";
             }
         } else {
             //Credentials wrong
@@ -92,4 +93,23 @@ function register()
         require_once "view/adminError.php";
     }
 
+}
+
+function accountChanges($status, $email, $password, $admin){
+    $sessionEmail = $_SESSION['mail'];
+
+    if ($status){
+        changeStatus($sessionEmail, $_POST['status_change']);
+    }
+    if ($email){
+        changeEmail($sessionEmail, $_POST['email_change']);
+    }
+    if ($password){
+        changePassword($sessionEmail, $_POST['password_change']);
+    }
+    if ($admin){
+        changeAdmin($sessionEmail, $_POST['admin_change']);
+    }
+
+    logout();
 }

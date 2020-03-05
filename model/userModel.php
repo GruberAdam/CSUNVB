@@ -14,19 +14,23 @@ function jsonDecodeUsers()
     return $userArray; // Returns json array
 }
 
-/* Check if the password and the email are correct */
-function check_login($mail, $psw)
-{
-    //Get the user in the json file
-    $userArray = jsonDecodeUsers();
+function jsonPutFiles($array){
+    $tempArray =json_encode($array);
+    file_put_contents("model/dataStorage/login.json", $tempArray);
+}
 
-    //Checks if the email exists
-    foreach ($userArray as $user) {
-        if ($user['email'] == $mail && password_verify($psw, $user['password'])) {
-            return true; //Returns true if credentials are right
+/* This function will find the user id with the email given */
+function getUserId($mail){
+    $result = jsonDecodeUsers();
+    $id = 0;
+
+    foreach ($result as $user){
+        if ($user['email'] == $mail){
+            return $id;
         }
+        $id++;
     }
-    return false; //Returns false if credentials are wrong
+    return false; // ERROR
 }
 
 // Check if user is an admin
@@ -42,6 +46,23 @@ function adminCheck($mail)
     }
     return false; // Returns false if not admin
 }
+
+/* Check if the password and the email are correct */
+function check_login($mail, $psw)
+{
+    //Get the user in the json file
+    $userArray = jsonDecodeUsers();
+
+    //Checks if the email exists
+    foreach ($userArray as $user) {
+        if ($user['email'] == $mail && password_verify($psw, $user['password'])) {
+            return true; //Returns true if credentials are right
+        }
+    }
+    return false; //Returns false if credentials are wrong
+}
+
+
 
 /* This function will add a user to the json file */
 function addUser($status, $type, $mail, $psw)
@@ -112,6 +133,49 @@ function statusCheck($mail){
         }
     }
     return "nouveau";
+}
+
+
+/* Changes the user status with the argument "status" given */
+function changeStatus($sEmail, $status){
+    $result = jsonDecodeUsers();
+    $id = getUserId($sEmail);
+
+    /* Changes the value */
+    $result[$id]['status'] = $status;
+    jsonPutFiles($result);
+}
+
+/* Changes the user email with argument "email" given */
+function changeEmail($sEmail, $email){
+
+    $result = jsonDecodeUsers();
+    $id = getUserId($sEmail);
+
+    /* Changes the value */
+    $result[$id]['email'] = strtolower($email);
+    jsonPutFiles($result);
+}
+
+
+/* Changes the user status with the argument "password" given */
+function changePassword($sEmail, $password){
+    $result = jsonDecodeUsers();
+    $id = getUserId($sEmail);
+
+    /* Changes the value */
+    $result[$id]['password'] = password_hash($password, PASSWORD_DEFAULT);
+    jsonPutFiles($result);
+}
+
+/* Changes the user admin status */
+function changeAdmin($sEmail, $admin){
+    $result = jsonDecodeUsers();
+    $id = getUserId($sEmail);
+
+    /* Changes the value */
+    $result[$id]['admin'] = $admin;
+    jsonPutFiles($result);
 }
 
 ?>

@@ -96,7 +96,7 @@ function register()
 }
 
 function accountChanges($status, $email, $password, $admin){
-    $sessionEmail = $_SESSION['mail'];
+    $sessionEmail = @$_SESSION['mail'];
 
     if ($status){
         changeStatus($sessionEmail, $_POST['status_change']);
@@ -111,5 +111,6 @@ function accountChanges($status, $email, $password, $admin){
         changeAdmin($sessionEmail, $_POST['admin_change']);
     }
 
+    $_GET['settings-success'] = true;
     logout();
 }

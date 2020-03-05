@@ -21,7 +21,7 @@ $title = "CSU-NVB - Stupéfiants";
 
                 $data = json_encode($_POST);
                 fwrite($fs, $data);
-                fclose($fs);
+                fclose($fs); // A VOIR
 
 
                 ?>

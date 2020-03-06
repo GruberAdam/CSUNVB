@@ -38,8 +38,7 @@ function login()
             if (statusCheck($email) == "membre") {
 
                 require_once "view/loginCongratulations.php";
-            }
-            else{
+            } else {
                 require_once "view/newUserRegister.php";
             }
         } else {
@@ -47,7 +46,7 @@ function login()
             $_GET['error'] = true;
             require_once "view/loginHome.php";
         }
-    } else{
+    } else {
         require_once "view/loginHome.php";
     }
 
@@ -95,19 +94,36 @@ function register()
 
 }
 
-function accountChanges($status, $email, $password, $admin){
+function userManagement()
+{
+    $users = jsonDecodeUsers();
+    $counter = 0;
+    foreach ($users as $user) {
+        if ($user['admin']) {
+            $users[$counter]['admin'] = "administrateur";
+        } else{
+            $users[$counter]['admin'] = "utilisateur";
+        }
+        $counter++;
+    }
+    require_once "view/userManagementHome.php";
+}
+
+/* Function designed to modify the accounts depending on what the admin choosed */
+function accountChanges($status, $email, $password, $admin)
+{
     $sessionEmail = @$_SESSION['mail'];
 
-    if ($status){
+    if ($status) {
         changeStatus($sessionEmail, $_POST['status_change']);
     }
-    if ($email){
+    if ($email) {
         changeEmail($sessionEmail, $_POST['email_change']);
     }
-    if ($password){
+    if ($password) {
         changePassword($sessionEmail, $_POST['password_change']);
     }
-    if ($admin){
+    if ($admin) {
         changeAdmin($sessionEmail, $_POST['admin_change']);
     }
 

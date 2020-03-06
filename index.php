@@ -31,8 +31,10 @@ switch ($action) {
     case 'register' :
         register();
         break;
+    case 'userManagement' :
+        userManagement();
+        break;
     case 'accountChanges':
-
         /* Take the query string to see what he wants to modify */
         $status = $_GET['status'];
         $email = $_GET['email'];

@@ -16,12 +16,20 @@ function readDrugItems()
     $itemLecture = file_get_contents("model/dataStorage/daystups.json");
     $json_decode = json_decode($itemLecture);
     var_dump($json_decode);
-    foreach($json_decode as $v){
+    foreach($json_decode as $v => $input ){
     echo $v;
     }
 
+
     return $json_decode;
+
 }
+
+    $write = fopen("daystups.json", 'w');
+    or die ("Error opening output file");
+    fwrite($write, json_encode($json_decode,JSON_UNESCAPED_UNICODE));
+    fclose($write);
+
 
 
 

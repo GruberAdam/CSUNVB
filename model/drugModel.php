@@ -20,10 +20,12 @@ function readDrugItems()
     echo $v;
     }
 
-    return json_decode(file_get_contents("model/dataStorage/items.json"),true);
 
+    return $json_decode;
 
 }
+
+
 
 /**
  * Retourne un item précis, identifié par son id

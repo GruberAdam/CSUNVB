@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ob_start();
 $title = "CSU-NVB - Stupéfiants";
 ?>
@@ -15,13 +15,7 @@ $title = "CSU-NVB - Stupéfiants";
 
                 <?php
 
-                $file = 'model/dataStorage/daystups.json';
 
-                $fs = fopen($file, "w");
-
-                $data = json_encode($_POST);
-                fwrite($fs, $data);
-                fclose($fs); // A VOIR
 
 
                 ?>
@@ -115,7 +109,12 @@ $title = "CSU-NVB - Stupéfiants";
                                 }
                                     $compteur6 = $compteur6 + 3;
                                 }elseif($compteur <= 22){
+                                    if (isset($data["inputlig{$compteur5}cel{$compteur}"])) {
+                                        echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                    }else{
                                     echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                    }
+
                                 }
 
 

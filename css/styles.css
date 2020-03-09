@@ -7,3 +7,33 @@
     background-color: aliceblue;
     font-size: xx-large;
 }
+
+#user-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.td-data, #user-table th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#user-table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ADD8E6;
+    color: #007bff  ;
+}
+
+#user-modifications{
+    padding: 10px;
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+}
+.div-spaces{
+    margin-bottom: 30px;
+}

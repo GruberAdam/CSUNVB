@@ -96,17 +96,15 @@ function register()
 
 function userManagement()
 {
-    $users = jsonDecodeUsers();
-    $counter = 0;
-    foreach ($users as $user) {
-        if ($user['admin']) {
-            $users[$counter]['admin'] = "administrateur";
-        } else{
-            $users[$counter]['admin'] = "utilisateur";
-        }
-        $counter++;
+    if (adminCheck($_SESSION['mail'])){
+        $users = displayJson();
+        require_once "view/userManagementHome.php";
     }
-    require_once "view/userManagementHome.php";
+    else{
+        require_once "view/adminError.php";
+    }
+
+
 }
 
 /* Function designed to modify the accounts depending on what the admin choosed */

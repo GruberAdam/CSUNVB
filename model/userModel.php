@@ -178,4 +178,19 @@ function changeAdmin($sEmail, $admin){
     jsonPutFiles($result);
 }
 
+function displayJson(){
+    $result = jsonDecodeUsers();
+    $counter = 0;
+
+    foreach ($result as $user) {
+        if ($user['admin']) {
+            $result[$counter]['admin'] = "Administrateur";
+        } else{
+            $result[$counter]['admin'] = "Utilisateur";
+        }
+        $counter++;
+    }
+    return $result;
+}
+
 ?>

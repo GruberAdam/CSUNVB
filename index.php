@@ -28,7 +28,7 @@ switch ($action) {
     case 'logout' :
         logout();
         break;
-    case 'register' :
+    case 'register':
         register();
         break;
     case 'userManagement' :

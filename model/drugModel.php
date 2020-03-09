@@ -13,6 +13,13 @@
 function readDrugItems()
 {
 
+    $itemLecture = file_get_contents("model/dataStorage/daystups.json");
+    $json_decode = json_decode($itemLecture);
+    var_dump($json_decode);
+    foreach($json_decode as $v){
+    echo $v;
+    }
+
     return json_decode(file_get_contents("model/dataStorage/items.json"),true);
 }
 

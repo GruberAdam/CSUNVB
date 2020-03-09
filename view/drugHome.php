@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ob_start();
 $title = "CSU-NVB - Stupéfiants";
 ?>
@@ -15,7 +15,7 @@ $title = "CSU-NVB - Stupéfiants";
 
                 <?php
 
-               
+
 
 
                 ?>

@@ -25,6 +25,12 @@ function readDrugItems()
 
 }
 
+    $write = fopen("daystups.json", 'w');
+    or die ("Error opening output file");
+    fwrite($write, json_encode($json_decode,JSON_UNESCAPED_UNICODE));
+    fclose($write);
+
+
 
 
 /**

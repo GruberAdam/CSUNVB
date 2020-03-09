@@ -13,7 +13,14 @@
 ob_start();
 $title = "CSU-NVB - Stupéfiants";
 $day = 1;
-$currentday = idate("w")-1;
+
+$currentdaytemp = idate("w") + 6;
+if( $currentdaytemp == 0){
+    $currentday = 6;
+}else{
+    $currentday = $currentdaytemp-1;
+}
+
 var_dump($currentday);
 
         $day = 4*$currentday;

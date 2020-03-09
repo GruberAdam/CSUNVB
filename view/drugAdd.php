@@ -13,14 +13,11 @@
 ob_start();
 $title = "CSU-NVB - Stupéfiants";
 $day = 1;
-$currentday = 3;
+$currentday = idate("w")-1;
 var_dump($currentday);
-for($a = 0; $a <= 6; $a++){
-    if($currentday == $a){
-        $day = 5 * $a;
-        $day = round($day, 0, PHP_ROUND_HALF_UP);
-    }
-}
+
+        $day = 4*$currentday;
+
 
 ?>
 
@@ -52,7 +49,7 @@ for($a = 0; $a <= 6; $a++){
             for ($compteur5=0;$compteur5<1;$compteur5++) {
 
               echo  "<tr>";
-                for ($compteur =  $day; $compteur < 4 + $day; $compteur++) {
+                for ($compteur = $day; $compteur < 4 + $day; $compteur++) {
 
                     if($compteur == $day){
                         echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' disabled value='-'></td>";

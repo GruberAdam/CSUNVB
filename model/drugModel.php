@@ -12,21 +12,35 @@
  */
 function readDrugItems($day)
 {
+
     $path = "model/dataStorage/daystups{$day}.json";
+
+    if(file_exists (  $path )) {
     $read = fopen($path, 'r');
     $itemLecture = fread($read, filesize($path));
     $json_decode = json_decode($itemLecture);
+        $array = (array) $json_decode;
+    }else{
+        $fr=  fopen($path, "x");
+        fclose($fr);
+    }
 
-   $array = (array) $json_decode;
     return $array;
 
 }
 function writedrugItems($json_decode, $day)
 {
-    $write = fopen("model/dataStorage/daystups{$day}.json", 'w')
-    or die ("Error opening output file");
-    fwrite($write, json_encode($json_decode, JSON_UNESCAPED_UNICODE));
-    fclose($write);
+
+    $file = "model/dataStorage/daystups{$day}.json";
+    if(file_exists (  $file )) {
+        $write = fopen($file, 'w')
+        or die ("Error opening output file");
+        fwrite($write, json_encode($json_decode, JSON_UNESCAPED_UNICODE));
+        fclose($write);
+    }else{
+       $fr = fopen($file, "x");
+        fclose($fr);
+    }
 }
 
 

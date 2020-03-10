@@ -158,6 +158,8 @@ $title = "CSU-NVB - Stupéfiants";
             </tbody>
 
         </table>
+
+        <button class="btn btn-primary w-100">Cloturer</button>
     </form>
 
 

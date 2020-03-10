@@ -11,8 +11,10 @@ function drugHomePage()
 {
     $currentday = @$_GET["currentday"];
     writedrugItems($_POST, $currentday);
-   $_POST = readDrugItems($currentday);
+    for($day2 = 1; $day2 <= 5; $day2 = $day2 + 4) {
+        $_POST += readDrugItems($day2);
 
+    }
     require_once 'view/drugHome.php';
 }
 function drugAdd(){
@@ -21,7 +23,9 @@ function drugAdd(){
     }else{
         $day = 1;
     }
-    $_POST = readDrugItems($day);
+
+        $_POST = readDrugItems($day);
+
 
     require_once  'view/drugAdd.php';
 }

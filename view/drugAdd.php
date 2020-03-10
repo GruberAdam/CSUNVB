@@ -22,33 +22,39 @@ if(idate("w") == 0){
 }
 
 for($a = 0; $a <= 6; $a++){
-    if($currentday == 0){
+    if($currentday == 0) {
         $day = 1;
-        $day2= 1;
+    $day2 = 1;
     }
     if($currentday == 1){
         $day = 4;
-        $day2= 5;
+        $day2 = 5;
+
     }
     if($currentday == 2){
         $day = 7;
-        $day2= 9;
+        $day2 = 9;
+
     }
     if($currentday == 3){
         $day = 10;
-        $day2= 13;
+        $day2 = 13;
+
     }
     if($currentday == 4){
         $day = 13;
-        $day2= 17;
+        $day2 = 17;
+
     }
     if($currentday == 5){
         $day = 16;
-        $day2= 21;
+        $day2 = 21;
+
     }
     if($currentday == 6){
         $day = 19;
-        $day2= 25;
+        $day2 = 25;
+
     }
 }
 
@@ -58,7 +64,10 @@ for($a = 0; $a <= 6; $a++){
 
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <button class="btn btn-primary m-1 pull-right">Ajouter</button>
-    <form action="index.php?action=drugs&currentday=<?=$day2?>"  method="post">
+    <form action="index.php?action=drugs&currentday=<?php if(isset($_GET["day"])){ echo $_GET["day"];
+    }else{
+        echo $day2;
+    }?>"  method="post">
 
     <table id="tableAdd">
 
@@ -82,23 +91,26 @@ for($a = 0; $a <= 6; $a++){
 
 
                   if(isset($_GET["day"])){
+                      $sim_day = $_GET["day"];
                       $data = @$_POST;
-                         for ($compteur5 = 0; $compteur5 <= count($data); $compteur5++) {
+                         for ($compteur5 = 0; $compteur5 <= 28; $compteur5++) {
                              echo "<tr>";
 
-                               for ($compteur = $day; $compteur <= 4 + $day; $compteur++) {
+                               for ($compteur = $sim_day; $compteur <= 3+ $sim_day; $compteur++) {
+                                    $buff_compteur = $compteur -1;
 
-
-                                   if ($compteur == $day && $compteur5 == 0 ) {
-                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' disabled value='-'></td>";
-                                   } elseif ($compteur == $day + 3 && $compteur5 == 0 ) {
-                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' disabled value='-'></td>";
-                                   } else { if(isset($data["inputlig{$compteur5}cel{$compteur}"])) {
+                                   if ($compteur == $sim_day && $compteur5 == 0 ) {
+                                       echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input' disabled value='-'></td>";
+                                   } elseif ($compteur == $sim_day + 3 && $compteur5 == 0 ) {
+                                       echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input' disabled value='-'></td>";
+                                   } else { if(isset($data["inputlig{$compteur5}cel{$compteur}"]) && $compteur5 != 0) {
 
 
                                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' ></td>";
+                                   }else if( $compteur5 != 0) {
+                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
                                    }else{
-
+                                       echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input'  value='{$data["inputlig{$compteur5}cel{$buff_compteur}"]}'></td>";
                                    }
                                    }
 
@@ -133,9 +145,13 @@ for($a = 0; $a <= 6; $a++){
 
     </table>
 
-        <input type="submit">
+        <input type="submit"  class='btn btn-primary w-100'>
     </form>
-    <button  onclick="addRows()">Ajouter ligne</button>
+    <?php if(isset($_GET["day"])):?>
+    <button disabled onclick="addRows()"  class='btn btn-primary w-100'>Ajouter ligne</button>
+    <?php else: ?>
+        <button  onclick="addRows() "  class='btn btn-primary w-100'>Ajouter ligne</button>
+    <?php endif; ?>
 </div>
 <?php
 $content = ob_get_clean();

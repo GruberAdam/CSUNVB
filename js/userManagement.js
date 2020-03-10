@@ -1,10 +1,10 @@
 var button = document.getElementsByClassName('modify-button');
+var closeButton = document.getElementById('close-button');
 var form = document.getElementsByClassName('user-modifications');
 
+console.log(closeButton);
+closeButton.addEventListener('click', function () {
+   console.log('in');
+   document.querySelector('.dialog-window').classList.add('defade')
+});
 
-for (var i = 0; i < button.length; i++){
-    button[i].addEventListener('click', function () {
-        console.log('in');
-        form.style.visibility = "visible"
-    });
-}

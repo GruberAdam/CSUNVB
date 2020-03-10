@@ -33,28 +33,29 @@ $title = "CSU-NVB - Création de compte";
                 <option>Membre</option>
             </select>
 
-        <div class="form-group" style="margin-top: 10px">
-            <label for="exampleFormControlSelect1">Type de compte</label>
-            <select class="form-control" id="exampleFormControlSelect1" name="register-account_type">
-                <option>Utilisateur</option>
-                <option>Administrateur</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="register-email">Email-adresse</label>
-            <input type="email" class="form-control" id="user-email" placeholder="name@example.com" name="register-email" required>
-        </div>
-        <div class="form-group">
-            <label for="register-password">Mot de passe</label>
-            <input type="password" class="form-control" id="password" name="register-password" required>
-        </div>
-        <div class="form-group">
-            <label for="register-password-confirmation">Confirmation du mot de passe</label>
-            <input type="password" class="form-control" id="password-confirmation"
-                   name="register-password-confirmation" required>
-        </div>
+            <div class="form-group" style="margin-top: 10px">
+                <label for="exampleFormControlSelect1">Type de compte</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="register-account_type">
+                    <option>Utilisateur</option>
+                    <option>Administrateur</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="register-email">Email-adresse</label>
+                <input type="email" class="form-control" id="user-email" placeholder="name@example.com"
+                       name="register-email" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password">Mot de passe</label>
+                <input type="password" class="form-control" id="password" name="register-password" required>
+            </div>
+            <div class="form-group">
+                <label for="register-password-confirmation">Confirmation du mot de passe</label>
+                <input type="password" class="form-control" id="password-confirmation"
+                       name="register-password-confirmation" required>
+            </div>
 
-        <input type="submit" class="btn btn-primary" id="button-validation">
+            <input type="submit" class="btn btn-primary" id="button-validation">
     </form>
 
     <script src="js/users.js" type="text/javascript" rel="script"></script>

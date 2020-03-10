@@ -62,7 +62,7 @@
         <?php endif; ?>
     </header>
 
-    <div>
+    <div id="container-gabarit">
         <?= $content; ?>
     </div>
 </div>

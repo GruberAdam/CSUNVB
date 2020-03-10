@@ -26,14 +26,38 @@
     color: #007bff  ;
 }
 
-#user-modifications{
-    padding: 10px;
-    width: 300px;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-}
 .div-spaces{
     margin-bottom: 30px;
+}
+#dialog-window{
+    padding: 10px;
+    position: fixed;
+    left: 25%;
+    right: 30%;
+    bottom: 30%;
+    top: 25%;
+    background-color: white;
+    border: solid 2px gray;
+    z-index: 1000;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes defade {
+    from{ opacity: 1;}
+    to{opacity: 0;}
 }

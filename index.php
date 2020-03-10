@@ -32,7 +32,8 @@ switch ($action) {
         register();
         break;
     case 'userManagement' :
-        userManagement();
+        $id = @$_GET['id'];
+        userManagement($id);
         break;
     case 'accountChanges':
         /* Take the query string to see what he wants to modify */

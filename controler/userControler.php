@@ -94,11 +94,22 @@ function register()
 
 }
 
-function userManagement()
+/* This will function will display every person in an array */
+function userManagement($id)
 {
+    /* Checks if user is an admin */
     if (adminCheck($_SESSION['mail'])){
         $users = displayJson();
-        require_once "view/userManagementHome.php";
+        /* Checks if the user clicked on a mdofiy button */
+        if (isset($id)){
+            $user = getUserById($id);
+            require_once "view/userManagementHome.php";
+        }
+        else{
+
+            require_once "view/userManagementHome.php";
+        }
+
     }
     else{
         require_once "view/adminError.php";

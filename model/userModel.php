@@ -178,6 +178,7 @@ function changeAdmin($sEmail, $admin){
     jsonPutFiles($result);
 }
 
+/* If we need to display something in the json, this will beautify it */
 function displayJson(){
     $result = jsonDecodeUsers();
     $counter = 0;
@@ -191,6 +192,19 @@ function displayJson(){
         $counter++;
     }
     return $result;
+}
+
+function getUserById($id){
+    $counter = 0;
+    $result = jsonDecodeUsers();
+
+    foreach ($result as $user){
+        if ($counter == $id){
+            return $user;
+        }
+        $counter++;
+    }
+    return false; /* ERROR */
 }
 
 ?>

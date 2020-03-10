@@ -5,7 +5,7 @@
     Project : Insert Project Name
 */
 ob_start();
-$title = "CSU-NVB - Administration";
+$title = "CSU-NVB - Error";
 ?>
 <br>
 <br>

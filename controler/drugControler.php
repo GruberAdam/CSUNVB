@@ -10,6 +10,7 @@ require_once 'model/drugModel.php';
 function drugHomePage()
 {
 
+    writedrugItems($_POST);
    $_POST = readDrugItems();
 
     require_once 'view/drugHome.php';

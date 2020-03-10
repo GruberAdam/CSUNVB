@@ -12,24 +12,22 @@
  */
 function readDrugItems()
 {
-
-    $itemLecture = file_get_contents("model/dataStorage/daystups.json");
+    $path = "model/dataStorage/daystups.json";
+    $read = fopen($path, 'r');
+    $itemLecture = fread($read, filesize($path));
     $json_decode = json_decode($itemLecture);
-    var_dump($json_decode);
-    foreach($json_decode as $v => $input ){
-    echo $v;
-    }
 
-
-    return $json_decode;
+   $array = (array) $json_decode;
+    return $array;
 
 }
-
-    $write = fopen("daystups.json", 'w');
+function writedrugItems($json_decode)
+{
+    $write = fopen("model/dataStorage/daystups.json", 'w')
     or die ("Error opening output file");
-    fwrite($write, json_encode($json_decode,JSON_UNESCAPED_UNICODE));
+    fwrite($write, json_encode($json_decode, JSON_UNESCAPED_UNICODE));
     fclose($write);
-
+}
 
 
 

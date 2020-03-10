@@ -73,6 +73,10 @@ function ambulances(input) {
 
 function addRows() {
     line++;
+    var date = new Date();
+    var daily = date.getDay() - 1;
+    var daily2;
+    daily = daily*4;
     if(line >= 28){
         alert("nombre de ligne maximum atteinte");
     }
@@ -81,13 +85,15 @@ function addRows() {
         var table = document.getElementById("tableAdd");
         var new_row = table.insertRow();
         for (var i = 0; i <= 3; i++) {
+            daily2 = daily + i+1;
+
             var new_input = document.createElement("input");
             new_input.type = "text";
-            new_input.name = "input" + "lig" + line + "cel" + a;
+            new_input.name = "input" + "lig" + line + "cel" + daily2;
             new_input.className = "input";
             var new_cell = new_row.insertCell(i);
             new_cell.appendChild(new_input);
-            new_cell.id = "lig" + line + "cel" + a;
+            new_cell.id = "lig" + line + "cel" + daily2;
             a++;
         }
     }

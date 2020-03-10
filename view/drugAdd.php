@@ -13,18 +13,36 @@
 ob_start();
 $title = "CSU-NVB - Stupéfiants";
 $day = 1;
+if(idate("w") == 0){
 
-$currentdaytemp = idate("w") + 6;
-if( $currentdaytemp == 0){
     $currentday = 6;
-}else{
-    $currentday = $currentdaytemp-1;
+}else {
+    $currentday = idate("w")-1;
 }
 
-var_dump($currentday);
-
-        $day = 4*$currentday;
-
+for($a = 0; $a <= 6; $a++){
+    if($currentday == 0){
+        $day = 1;
+    }
+    if($currentday == 1){
+        $day = 4;
+    }
+    if($currentday == 2){
+        $day = 7;
+    }
+    if($currentday == 3){
+        $day = 10;
+    }
+    if($currentday == 4){
+        $day = 13;
+    }
+    if($currentday == 5){
+        $day = 16;
+    }
+    if($currentday == 6){
+        $day = 19;
+    }
+}
 
 ?>
 
@@ -52,7 +70,7 @@ var_dump($currentday);
         </tr>
 
             <?php
-            var_dump($day);
+
             for ($compteur5=0;$compteur5<1;$compteur5++) {
 
               echo  "<tr>";

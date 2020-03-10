@@ -9,14 +9,19 @@ require_once 'model/drugModel.php';
 
 function drugHomePage()
 {
-
-    writedrugItems($_POST);
-   $_POST = readDrugItems();
+    $currentday = @$_GET["currentday"];
+    writedrugItems($_POST, $currentday);
+   $_POST = readDrugItems($currentday);
 
     require_once 'view/drugHome.php';
 }
 function drugAdd(){
-
+    if(isset($_GET["day"])) {
+        $day = @$_GET["day"];
+    }else{
+        $day = 1;
+    }
+    $_POST = readDrugItems($day);
 
     require_once  'view/drugAdd.php';
 }

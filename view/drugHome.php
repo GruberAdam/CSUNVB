@@ -136,7 +136,7 @@ $title = "CSU-NVB - Stupéfiants";
                                         echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                                     }
                                 }else if ($compteur == $compteur9 && $compteur5 == 28) {
-                                    echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a href='index.php?action=drugs&day={$compteur}'><button class='btn btn-primary w-100' type='button'>Modifier</button></a></td>";
+                                    echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a href='index.php?action=drugAdd&day={$compteur}'><button class='btn btn-primary w-100' type='button'>Modifier</button></a></td>";
                                     $compteur9 = $compteur9 + 4;
                                 }
                             }

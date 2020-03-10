@@ -10,9 +10,9 @@
  * Des points seront également retirés au groupe qui osera laisser une des fonctions de ce fichier telle quelle
  * sans l'adapter au niveau de son nom et de son code pour qu'elle dise plus précisément de quelles données elle traite
  */
-function readDrugItems()
+function readDrugItems($day)
 {
-    $path = "model/dataStorage/daystups.json";
+    $path = "model/dataStorage/daystups{$day}.json";
     $read = fopen($path, 'r');
     $itemLecture = fread($read, filesize($path));
     $json_decode = json_decode($itemLecture);
@@ -21,9 +21,9 @@ function readDrugItems()
     return $array;
 
 }
-function writedrugItems($json_decode)
+function writedrugItems($json_decode, $day)
 {
-    $write = fopen("model/dataStorage/daystups.json", 'w')
+    $write = fopen("model/dataStorage/daystups{$day}.json", 'w')
     or die ("Error opening output file");
     fwrite($write, json_encode($json_decode, JSON_UNESCAPED_UNICODE));
     fclose($write);

@@ -9,10 +9,12 @@ require_once 'model/drugModel.php';
 
 function drugHomePage()
 {
+    $dayout = 1;
     $currentday = @$_GET["currentday"];
     writedrugItems($_POST, $currentday);
-    for($day2 = 1; $day2 <= 5; $day2 = $day2 + 4) {
-        $_POST += readDrugItems($day2);
+    for($day2 = 1; $day2 <= 7; $day2++) {
+        $_POST += readDrugItems($dayout);
+        $dayout = $dayout + 4;
 
     }
     require_once 'view/drugHome.php';

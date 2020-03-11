@@ -97,8 +97,24 @@ for($a = 0; $a <= 6; $a++){
                              echo "<tr>";
 
                                for ($compteur = $sim_day; $compteur <= 3+ $sim_day; $compteur++) {
-                                    $buff_compteur = $compteur -1;
+                                   if($sim_day >= 9){
 
+                                       if($sim_day == 13){
+                                           $buff_compteur = $compteur - 3;
+
+                                       }elseif($sim_day == 17){
+                                           $buff_compteur = $compteur - 4;
+                                       }elseif($sim_day == 21){
+                                           $buff_compteur = $compteur - 5;
+                                       }elseif($sim_day == 25){
+                                           $buff_compteur = $compteur - 6;
+                                       }else {
+                                           $buff_compteur = $compteur - 2;
+                                       }
+
+                                   }else {
+                                       $buff_compteur = $compteur - 1;
+                                   }
                                    if ($compteur == $sim_day && $compteur5 == 0 ) {
                                        echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input' disabled value='-'></td>";
                                    } elseif ($compteur == $sim_day + 3 && $compteur5 == 0 ) {

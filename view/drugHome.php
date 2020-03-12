@@ -41,7 +41,7 @@ $title = "CSU-NVB - Stupéfiants";
 
                     if ($compteur==$compteur3){
 
-                        echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='col-sm-12  col-md-12 col-lg-12 center'>". strftime("%A", mktime(0, 0, 0, 0 , $dateday2 + $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , idate("W") + $dateday , $dateyear )). "</th>";
+                        echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 , $dateday2 + $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , idate("W") + $dateday , $dateyear )). "</th>";
                         $dateday++;
                         $compteur3 = $compteur3 + 2;
                     }
@@ -57,20 +57,20 @@ $title = "CSU-NVB - Stupéfiants";
 
                 <?php
 
-                echo "<td id='h2cel0' class='cel0'><p id='ph2cel$compteur' class=' col-sm-12  col-md-12 col-lg-12 input'></p></td>";
+                echo "<td id='h2cel0' class='cel0'><p id='ph2cel$compteur' class='input'></p></td>";
                 for($compteur2=1;$compteur2<23;$compteur2++){
 
 
 
                     if($compteur2 == $compteur8) {
-                        echo "<td id='h2cel$compteur2' class='celsmall' ><p id='ph2cel$compteur' class= 'col-sm-12  col-md-12 col-lg-12 input'  >pharma</p></td>";
+                        echo "<td id='h2cel$compteur2' class='celsmall' ><p id='ph2cel$compteur' class= 'input'  >pharma</p></td>";
                         if($compteur2 == $compteur8 && ($compteur2 != 1 && $compteur2 != 22)) {
-                            echo "<td id='h2cel{$compteur2}2' class='celsmall' ><p id='ph2cel$compteur' class='col-sm-12  col-md-12 col-lg-12 input'  >pharma</p></td>";
+                            echo "<td id='h2cel{$compteur2}2' class='celsmall' ><p id='ph2cel$compteur' class='input'  >pharma</p></td>";
 
                         }
                         $compteur8 = $compteur8 + 3;
                     }else{
-                        echo "<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='col-sm-12  col-md-12 col-lg-12 input' value=''></td>";
+                        echo "<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='input' value=''></td>";
                     }
 
 

@@ -23,15 +23,25 @@ function remiseformjour(){
 
 
     $date = @$_POST['date'];
+    $base = @$_POST['base'];
     $responsablejour = @$_POST['responsablejour'];
+    $equipedejour = @$_POST['equipedejour'];
+    $vehiculedesjour = @$_POST['vehiculedesjour'];
     $responsablenuit = @$_POST['responsablenuit'];
+    $equipedenuit = @$_POST['equipedenuit'];
+    $vehiculedesnuit = @$_POST['vehiculedesnuit'];
+    $radioradio = @$_POST['radioRadio'];
+    $radiodetecteur = @$_POST['radiodetecteur'];
+
+
+    echo $date. '<br>'. $responsablejour. '<br>'. $responsablenuit. '<br>';
+
 
     if (!isset($date) || !isset($responsablejour) || !isset($responsablenuit)){
         require "view/FormulaireJour.php";
     }
     else {
-        require "model/shiftEndModel.php";
-        registerToJson($date, $responsablejour, $responsablenuit);
+        registerToJson($date, $responsablejour, $responsablenuit, $base);
         require "view/home.php";
     }
 }
@@ -41,4 +51,8 @@ function remiseformnuit(){
     require "view/RemiseFormulaireNuit.php";
 }
 
+
+
 ?>
+
+

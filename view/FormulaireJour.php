@@ -3,13 +3,33 @@ ob_start()
 
 ?>
 
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="?action=home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="?action=shiftend">Remise</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="?action=remiseformnuitjour" tabindex="-1" aria-disabled="true">Formulaire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="?action=remiseformjour" tabindex="-1" aria-disabled="true">Formulaire Jour</a>
+        </li>
+    </ul>
+
     <h2>Jour</h2>
-    <form action="index.php?action=remiseForm" method="post">
+    <form action="index.php?action=remiseformjour" method="post">
         <div class="form-row">
+            <!-- Base -->
+            <div class="col-md-4 mb-3">
+                <label for="base">Base</label>
+                <input type="text" class="form-control" id="base" placeholder="base" name="base" required>
+            </div>
             <!-- Date -->
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
-                <input type="text" class="form-control" id="date" placeholder="00/00/0000" name="date" required>
+                <input type="date" class="form-control" id="date" placeholder="00/00/0000" name="date" required>
             </div>
             <!-- Responsable de jour -->
             <div class="col-md-4 mb-3">
@@ -24,24 +44,22 @@ ob_start()
             <!-- Équipage de jour -->
             <div class="col-md-4 mb-3">
                 <label for="equipedejour">Équipage de jour</label>
-                <input type="text" class="form-control" id="equipedejour" placeholder="Équipage de jour" required>
+                <input type="text" class="form-control" id="equipedejour" placeholder="Équipage de jour" name="equipedejour" required>
             </div>
             <!-- Équipage de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="equipedenuit">Équipage de nuit</label>
-                <input type="text" class="form-control" id="equipedenuit" placeholder="Équipage de nuit" required>
+                <input type="text" class="form-control" id="equipedenuit" placeholder="Équipage de nuit" name="equipedenuit" required>
             </div>
             <!-- Véhicule de service jour -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesjour">Véhicule de service jour</label>
-                <input type="text" class="form-control" id="vehiculedesjour" placeholder="Véhicule de service jour"
-                       required>
+                <input type="text" class="form-control" id="vehiculedesjour" placeholder="Véhicule de service jour" name="vehiculedesjour" required>
             </div>
             <!-- Véhicule de service nuit -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesnuit">Véhicule de service nuit</label>
-                <input type="text" class="form-control" id="vehiculedesnuit" placeholder="Véhicule de service nuit"
-                       required>
+                <input type="text" class="form-control" id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="vehiculedesnuit" required>
             </div>
 
         </div>
@@ -57,7 +75,7 @@ ob_start()
                     <div class="row">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="radioRadio1" name="customRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="radioRadio1">Oui</label>
+                            <label class="custom-control-label" for="radioRadio1" nmae>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
                             <input type="radio" id="radioRadio2" name="customRadio" class="custom-control-input">
@@ -339,7 +357,7 @@ ob_start()
         <br>
         <br>
         <br>
+    </form>
 <?php
 $content = ob_get_clean();
 require "gabarit.php";
-?>

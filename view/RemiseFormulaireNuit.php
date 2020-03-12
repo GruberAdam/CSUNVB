@@ -3,6 +3,21 @@ ob_start()
 
 ?>
 
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="?action=home">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="?action=shiftend">Remise</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="?action=remiseformnuitjour" tabindex="-1" aria-disabled="true">Formulaire</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="?action=remiseformnuit" tabindex="-1" aria-disabled="true">Formulaire Nuit</a>
+        </li>
+    </ul>
+
     <form action="index.php?action=remiseformnuit">
         <div class="form-row">
             <!-- Date -->

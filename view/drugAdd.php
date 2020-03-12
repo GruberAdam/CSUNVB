@@ -93,7 +93,7 @@ for($a = 0; $a <= 6; $a++){
                   if(isset($_GET["day"])){
                       $sim_day = $_GET["day"];
                       $data = @$_POST;
-                         for ($compteur5 = 0; $compteur5 <= 28; $compteur5++) {
+                         for ($compteur5 = 0; $compteur5 < 27; $compteur5++) {
                              echo "<tr>";
 
                                for ($compteur = $sim_day; $compteur <= 3+ $sim_day; $compteur++) {

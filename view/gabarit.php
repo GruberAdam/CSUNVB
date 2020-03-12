@@ -10,6 +10,7 @@
     <link href="node_modules/bootstrap/dist/css/bootstrap-reboot.css" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Icons -->
     <link href="assets/icons/general/stylesheets/general_foundicons.css" media="screen" rel="stylesheet" type="text/css"/>
@@ -42,7 +43,7 @@
     <header>
         <div class="row banner">
             <img class="col-2" src="/assets/images/logo.png">
-            <a href="index.php" class="col-10 text-center mt-5 text-decoration-none"><h1>CSU-NVB</h1></a>
+            <a href="index.php" class=" col-xs-12  col-md-12 col-lg-12  text-center mt-5 text-decoration-none"><h1>CSU-NVB</h1></a>
             <a href="?action=login" class="btn btn-primary m-1 pull-right">Login</a>
         </div>
     </header>

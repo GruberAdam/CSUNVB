@@ -86,7 +86,9 @@ $title = "CSU-NVB - Stupéfiants";
 
                 echo  "<tr>";
 
+
                 for ($compteur = 0; $compteur < 29; $compteur++) {
+                    
 
                     if($compteur5 == 0 && $compteur == 0){
                         echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}'  >Morphine</td>";

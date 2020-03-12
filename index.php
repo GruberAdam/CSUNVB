@@ -26,6 +26,9 @@ switch ($action)
     case 'drugs':
         drugHomePage();
         break;
+    case 'finish':
+        finish($_POST);
+        break;
     case 'login':
         login();
         break;

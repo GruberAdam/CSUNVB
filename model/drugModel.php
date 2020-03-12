@@ -45,7 +45,7 @@ function writedrugItems($json_decode, $day)
 
 function writeFinish($data){
 
-    $file = "model/dataStorage/fullstups";
+    $file = "model/dataStorage/fullstups.json";
     file_put_contents( $file,json_encode($data, JSON_UNESCAPED_UNICODE) );
 }
 

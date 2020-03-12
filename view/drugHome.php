@@ -3,15 +3,15 @@ ob_start();
 $title = "CSU-NVB - Stupéfiants";
 ?>
 
-<div class="row m-2">
+<div class="row m-2 ">
 
     <h1>Contrôle de stupéfiants Hebdomadaire</h1><br>
     <a href="index.php?action=drugAdd"><button class="btn btn-primary m-1 pull-right">Ajouter</button></a>
     <form method="post" action="index.php?action=finish">
 
-        <table class=" ">
+        <table  id="dtHorizontalExample"  width="100%">
 
-            <tbody ><tr >
+            <tbody class="col-lg-6"><tr >
 
                 <?php
 
@@ -89,7 +89,7 @@ $title = "CSU-NVB - Stupéfiants";
                 for ($compteur = 0; $compteur < 29; $compteur++) {
 
                     if($compteur5 == 0 && $compteur == 0){
-                        echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' >Morphine</td>";
+                        echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}'  >Morphine</td>";
                     }else if ($compteur5 == 11 && $compteur == 0){
 
                         echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' >Fentanyl</td>";
@@ -104,7 +104,7 @@ $title = "CSU-NVB - Stupéfiants";
                         if($compteur == 0){
 
                             if (!isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
                             } else {
                                 echo "<td id='lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                             }
@@ -160,7 +160,7 @@ $title = "CSU-NVB - Stupéfiants";
 
             }
             ?>
-            </tbody>
+           </tbody>
 
         </table>
 

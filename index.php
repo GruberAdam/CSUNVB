@@ -41,8 +41,11 @@ switch ($action) {
         $email = $_GET['email'];
         $password = $_GET['password'];
         $admin = $_GET['admin'];
-        accountChanges($status, $email, $password, $admin);
+        accountChanges($status, $email, $password, $admin, $_GET['id']);
         break;
+    case 'deleteAccount':
+        $id = $_GET['deletedId'];
+        deleteAccount($id);
     default: // unknown action
         require_once 'view/home.php';
         break;

@@ -36,9 +36,9 @@ function login()
 
             /* Checks if user is new */
             if (statusCheck($email) == "membre") {
-
                 require_once "view/loginCongratulations.php";
             } else {
+                $id = getUserId($_SESSION['mail']);
                 require_once "view/newUserRegister.php";
             }
         } else {
@@ -106,10 +106,8 @@ function userManagement($id)
             require_once "view/userManagementHome.php";
         }
         else{
-
             require_once "view/userManagementHome.php";
         }
-
     }
     else{
         require_once "view/adminError.php";
@@ -119,23 +117,30 @@ function userManagement($id)
 }
 
 /* Function designed to modify the accounts depending on what the admin choosed */
-function accountChanges($status, $email, $password, $admin)
+function accountChanges($status, $email, $password, $admin, $id)
 {
-    $sessionEmail = @$_SESSION['mail'];
 
     if ($status) {
-        changeStatus($sessionEmail, $_POST['status_change']);
+        changeStatus($id, strtolower($_POST['status_change']));
     }
     if ($email) {
-        changeEmail($sessionEmail, $_POST['email_change']);
+        changeEmail($id, $_POST['email_change']);
     }
     if ($password) {
-        changePassword($sessionEmail, $_POST['password_change']);
+        changePassword($id, $_POST['password_change']);
     }
     if ($admin) {
-        changeAdmin($sessionEmail, $_POST['admin_change']);
+        changeAdmin($id, $_POST['admin_change']);
     }
 
     $_GET['settings-success'] = true;
-    logout();
+    require_once "view/home.php";
+}
+
+/* Supprime un compte */
+function deleteAccount($id)
+{
+    deleteAccountById($id);
+    $_GET['settings-success'] = true;
+    require_once "view/home.php";
 }

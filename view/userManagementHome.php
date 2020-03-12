@@ -21,6 +21,9 @@ $counter = 0;
                 <td><a class="btn btn-primary m-1 pull-right modify-button" style="color: white"
                        href="index.php?action=userManagement&id=<?= $counter ?>">Modifier</a>
                 </td>
+                <td><a class="btn btn-danger m-1 pull-right modify-button" style="color: white"
+                       href="index.php?action=deleteAccount&deletedId=<?= $counter ?>">Suprimer</a>
+                </td>
             </tr>
             <?php $counter++; endforeach; ?>
     </table>
@@ -30,12 +33,15 @@ $counter = 0;
         <?php if (!isset($_GET['id'])) : ?>
          style="display: none">
         <?php endif; ?>>
-        <form id="user-modifications">
-            <a class="btn btn-danger defade" style="float: right" role="button" href="#" id="close-button">Quitter</a>
-            <h1>Modifications</h1>
-            <div class="form-group div-spaces">
+        <a class="btn btn-danger defade" style="float: right" role="button" href="index.php?action=userManagement"
+           id="close-button">Quitter</a>
+        <h1>Modifications</h1>
+        <a class="btn btn-primary" role="button" href="#" id="delete-button" style="float: right">Générer un mot de passe</a>
+        <form id="user-modifications" method="post"
+              action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=1&admin=1&password=0">
+            <div class="form-group div-spaces" style="margin-top: 25px">
                 <label>Status</label>
-                <select class="form-control">
+                <select class="form-control" id="user-status" name="status_change">
                     <?php if ($user['status'] == "nouveau") : ?>
                         <option>Nouveau</option>
                         <option>Membre</option>
@@ -47,11 +53,12 @@ $counter = 0;
             </div>
             <div class="form-group div-spaces">
                 <label>E-mail</label>
-                <input type="email" class="form-control" value="<?= $user['email']; ?>">
+                <input type="email" class="form-control" value="<?= $user['email']; ?>" id="user-email"
+                       name="email_change">
             </div>
             <div class="form-group div-spaces">
                 <label>Type de compte</label>
-                <select class="form-control">
+                <select class="form-control" id="user-account_type" name="admin_change">
                     <?php if ($user['admin'] == true) : ?>
                         <option>Administrateur</option>
                         <option>Utilisateur</option>
@@ -61,7 +68,7 @@ $counter = 0;
                     <?php endif; ?>
                 </select>
             </div>
-            <input type="submit" class="btn btn-primary" value="Confirmer" id="button-validation">
+            <input class="btn btn-primary" type="submit" value="Confirmer">
         </form>
     </div>
 

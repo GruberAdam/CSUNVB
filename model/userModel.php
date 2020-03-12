@@ -137,9 +137,8 @@ function statusCheck($mail){
 
 
 /* Changes the user status with the argument "status" given */
-function changeStatus($sEmail, $status){
+function changeStatus($id, $status){
     $result = jsonDecodeUsers();
-    $id = getUserId($sEmail);
 
     /* Changes the value */
     $result[$id]['status'] = $status;
@@ -147,10 +146,9 @@ function changeStatus($sEmail, $status){
 }
 
 /* Changes the user email with argument "email" given */
-function changeEmail($sEmail, $email){
+function changeEmail($id, $email){
 
     $result = jsonDecodeUsers();
-    $id = getUserId($sEmail);
 
     /* Changes the value */
     $result[$id]['email'] = strtolower($email);
@@ -159,9 +157,8 @@ function changeEmail($sEmail, $email){
 
 
 /* Changes the user status with the argument "password" given */
-function changePassword($sEmail, $password){
+function changePassword($id, $password){
     $result = jsonDecodeUsers();
-    $id = getUserId($sEmail);
 
     /* Changes the value */
     $result[$id]['password'] = password_hash($password, PASSWORD_DEFAULT);
@@ -169,9 +166,14 @@ function changePassword($sEmail, $password){
 }
 
 /* Changes the user admin status */
-function changeAdmin($sEmail, $admin){
+function changeAdmin($id, $admin){
+    if ($admin == "Administrateur"){
+        $admin = true;
+    }
+    else{
+        $admin = false;
+    }
     $result = jsonDecodeUsers();
-    $id = getUserId($sEmail);
 
     /* Changes the value */
     $result[$id]['admin'] = $admin;
@@ -194,6 +196,7 @@ function displayJson(){
     return $result;
 }
 
+/* From an id get the user's array */
 function getUserById($id){
     $counter = 0;
     $result = jsonDecodeUsers();
@@ -205,6 +208,14 @@ function getUserById($id){
         $counter++;
     }
     return false; /* ERROR */
+}
+
+function deleteAccountById($id){
+    $result = jsonDecodeUsers();
+    $counter = 0;
+    unset($result[$id]);
+
+    jsonPutFiles($result);
 }
 
 ?>

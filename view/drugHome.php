@@ -32,7 +32,7 @@ $title = "CSU-NVB - Stupéfiants";
                 echo "Semaine N°";   echo "<input id='semaine' type='text'>";  echo"<select id='site' size='1'><option>Saint-loup<option>Payerne<option>Valley-de-Joux<option>Yverdon</select>";
                 echo " <td id='rowh1cel0' height='100' ><p class='' onmouseover='getDate(this)' ></p></td>";
                 setlocale(LC_TIME, "fr");
-                $dateday = 1;
+                $dateday = -1;
                 $dateday2 = idate("w") - idate("w") + 1;
 
                 $dateyear = idate("Y");
@@ -41,7 +41,10 @@ $title = "CSU-NVB - Stupéfiants";
 
                     if ($compteur==$compteur3){
 
-                        echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 , $dateday2 + $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , idate("W") + $dateday , $dateyear )). "</th>";
+
+            echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 ,  $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , idate("W") + $dateday - 1 , $dateyear )). "</th>";
+
+
                         $dateday++;
                         $compteur3 = $compteur3 + 2;
                     }

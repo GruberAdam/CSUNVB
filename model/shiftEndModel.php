@@ -73,7 +73,7 @@ function createShiftEndItem($item)
 }
 
 
-function registerToJson($date, $responsablejour, $responsablenuit, $base)
+function registerToJson($base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit)
 {
     $file = 'model/dataStorage/remise.json';
 
@@ -85,7 +85,12 @@ function registerToJson($date, $responsablejour, $responsablenuit, $base)
             'base' => $base,
             'date' => $date,
             'responsable jour' => $responsablejour,
-            'responsable nuit' => $responsablenuit]);
+            'equipe de jour' => $equipedejour,
+            'vehicule de service / jour' => $vehiculedesjour,
+            'responsable nuit' => $responsablenuit,
+            'equipe de nuit' => $equipedenuit,
+            'vehicule de service / nuit' => $vehiculedesnuit
+        ]);
 
         $dataArray = json_encode($dataArray, true);
         file_put_contents($file, $dataArray);
@@ -97,7 +102,11 @@ function registerToJson($date, $responsablejour, $responsablenuit, $base)
             'base' => $base,
             'date' => $date,
             'responsable jour' => $responsablejour,
-            'responsable nuit' => $responsablenuit);
+            'equipe de jour' => $equipedejour,
+            'vehicule de service / jour' => $vehiculedesjour,
+            'responsable nuit' => $responsablenuit,
+            'equipe de nuit' => $equipedenuit,
+            'vehicule de service / nuit' => $vehiculedesnuit);
 
 
         $tempArray = file_get_contents($file);

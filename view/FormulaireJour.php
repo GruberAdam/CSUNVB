@@ -85,7 +85,7 @@ ob_start()
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="remarqueradio">Remarques</label>
-                    <input type="text" class="form-control" id="remarqueradio" placeholder="Remarques" required>
+                    <input type="text" class="form-control" id="remarqueradio" placeholder="Remarques" name="remarqueradio" required>
                 </div>
             </div>
             <br>

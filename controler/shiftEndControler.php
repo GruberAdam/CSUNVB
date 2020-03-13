@@ -30,8 +30,12 @@ function remiseformjour(){
     $responsablenuit = @$_POST['responsablenuit'];
     $equipedenuit = @$_POST['equipedenuit'];
     $vehiculedesnuit = @$_POST['vehiculedesnuit'];
-    $radioradio = @$_POST['radioRadio'];
-    $radiodetecteur = @$_POST['radiodetecteur'];
+    $radiooui = @$_POST['radioRadio1'];
+    $radionon = @$_POST['radioRadio2'];
+    $remarqueradio = @$_POST['remarqueradio'];
+    $detecteuroui = @$_POST['detecteurRadio1'];
+    $detecteurnon = @$_POST['detecteurRadio2'];
+    $remarquedetecteur = @$_POST['remarquedetecteurco'];
 
 
     echo $date. '<br>'. $responsablejour. '<br>'. $responsablenuit. '<br>';
@@ -41,7 +45,7 @@ function remiseformjour(){
         require "view/FormulaireJour.php";
     }
     else {
-        registerToJson($date, $responsablejour, $responsablenuit, $base);
+        registerToJson($base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
         require "view/home.php";
     }
 }

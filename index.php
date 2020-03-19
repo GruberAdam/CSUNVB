@@ -31,6 +31,9 @@ switch ($action)
     case 'remiseformjour':
         remiseformjour();
         break;
+    case 'tableauRemise':
+        tableauRemise();
+        break;
     default: // unknown action
         require_once 'view/home.php';
         break;

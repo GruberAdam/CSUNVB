@@ -74,11 +74,11 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="radioRadio1" name="customRadio" class="custom-control-input">
+                            <input type="radio" id="radioRadio1" name="radioRadio" class="custom-control-input">
                             <label class="custom-control-label" for="radioRadio1" nmae>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="radioRadio2" name="customRadio" class="custom-control-input">
+                            <input type="radio" id="radioRadio2" name="radioRadio" class="custom-control-input">
                             <label class="custom-control-label" for="radioRadio2">Non</label>
                         </div>
                     </div>
@@ -91,26 +91,22 @@ ob_start()
             <br>
             <!--        --------------------------------------------                Détecteur CO                --------------------------------------------        -->
             <div class="border" style="margin-left: 25px">
-                <p class="col-md-4 mb-3">Détecteurs CO</p>
+                <p class="col-md-4 mb-3">Détecteur CO</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="row">
-                                <div class="custom-control custom-radio">
-                                    <input type="radio" id="detecteurRadio1" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="detecteurRadio1">Oui</label>
-                                </div>
-                                <div class="custom-control custom-radio" style="margin-left: 50px">
-                                    <input type="radio" id="detecteurRadio2" name="customRadio" class="custom-control-input">
-                                    <label class="custom-control-label" for="detecteurRadio2">Non</label>
-                                </div>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="detecteurRadio1" name="detecteurRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="detecteurRadio1" nmae>Oui</label>
+                        </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="detecteurRadio2" name="detecteurRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="detecteurRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="remarquedetecteurco">Remarques</label>
-                    <input type="text" class="form-control" id="remarquedetecteurco" placeholder="Remarques" required>
+                    <input type="text" class="form-control" id="remarquedetecteurco" placeholder="Remarques" name="remarquedetecteurco" required>
                 </div>
             </div>
             <br>
@@ -119,23 +115,19 @@ ob_start()
                 <p class="col-md-4 mb-3">Téléphone</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="telephone">
-                                <label class="custom-control-label" for="telephone">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="telephoneRadio1" name="telephoneRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="telephoneRadio1" nmae>Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="telephone2">
-                                <label class="custom-control-label" for="telephone2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="telephoneRadio2" name="telephoneRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="telephoneRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="remarquedetecteurco">Remarques</label>
-                    <input type="text" class="form-control" id="remarquetelephone" placeholder="Remarques" required>
+                    <input type="text" class="form-control" id="remarquetelephone" placeholder="Remarques" name="remarquetelephone" required>
                 </div>
             </div>
             <br>
@@ -144,23 +136,19 @@ ob_start()
                 <p class="col-md-4 mb-3">Gt info avisé</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtinfoavise">
-                                <label class="custom-control-label" for="gtinfoavise">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="gtinfoaviseRadio1" name="gtinfoaviseRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="gtinfoaviseRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtinfoavise2">
-                                <label class="custom-control-label" for="gtinfoavise2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="gtinfoaviseRadio2" name="gtinfoaviseRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="gtinfoaviseRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="remarquegtinfoavise">Remarques</label>
-                    <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" required>
+                    <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" name="remaequegtinfoavise" required>
                 </div>
             </div>
             <br>
@@ -169,25 +157,20 @@ ob_start()
                 <p class="col-md-4 mb-3">Annonce 144</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="annonce">
-                                <label class="custom-control-label" for="annonce">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="annonceRadio1" name="annonceRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="annonceRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="annonce2">
-                                <label class="custom-control-label" for="annonce2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="annonceRadio2" name="annonceRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="annonceRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="remarqueannonce">Remarques</label>
-                    <input type="text" class="form-control" id="remarqueannonce" placeholder="Remarques" required>
+                    <label for="annonceremarque">Remarques</label>
+                    <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" name="remaequegtinfoavise" required>
                 </div>
-            </div>
             <br>
         </div>
         <br>

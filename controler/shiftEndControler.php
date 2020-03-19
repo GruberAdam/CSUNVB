@@ -38,6 +38,7 @@ function remiseformjour(){
     $remarquedetecteur = @$_POST['remarquedetecteurco'];
 
 
+
     echo $date. '<br>'. $responsablejour. '<br>'. $responsablenuit. '<br>';
 
 
@@ -55,7 +56,24 @@ function remiseformnuit(){
     require "view/RemiseFormulaireNuit.php";
 }
 
+function tableauRemise(){
 
+    $_GET['action'] = "tableauRemise";
+    require 'view/tableauRemise.php';
+
+    $tonObjJson = file_get_contents("model/dataStorage/remise.json");
+    $result = json_decode($tonObjJson,true);
+
+    echo "<table>";
+    foreach($result  as $R=>$D){
+        echo "<tr id='Tr_".$R."'>";
+        foreach($D as $key=>$Value){
+            echo "<td id='Td_".$R."_".$key."'>".$Value."</td>";
+        }
+        echo "</tr>";
+    }
+    echo "</table>";
+}
 
 ?>
 

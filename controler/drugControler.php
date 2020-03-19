@@ -34,7 +34,6 @@ function drugAdd(){
 
 function finish($data){
 
-    var_dump($data);
     require_once  "view/drugHome.php";
 writeFinish($data);
 

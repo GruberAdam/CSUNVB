@@ -91,6 +91,7 @@ function addRows() {
             new_input.type = "text";
             new_input.name = "input" + "lig" + line + "cel" + daily2;
             new_input.className = "input";
+            new_input.type = "number";
             var new_cell = new_row.insertCell(i);
             new_cell.appendChild(new_input);
             new_cell.id = "lig" + line + "cel" + daily2;

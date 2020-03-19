@@ -69,6 +69,8 @@ for($a = 0; $a <= 6; $a++){
         echo $day2;
     }?>"  method="post">
 
+
+
     <table id="tableAdd">
 
         <tbody id="tbodyAdd"><tr class="trh">
@@ -91,12 +93,13 @@ for($a = 0; $a <= 6; $a++){
 
 
                   if(isset($_GET["day"])){
+
                       $sim_day = $_GET["day"];
                       $data = @$_POST;
                          for ($compteur5 = 0; $compteur5 < 27; $compteur5++) {
                              echo "<tr>";
 
-                               for ($compteur = $sim_day; $compteur <= 3+ $sim_day; $compteur++) {
+                               for ($compteur = $sim_day; $compteur <= 4+ $sim_day; $compteur++) {
                                    if($sim_day >= 9){
 
                                        if($sim_day == 13){
@@ -115,18 +118,26 @@ for($a = 0; $a <= 6; $a++){
                                    }else {
                                        $buff_compteur = $compteur - 1;
                                    }
-                                   if ($compteur == $sim_day && $compteur5 == 0 ) {
+                                   if ($compteur == $sim_day && $compteur5 == 0) {
                                        echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input' disabled value='-'></td>";
                                    } elseif ($compteur == $sim_day + 3 && $compteur5 == 0 ) {
                                        echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input' disabled value='-'></td>";
                                    } else { if(isset($data["inputlig{$compteur5}cel{$compteur}"]) && $compteur5 != 0) {
 
 
-                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' ></td>";
-                                   }else if( $compteur5 != 0) {
-                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
-                                   }else{
+                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='number' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' ></td>";
+                                   }else if( $compteur5 != 0 && $compteur <= 4) {
+                                       echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='number' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                   }else if($compteur5 == 0 && $compteur <= 4){
                                        echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input'  value='{$data["inputlig{$compteur5}cel{$buff_compteur}"]}'></td>";
+                                   }elseif($compteur5 == 1){
+                                       echo "<td>Morphine</td>";
+                                   }elseif($compteur5 == 11){
+
+                                       echo "<td>Fentanyl</td>";
+                                   }elseif($compteur5 == 21){
+
+                                       echo "<td>TEMESTA</td>";
                                    }
                                    }
 

@@ -46,7 +46,7 @@ switch ($action) {
     case 'deleteAccount':
         $id = $_GET['deletedId'];
         deleteAccount($id);
-
+        break;
 
     default: // unknown action
         require_once 'view/home.php';

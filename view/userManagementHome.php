@@ -3,6 +3,23 @@ ob_start();
 $title = "CSU-NVB - Modifications des comptes";
 $counter = 0;
 ?>
+
+<?php if (@$_GET['settings-success']) : ?>
+    <div class="alert alert-success" role="alert" style="margin-top: 30px">
+        <h4 class="alert-heading">Modifications accomplies!</h4>
+    </div>
+<?php endif; ?>
+
+<?php if (@$_GET['error-email-settings'] == true) : ?>
+    <div class="alert alert-danger" role="alert">E-mail déjà utilisé</div>
+<?php endif; ?>
+
+<?php if (@$_GET['password'] == 1 && @$_GET['generation'] == true) : ?>
+    <div class="alert alert-success" role="alert" style="margin-top: 30px">
+        <h4 class="alert-heading">Le nouveau mot de passe est : <?= $_POST['password_generation'] ?></h4>
+    </div>
+<?php endif; ?>
+
 <?php if (isset($_GET['id'])) : ?>
     <div id="overlay"></div>
 <?php endif; ?>
@@ -37,13 +54,17 @@ $counter = 0;
            id="close-button">Quitter</a>
         <h1>Modifications</h1>
         <div id="button-parent">
-            <form method="post" action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=0&admin=0&password=1&generation=1" id="password_generation_form">
+            <form method="post"
+                  action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=0&admin=0&password=1&generation=1"
+                  id="password_generation_form">
                 <input type="hidden" name="password_change" id="password_change_id">
                 <input type="hidden" name="status_change" value="nouveau">
-                <input type="submit" class="btn btn-primary" id="password-generator-button" style="float: right" value="Générer un nouveau mot de passe">
+                <input type="submit" class="btn btn-primary" id="password-generator-button" style="float: right"
+                       value="Générer un nouveau mot de passe">
             </form>
         </div>
-        <form id="user-modifications" method="post" action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=1&admin=1&password=0">
+        <form id="user-modifications" method="post"
+              action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=1&admin=1&password=0">
             <div class="form-group div-spaces" style="margin-top: 25px">
                 <label>Status</label>
                 <select class="form-control" id="user-status" name="status_change">

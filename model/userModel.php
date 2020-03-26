@@ -156,15 +156,15 @@ function changeEmail($id, $email)
     $counter = 0;
     $error = 0;
 
-    foreach ($result as $user){
-        if ($user['email'] == $email && $counter != $id){
+    foreach ($result as $user) {
+        if ($user['email'] == $email && $counter != $id) {
             $_GET['error-email-settings'] = true;
             $error = 1;
         }
         $counter++;
     }
 
-    if ($error != 1){
+    if ($error != 1) {
         /* Changes the value */
         $result[$id]['email'] = strtolower($email);
         $_GET['settings-success'] = true;
@@ -242,7 +242,6 @@ function getUserById($id)
 function deleteAccountById($id)
 {
     $result = jsonDecodeUsers();
-    $counter = 0;
     unset($result[$id]);
 
     jsonPutFiles($result);

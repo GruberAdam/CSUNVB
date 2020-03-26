@@ -98,18 +98,16 @@ function register()
 function userManagement($id)
 {
     /* Checks if user is an admin */
-    if (adminCheck($_SESSION['mail'])){
+    if (adminCheck($_SESSION['mail'])) {
         $users = displayJson();
         /* Checks if the user clicked on a mdofiy button */
-        if (isset($id)){
+        if (isset($id)) {
             $user = getUserById($id);
             require_once "view/userManagementHome.php";
-        }
-        else{
+        } else {
             require_once "view/userManagementHome.php";
         }
-    }
-    else{
+    } else {
         require_once "view/adminError.php";
     }
 
@@ -133,8 +131,15 @@ function accountChanges($status, $email, $password, $admin, $id)
         changeAdmin($id, $_POST['admin_change']);
     }
 
+    if (@$_GET['newUser']){
+        $_GET['settings-success'] = true;
+        require_once "view/home.php";
+    }
+    else{
+        unset($_GET['id']);
+        userManagement(@$_GET['id']);
+    }
 
-    require_once "view/home.php";
 }
 
 /* Supprime un compte */
@@ -142,5 +147,6 @@ function deleteAccount($id)
 {
     deleteAccountById($id);
     $_GET['settings-success'] = true;
-    require_once "view/home.php";
+    unset($_GET['id']);
+    userManagement(@$_GET['id']);
 }

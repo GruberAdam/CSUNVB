@@ -11,7 +11,7 @@ $title = "CSU-NVB - Administration";
     <h1>Première connection</h1>
 
     <h5>Veuillez remplir les champs suivants</h5>
-    <form method="post" action="index.php?action=accountChanges&id=<?=$id?>&status=1&email=0&password=1&admin=0" style="margin-top: 15px">
+    <form method="post" action="index.php?action=accountChanges&id=<?=$id?>&status=1&email=0&password=1&admin=0&newUser=1" style="margin-top: 15px">
         <div class="form-group">
             <input type="hidden" name="status_change" value="membre">
             <label for="password">Nouveau mot de passe</label>

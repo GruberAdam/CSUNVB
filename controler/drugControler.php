@@ -34,9 +34,10 @@ function drugAdd(){
 
 function finish($data){
 
-    require_once  "view/drugHome.php";
+
+
 writeFinish($data);
 
-    require_once  'view/drugHome.php';
+    require 'view/drugHome.php';
 }
 ?>

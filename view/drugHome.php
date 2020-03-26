@@ -30,7 +30,7 @@ $title = "CSU-NVB - Stupéfiants";
                 $data = $_POST;
 
 
-                echo "Semaine N°";   echo "<input id='semaine' type='text'>";  echo"<select id='site' size='1'><option>Saint-loup<option>Payerne<option>Valley-de-Joux<option>Yverdon</select>";
+                echo "Semaine N°";   echo "<input id='semaine' type='text' name='semaine' required>";  echo"<select id='site' size='1'><option name='1'>Saint-loup<option name='2'>Payerne<option name='3'>Valley-de-Joux<option name='4'>Yverdon</select>";
                 echo " <td id='rowh1cel0' height='100' ><p class='' onmouseover='getDate(this)' ></p></td>";
                 setlocale(LC_TIME, "fr");
                 $dateday = -1;
@@ -116,24 +116,24 @@ $title = "CSU-NVB - Stupéfiants";
                         if($compteur == 0){
 
                             if (!isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
                             } else {
-                                echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                             }
 
                         }else{
                             if($compteur5 == 0 && $compteur <= 22){
                                 if($compteur == $compteur6){
-                                echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='-' disabled></td>";
+                                echo "<td id='lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='-' disabled></td>";
                                 if($compteur == $compteur6 && ($compteur != 1 && $compteur != 22)) {
-                                    echo "<td id='lig{$compteur5}cel{$compteur}2' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='-' disabled></td>";
+                                    echo "<td id='lig{$compteur5}cel{$compteur}2' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='-' disabled></td>";
                                 }
                                     $compteur6 = $compteur6 + 3;
                                 }elseif($compteur <= 22){
                                     if (isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                                     }else{
-                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
                                     }
 
                                 }
@@ -142,15 +142,15 @@ $title = "CSU-NVB - Stupéfiants";
 
                             }elseif($compteur5 != 0){
                                 if($compteur == $compteur7 && $compteur5 == 27){
-                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='' ></td>";
+                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' ></td>";
                                     $compteur7 = $compteur7 + 4;
                                 }
                                 else if ( $compteur5 != 27 && $compteur5 != 28)
                                     {
                                     if (!isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
                                     } else {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                                     }
                                 }else if ($compteur == $compteur9 && $compteur5 == 28) {
                                     echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a href='index.php?action=drugAdd&day={$compteur}'><button class='btn btn-primary w-100' type='button'>Modifier</button></a></td>";

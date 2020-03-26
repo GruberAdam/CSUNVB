@@ -161,6 +161,7 @@ function changeEmail($id, $email)
             $_GET['error-email-settings'] = true;
             $error = 1;
         }
+        $counter++;
     }
 
     if ($error != 1){

@@ -133,7 +133,7 @@ function accountChanges($status, $email, $password, $admin, $id)
         changeAdmin($id, $_POST['admin_change']);
     }
 
-    $_GET['settings-success'] = true;
+
     require_once "view/home.php";
 }
 

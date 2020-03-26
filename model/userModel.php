@@ -14,18 +14,20 @@ function jsonDecodeUsers()
     return $userArray; // Returns json array
 }
 
-function jsonPutFiles($array){
-    $tempArray =json_encode($array);
+function jsonPutFiles($array)
+{
+    $tempArray = json_encode($array);
     file_put_contents("model/dataStorage/login.json", $tempArray);
 }
 
 /* This function will find the user id with the email given */
-function getUserId($mail){
+function getUserId($mail)
+{
     $result = jsonDecodeUsers();
     $id = 0;
 
-    foreach ($result as $user){
-        if ($user['email'] == $mail){
+    foreach ($result as $user) {
+        if ($user['email'] == $mail) {
             return $id;
         }
         $id++;
@@ -61,7 +63,6 @@ function check_login($mail, $psw)
     }
     return false; //Returns false if credentials are wrong
 }
-
 
 
 /* This function will add a user to the json file */
@@ -124,11 +125,12 @@ function checkIfUserInJson($mail)
 
 /* Checks witch status has the user */
 /* Returns the name of the status (string) */
-function statusCheck($mail){
+function statusCheck($mail)
+{
     $users = jsonDecodeUsers();
 
-    foreach ($users as $user){
-        if ($user['status'] == "membre" && $mail == $user['email']){
+    foreach ($users as $user) {
+        if ($user['status'] == "membre" && $mail == $user['email']) {
             return "membre";
         }
     }
@@ -137,7 +139,8 @@ function statusCheck($mail){
 
 
 /* Changes the user status with the argument "status" given */
-function changeStatus($id, $status){
+function changeStatus($id, $status)
+{
     $result = jsonDecodeUsers();
 
     /* Changes the value */
@@ -146,31 +149,47 @@ function changeStatus($id, $status){
 }
 
 /* Changes the user email with argument "email" given */
-function changeEmail($id, $email){
+function changeEmail($id, $email)
+{
 
     $result = jsonDecodeUsers();
+    $counter = 0;
+    $error = 0;
 
-    /* Changes the value */
-    $result[$id]['email'] = strtolower($email);
-    jsonPutFiles($result);
+    foreach ($result as $user){
+        if ($user['email'] == $email && $counter != $id){
+            $_GET['error-email-settings'] = true;
+            $error = 1;
+        }
+    }
+
+    if ($error != 1){
+        /* Changes the value */
+        $result[$id]['email'] = strtolower($email);
+        $_GET['settings-success'] = true;
+        jsonPutFiles($result);
+    }
 }
 
 
 /* Changes the user status with the argument "password" given */
-function changePassword($id, $password){
+function changePassword($id, $password)
+{
     $result = jsonDecodeUsers();
 
     /* Changes the value */
     $result[$id]['password'] = password_hash($password, PASSWORD_DEFAULT);
     jsonPutFiles($result);
+
+    $_POST['password_generation'] = $password;
 }
 
 /* Changes the user admin status */
-function changeAdmin($id, $admin){
-    if ($admin == "Administrateur"){
+function changeAdmin($id, $admin)
+{
+    if ($admin == "Administrateur") {
         $admin = true;
-    }
-    else{
+    } else {
         $admin = false;
     }
     $result = jsonDecodeUsers();
@@ -181,15 +200,21 @@ function changeAdmin($id, $admin){
 }
 
 /* If we need to display something in the json, this will beautify it */
-function displayJson(){
+function displayJson()
+{
     $result = jsonDecodeUsers();
     $counter = 0;
 
     foreach ($result as $user) {
         if ($user['admin']) {
             $result[$counter]['admin'] = "Administrateur";
-        } else{
+        } else {
             $result[$counter]['admin'] = "Utilisateur";
+        }
+        if ($user['status'] == 'membre') {
+            $result[$counter]['status'] = "Membre";
+        } else {
+            $result[$counter]['status'] = "Nouveau";
         }
         $counter++;
     }
@@ -197,12 +222,13 @@ function displayJson(){
 }
 
 /* From an id get the user's array */
-function getUserById($id){
+function getUserById($id)
+{
     $counter = 0;
     $result = jsonDecodeUsers();
 
-    foreach ($result as $user){
-        if ($counter == $id){
+    foreach ($result as $user) {
+        if ($counter == $id) {
             return $user;
         }
         $counter++;
@@ -210,7 +236,8 @@ function getUserById($id){
     return false; /* ERROR */
 }
 
-function deleteAccountById($id){
+function deleteAccountById($id)
+{
     $result = jsonDecodeUsers();
     $counter = 0;
     unset($result[$id]);

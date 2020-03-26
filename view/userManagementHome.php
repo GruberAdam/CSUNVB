@@ -36,9 +36,14 @@ $counter = 0;
         <a class="btn btn-danger defade" style="float: right" role="button" href="index.php?action=userManagement"
            id="close-button">Quitter</a>
         <h1>Modifications</h1>
-        <a class="btn btn-primary" role="button" href="#" id="delete-button" style="float: right">Générer un mot de passe</a>
-        <form id="user-modifications" method="post"
-              action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=1&admin=1&password=0">
+        <div id="button-parent">
+            <form method="post" action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=0&admin=0&password=1&generation=1" id="password_generation_form">
+                <input type="hidden" name="password_change" id="password_change_id">
+                <input type="hidden" name="status_change" value="nouveau">
+                <input type="submit" class="btn btn-primary" id="password-generator-button" style="float: right" value="Générer un nouveau mot de passe">
+            </form>
+        </div>
+        <form id="user-modifications" method="post" action="index.php?action=accountChanges&id=<?= $_GET['id'] ?>&status=1&email=1&admin=1&password=0">
             <div class="form-group div-spaces" style="margin-top: 25px">
                 <label>Status</label>
                 <select class="form-control" id="user-status" name="status_change">

@@ -6,7 +6,6 @@
 */
 ob_start();
 $title = "CSU-NVB - Administration";
-echo $id;
 ?>
 
     <h1>Première connection</h1>

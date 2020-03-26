@@ -5,7 +5,7 @@
  * Date: 07/02/2020
  * Time: 22:17
  */
-
+$title = "CSU-NVB - Congratulations";
 ob_start();
 ?>
 <br><br>

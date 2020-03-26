@@ -190,8 +190,10 @@ function changeAdmin($id, $admin)
 {
     if ($admin == "Administrateur") {
         $admin = true;
+        $_SESSION['admin'] = true;
     } else {
         $admin = false;
+        $_SESSION['admin'] = false;
     }
     $result = jsonDecodeUsers();
 

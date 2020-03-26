@@ -12,7 +12,7 @@
  */
 function readShiftEndItems()
 {
-    return json_decode(file_get_contents("model/dataStorage/items.json"),true);
+    return json_decode(file_get_contents("model/dataStorage/items.json"), true);
 }
 
 /**
@@ -32,7 +32,7 @@ function readShiftEndItem($id)
  */
 function updateShiftEndItems($items)
 {
-    file_put_contents("model/dataStorage/items.json",json_encode($items));
+    file_put_contents("model/dataStorage/items.json", json_encode($items));
 }
 
 /**
@@ -117,6 +117,35 @@ function registerToJson($base, $date, $responsablejour, $equipedejour, $vehicule
     }
 }
 
+function remiseDelete()
+{
+
+    //récupérer toutes les données
+    $data = file_get_contents('model/dataStorage/remise.json');
+
+// decode json to associative array
+    $json_arr = json_decode($data, true);
+
+// get array index to delete
+    $arr_index = array();
+    foreach ($json_arr as $key => $value) {
+        if ($value['YOUR KEY'] == SOME VALUE TO COMPARE) {
+            $arr_index[] = $key;
+        }
+}
+
+// supprimer les données
+    foreach ($arr_index as $i) {
+        unset($json_arr[$i]);
+    }
+
+// rebase array
+    $json_arr = array_values($json_arr);
+
+// encode array to json and save to file
+    file_put_contents('model/dataStorage/remise.json', json_encode($json_arr));
+
+}
 
 
 ?>

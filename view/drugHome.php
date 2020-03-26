@@ -40,6 +40,15 @@ $title = "CSU-NVB - Stupéfiants";
                 $datemonth = idate("m");
                 for($compteur=1;$compteur<14;$compteur++){
 
+                    for($compteurJan=0;$compteurJan<6;$compteurJan++){
+                        if ($compteurJan == date("d"){
+                     echo"<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='input'></td>";
+                            }
+                            else{
+                            echo"<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='input' value='read-only'></td>";
+                        }
+                    }
+
                     if ($compteur==$compteur3){
 
 

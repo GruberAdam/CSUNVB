@@ -40,19 +40,13 @@ $title = "CSU-NVB - Stupéfiants";
                 $datemonth = idate("m");
                 for($compteur=1;$compteur<14;$compteur++){
 
-                    for($compteurJan=0;$compteurJan<6;$compteurJan++){
-                        if ($compteurJan == date("d"){
-                     echo"<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='input'></td>";
-                            }
-                            else{
-                            echo"<td id='h2cel$compteur2'><input type='text' name='inputph2cel{$compteur}'  class='input' value='read-only'></td>";
-                        }
-                    }
-
                     if ($compteur==$compteur3){
 
+                        if(idate("w") == 1 ){
+                            $dailydate= idate("d");
+                        }
 
-            echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 ,  $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , idate("W") + $dateday - 1 , $dateyear )). "</th>";
+            echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 ,  $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , $dailydate + $dateday + 1 , $dateyear )). "</th>";
 
 
                         $dateday++;

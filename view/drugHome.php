@@ -53,30 +53,30 @@ $title = "CSU-NVB - Stupéfiants";
                         $dateday++;
                         $compteur3 = $compteur3 + 2;
                     }
-                    if (0 == date('d')){
+                    if (1 == idate('w')){
                         $var = 1;
 
                     }
-                    if (1 == date('d')){
+                    if (2 == idate('w')){
                         $var = 5;
                     }
-                    if (2 == date('d')){
+                    if (3 == idate('w')){
                         $var = 9;
                     }
-                    if (3 == date('d')){
+                    if (4 == idate('w')){
                         $var = 13;
                     }
-                    if (4 == date('d')){
+                    if (5 == idate('w')){
                         $var = 17;
                     }
-                    if (5 == date('d')){
+                    if (6 == idate('w')){
                         $var = 21;
                     }
-                    if (6 == date('d')){
+                    if (0 == idate('w')){
                         $var = 25;
                     }
-                    echo $var;
-                    echo date('d');
+                    $temp = $var;
+
 
                 }
                 ?>
@@ -162,9 +162,28 @@ $title = "CSU-NVB - Stupéfiants";
                                     $compteur6 = $compteur6 + 3;
                                 }elseif($compteur <= 22){
                                     if (isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                      if($compteur <= $var+3){
+
+                                          echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+
+
+
+                                      }else {
+
+                                          echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' readonly></td>";
+                                      }
                                     }else{
-                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                        if($compteur <= $var+3){
+
+
+
+                                            echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+
+
+                                        }else {
+
+                                            echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' readonly></td>";
+                                        }
                                     }
 
                                 }
@@ -173,18 +192,39 @@ $title = "CSU-NVB - Stupéfiants";
 
                             }elseif($compteur5 != 0){
                                 if($compteur == $compteur7 && $compteur5 == 27){
-                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' ></td>";
+                                    if($compteur7 == $var){
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' ></td>";
+                                    }else{
+                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' readonly></td>";
+                                    }
                                     $compteur7 = $compteur7 + 4;
                                 }
                                 else if ( $compteur5 != 27 && $compteur5 != 28)
                                     {
                                     if (!isset($data["inputlig{$compteur5}cel{$compteur}"])) {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                        if($compteur <= $var+3) {
+                                            echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
+                                        }else{
+                                                echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' readonly></td>";
+                                            }
                                     } else {
-                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                        if($compteur <= $var+3) {
+
+                                            echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
+                                        }else {
+
+                                            echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' readonly></td>";
+                                        }
                                     }
                                 }else if ($compteur == $compteur9 && $compteur5 == 28) {
-                                    echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a href='index.php?action=drugAdd&day={$compteur}'><button class='btn btn-primary w-100' type='button'>Modifier</button></a></td>";
+
+                                    if($compteur9 == $var){
+
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a href='index.php?action=drugAdd&day={$compteur}'><button class='btn btn-primary w-100' type='button'>Modifier</button></a></td>";
+                                    }else {
+                                        echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' class='cel{$compteur}' colspan='4'><a ><button class='btn btn-primary w-100' type='button' disabled>Modifier</button></a></td>";
+
+                                    }
                                     $compteur9 = $compteur9 + 4;
                                 }
                             }

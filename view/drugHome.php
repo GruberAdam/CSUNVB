@@ -43,9 +43,9 @@ $title = "CSU-NVB - Stupéfiants";
 
                     if ($compteur==$compteur3){
 
-                        if(idate("w") == 1 ){
-                            $dailydate= idate("d");
-                        }
+
+                            $dailydate= idate("d")-idate("w")+1;
+
 
             echo " <th  id='rowh1cel$compteur3' height='100' colspan='4' class='center'>". strftime("%A", mktime(0, 0, 0, 0 ,  $dateday, 0 ))  .  strftime(" %d %B %Y", mktime(0, 0, 0,$datemonth , $dailydate + $dateday + 1 , $dateyear )). "</th>";
 

@@ -34,6 +34,14 @@ switch ($action)
     case 'tableauRemise':
         tableauRemise();
         break;
+    case 'remiseManagement' :
+        $id = @$_GET['id'];
+        remiseManagement($id);
+        break;
+    case 'modifyremise' :
+        $id = @$_GET['id'];
+        modifyRemise($id);
+        break;
     default: // unknown action
         require_once 'view/home.php';
         break;

@@ -30,23 +30,39 @@ function remiseformjour(){
     $responsablenuit = @$_POST['responsablenuit'];
     $equipedenuit = @$_POST['equipedenuit'];
     $vehiculedesnuit = @$_POST['vehiculedesnuit'];
-    $radiooui = @$_POST['radioRadio1'];
-    $radionon = @$_POST['radioRadio2'];
+    $radiochx = @$_POST['radioRadio1'];
     $remarqueradio = @$_POST['remarqueradio'];
-    $detecteuroui = @$_POST['detecteurRadio1'];
-    $detecteurnon = @$_POST['detecteurRadio2'];
+    $detecteurchx = @$_POST['detecteurRadio'];
     $remarquedetecteur = @$_POST['remarquedetecteurco'];
+    $telephonechx = @$_POST['telephoneRadio'];
+    $remarquetelephone = @$_POST['remarquetelephone'];
+    $gtinfoavisechx = @$_POST['gtinfoaviseRadio'];
+    $remarquegtinfoavise = @$_POST['remarquegtinfoavise'];
+    $annoncechx = @$_POST['annonceRadio'];
+    $remarqueannonce = @$_POST['remarqueannonce'];
+
+    $pleinessencechx = @$_POST['pleinessenceRadio'];
+    $remarquepleinessence = @$_POST['remarquepleinessence'];
+    $operationnelchx = @$_POST['operationnelRadio'];
+    $remarqueoperationnel = @$_POST['remarqueoperationnel'];
+    $rdvgaragechx = @$_POST['rdvgarageRadio'];
+    $remarquerdvgarage = @$_POST['remarquerdvgarage'];
+    $gtvhcavisechx = @$_POST['gtvhcaviseRadio'];
+    $remarquegtvhcavise = @$_POST['remarquegtvhcavise'];
+    $fiftychfpresentchx = @$_POST['fiftychfpresentRadio'];
+    $remarquefiftychfpresent = @$_POST['remarquefiftychfpresent'];
+    $probinterchx = @$_POST['probinterRadio'];
+    $remarqueprobinter = @$_POST['remarqueprobinter'];
 
 
-
-    echo $date. '<br>'. $responsablejour. '<br>'. $responsablenuit. '<br>';
+    //echo $date. '<br>'. $responsablejour. '<br>'. $responsablenuit. '<br>';
 
 
     if (!isset($date) || !isset($responsablejour) || !isset($responsablenuit)){
         require "view/FormulaireJour.php";
     }
     else {
-        registerToJson($base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
+        registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
         require "view/home.php";
     }
 }
@@ -74,6 +90,32 @@ function tableauRemise(){
     }
     echo "</table>";
 }
+
+function modifyRemise($id){
+    $base = $_POST['modify'];
+
+    test($id);
+}
+
+function remiseManagement($id)
+{
+    /* Checks if user is an admin */
+    if (adminCheck($_SESSION['mail'])) {
+        $remise = displayJson();
+        /* Checks if the user clicked on a mdofiy button */
+        if (isset($id)) {
+            $remises = getUserById($id);
+            require_once "view/tableauRemise.php";
+        } else {
+            require_once "view/tableauRemise.php";
+        }
+    } else {
+        require_once "view/adminError.php";
+    }
+
+
+}
+
 
 ?>
 

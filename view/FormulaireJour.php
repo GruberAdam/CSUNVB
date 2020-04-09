@@ -24,42 +24,42 @@ ob_start()
             <!-- Base -->
             <div class="col-md-4 mb-3">
                 <label for="base">Base</label>
-                <input type="text" class="form-control" id="base" placeholder="base" name="base" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="base" placeholder="base" name="mjbasemodifier" required>
             </div>
             <!-- Date -->
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" id="date" placeholder="00/00/0000" name="date" required>
+                <input type="date" class="form-control" value=<?php $basemodify ?> id="date" placeholder="00/00/0000" name="date" required>
             </div>
             <!-- Responsable de jour -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledejour">Responsable de jour</label>
-                <input type="text" class="form-control" id="responsabledejour" placeholder="Responsable de jour" name="responsablejour" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledejour" placeholder="Responsable de jour" name="responsablejour" required>
             </div>
             <!-- Responsable de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledenuit">Responsable de nuit</label>
-                <input type="text" class="form-control" id="responsabledenuit" placeholder="Responsable de nuit" name="responsablenuit" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledenuit" placeholder="Responsable de nuit" name="responsablenuit" required>
             </div>
             <!-- Équipage de jour -->
             <div class="col-md-4 mb-3">
                 <label for="equipedejour">Équipage de jour</label>
-                <input type="text" class="form-control" id="equipedejour" placeholder="Équipage de jour" name="equipedejour" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedejour" placeholder="Équipage de jour" name="equipedejour" required>
             </div>
             <!-- Équipage de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="equipedenuit">Équipage de nuit</label>
-                <input type="text" class="form-control" id="equipedenuit" placeholder="Équipage de nuit" name="equipedenuit" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedenuit" placeholder="Équipage de nuit" name="equipedenuit" required>
             </div>
             <!-- Véhicule de service jour -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesjour">Véhicule de service jour</label>
-                <input type="text" class="form-control" id="vehiculedesjour" placeholder="Véhicule de service jour" name="vehiculedesjour" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesjour" placeholder="Véhicule de service jour" name="vehiculedesjour" required>
             </div>
             <!-- Véhicule de service nuit -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesnuit">Véhicule de service nuit</label>
-                <input type="text" class="form-control" id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="vehiculedesnuit" required>
+                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="vehiculedesnuit" required>
             </div>
 
         </div>
@@ -75,7 +75,7 @@ ob_start()
                     <div class="row">
                         <div class="custom-control custom-radio">
                             <input type="radio" id="radioRadio1" name="radioRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="radioRadio1" nmae>Oui</label>
+                            <label class="custom-control-label" for="mjradioRadio1" nmae>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
                             <input type="radio" id="radioRadio2" name="radioRadio" class="custom-control-input">
@@ -168,9 +168,13 @@ ob_start()
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                    <label for="annonceremarque">Remarques</label>
+                    <label for="mjannonceremarque">Remarques</label>
                     <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" name="remaequegtinfoavise" required>
                 </div>
+                <br>
+
+            </div>
+            <br>
             <br>
         </div>
         <br>
@@ -186,73 +190,63 @@ ob_start()
                 <p class="col-md-4 mb-3">Plein essence</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="pleinessence">
-                                <label class="custom-control-label" for="pleinessence">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="pleinessenceRadio1" name="pleinessenceRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="pleinessenceRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="pleinessence2">
-                                <label class="custom-control-label" for="pleinessence2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="pleinessenceRadio2" name="pleinessenceRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="pleinessenceRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="remarquepleinessence">Remarques</label>
+                        <input type="text" class="form-control" id="remarquepleinessence" placeholder="Remarques" name="remarquepleinessence" required>
+                    </div>
                 </div>
             </div>
+
             <br>
             <!--        --------------------------------------------                Opérationnel                --------------------------------------------        -->
             <div class="border" style="margin-left: 25px">
                 <p class="col-md-4 mb-3">Opérationnel</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="operationnel">
-                                <label class="custom-control-label" for="operationnel">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="operationnelRadio1" name="operationnelRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="operationnelRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="operationnel2">
-                                <label class="custom-control-label" for="operationnel2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="operationnelRadio2" name="operationnelRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="operationnelRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="remarqueoperationnel">Remarques</label>
+                        <input type="text" class="form-control" id="remarqueoperationnel" placeholder="Remarques" name="remarqueoperationnel" required>
+                    </div>
                 </div>
             </div>
+
             <br>
             <!--        --------------------------------------------                Rdv garage                --------------------------------------------        -->
             <div class="border" style="margin-left: 25px">
                 <p class="col-md-4 mb-3">Rdv garage</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rdvgarage">
-                                <label class="custom-control-label" for="rdvgarage">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="rdvgarageRadio1" name="rdvgarageRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="rdvgarageRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="rdvgarage2">
-                                <label class="custom-control-label" for="rdvgarage2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="rdvgarageRadio2" name="rdvgarageRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="rdvgarageRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="remarquerdvgarage">Remarques</label>
+                        <input type="text" class="form-control" id="remarquerdvgarage" placeholder="Remarques" name="remarquerdvgarage" required>
+                    </div>
                 </div>
             </div>
             <br>
@@ -261,23 +255,19 @@ ob_start()
                 <p class="col-md-4 mb-3">Gt vhc avisé</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtvhcavise">
-                                <label class="custom-control-label" for="gtvhcavise">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="gtvhcaviseRadio1" name="gtvhcaviseRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="gtvhcaviseRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtvhcavise2">
-                                <label class="custom-control-label" for="gtvhcavise2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="gtvhcaviseRadio2" name="gtvhcaviseRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="gtvhcaviseRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="mjremarquegtvhcavise">Remarques</label>
+                        <input type="text" class="form-control" id="mjremarquegtvhcavise" placeholder="Remarques" name="mjremarquegtvhcavise" required>
+                    </div>
                 </div>
             </div>
             <br>
@@ -286,23 +276,19 @@ ob_start()
                 <p class="col-md-4 mb-3">50chf présent</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="50chfpresent">
-                                <label class="custom-control-label" for="50chfpresent">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="fiftychfpresentRadio1" name="fiftychfpresentRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="fiftychfpresentRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="50chfpresent2">
-                                <label class="custom-control-label" for="50chfpresent2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="fiftychfpresentRadio2" name="fiftychfpresentRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="fiftychfpresentRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="remarquefiftych">Remarques</label>
+                        <input type="text" class="form-control" id="remarquefiftychfpresent" placeholder="Remarques" name="remarquefiftychfpresent" required>
+                    </div>
                 </div>
             </div>
             <br>
@@ -311,23 +297,19 @@ ob_start()
                 <p class="col-md-4 mb-3">Problèmes d'interventions hors véhicules</p>
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtvhcavise">
-                                <label class="custom-control-label" for="gtvhcavise">Oui</label>
-                            </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" id="probinterRadio1" name="probinterRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="probinterRadio1">Oui</label>
                         </div>
-                        <div class="col-1">
-                            <div class="custom-control custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" id="gtvhcavise2">
-                                <label class="custom-control-label" for="gtvhcavise2">Non</label>
-                            </div>
+                        <div class="custom-control custom-radio" style="margin-left: 50px">
+                            <input type="radio" id="probinterRadio2" name="probinterRadio" class="custom-control-input">
+                            <label class="custom-control-label" for="probinterRadio2">Non</label>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label for="validationDefault03">Remarques</label>
-                    <input type="text" class="form-control" id="validationDefault03" placeholder="Remarques" required>
+                    <div class="col-md-6 mb-3">
+                        <label for="remarqueprobinter">Remarques</label>
+                        <input type="text" class="form-control" id="remarqueprobinter" placeholder="Remarques" name="remarqueprobinter" required>
+                    </div>
                 </div>
             </div>
             <br>
@@ -340,6 +322,7 @@ ob_start()
         <br>
         <br>
         <br>
+
     </form>
 <?php
 $content = ob_get_clean();

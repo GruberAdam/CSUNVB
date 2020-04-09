@@ -73,6 +73,14 @@ function createShiftEndItem($item)
 }
 
 
+function jsonDecodeRemise()
+{
+    $userArray = file_get_contents("model/dataStorage/remise.json");
+    $userArray = json_decode($userArray, true);
+
+    return $userArray; // Returns json array
+}
+
 function registerToJson($base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit)
 {
     $file = 'model/dataStorage/remise.json';
@@ -115,37 +123,99 @@ function registerToJson($base, $date, $responsablejour, $equipedejour, $vehicule
         $dataArray = json_encode($tempArray, true);
         file_put_contents($file, $dataArray);
     }
+    echo 'in';
+    test(2);
 }
 
-function remiseDelete()
+function getRemise($date)
 {
+    $result = jsonDecodeUsers();
+    $id = 0;
 
-    //récupérer toutes les données
-    $data = file_get_contents('model/dataStorage/remise.json');
-
-// decode json to associative array
-    $json_arr = json_decode($data, true);
-
-// get array index to delete
-    $arr_index = array();
-    foreach ($json_arr as $key => $value) {
-        if ($value['YOUR KEY'] == SOME VALUE TO COMPARE) {
-            $arr_index[] = $key;
+    foreach ($result as $remise) {
+        if ($remise['date'] == $date) {
+            return $date;
         }
+        $date++;
+    }
+    return false;
 }
 
-// supprimer les données
-    foreach ($arr_index as $i) {
-        unset($json_arr[$i]);
+function test($id){
+    $file = 'model/dataStorage/remise.json';
+    $values = file_get_contents($file);
+    $values = json_decode($values, true);
+
+    unset($values[$id]);
+
+    if (file_get_contents($file) == "") {
+
+
+        $dataArray = array([
+            'base' => $base,
+            'date' => $date,
+            'responsable jour' => $responsablejour,
+            'equipe de jour' => $equipedejour,
+            'vehicule de service / jour' => $vehiculedesjour,
+            'responsable nuit' => $responsablenuit,
+            'equipe de nuit' => $equipedenuit,
+            'vehicule de service / nuit' => $vehiculedesnuit
+        ]);
+
+        $dataArray = json_encode($dataArray, true);
+        file_put_contents($file, $dataArray);
+
+    } else {
+
+
+        $dataArray = array(
+            'base' => $base,
+            'date' => $date,
+            'responsable jour' => $responsablejour,
+            'equipe de jour' => $equipedejour,
+            'vehicule de service / jour' => $vehiculedesjour,
+            'responsable nuit' => $responsablenuit,
+            'equipe de nuit' => $equipedenuit,
+            'vehicule de service / nuit' => $vehiculedesnuit);
+
+
+        $tempArray = file_get_contents($file);
+        $tempArray = json_decode($tempArray, true);
+        array_push($tempArray, $dataArray);
+        $dataArray = json_encode($tempArray, true);
+        file_put_contents($file, $dataArray);
     }
 
-// rebase array
-    $json_arr = array_values($json_arr);
+    $array = json_encode($values, true);
+    file_put_contents($file, $array);
+}
 
-// encode array to json and save to file
-    file_put_contents('model/dataStorage/remise.json', json_encode($json_arr));
+function JsonDisplay(){
+    $result = jsonDecodeRemise();
+    $counter = 0;
+
+    foreach ($result as $remise) {
+
+        $counter++;
+    }
+    return $result;
 
 }
+
+function getUserById($id)
+{
+    $counter = 0;
+    $result = jsonDecodeUsers();
+
+    foreach ($result as $remises) {
+        if ($counter == $id) {
+            return $remises;
+        }
+        $counter++;
+    }
+    return false; /* ERROR */
+}
+
 
 
 ?>

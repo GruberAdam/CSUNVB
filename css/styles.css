@@ -7,6 +7,7 @@
     background-color: aliceblue;
     font-size: xx-large;
 }
+<<<<<<< HEAD
 
 #user-table {
     border-collapse: collapse;
@@ -61,3 +62,10 @@
     from{ opacity: 1;}
     to{opacity: 0;}
 }
+=======
+.sideway{
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    color: crimson;
+}
+>>>>>>> 067893f9288149328c06094cb6730537530ec428

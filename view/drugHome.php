@@ -173,7 +173,7 @@ $title = "CSU-NVB - Stupéfiants";
                                           echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' readonly></td>";
                                       }
                                     }else{
-                                        if($compteur <= $var+3){
+                                        if($compteur <= $var+3 && $compteur >= $var){
 
 
 
@@ -208,7 +208,7 @@ $title = "CSU-NVB - Stupéfiants";
                                                 echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='' readonly></td>";
                                             }
                                     } else {
-                                        if($compteur <= $var+3) {
+                                        if($compteur <= $var+3 && $compteur >= $var) {
 
                                             echo "<td id='{$drug}lig{$compteur5}cel{$compteur}' ><input type='text' name='{$drug}inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}'></td>";
                                         }else {
@@ -246,8 +246,11 @@ $title = "CSU-NVB - Stupéfiants";
            </tbody>
 
         </table>
-
-        <button class="btn btn-primary w-100">Cloturer</button>
+<?php if(0 != idate('w')): ?>
+        <button class="btn btn-primary w-100" disabled>Cloturer</button>
+        <?php else: ?>
+    <button class="btn btn-primary w-100" >Cloturer</button>
+        <?php endif; ?>
     </form>
 
 

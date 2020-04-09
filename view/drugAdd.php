@@ -126,16 +126,16 @@ for($a = 0; $a <= 6; $a++){
 
 
                                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='number' name='inputlig{$compteur5}cel{$compteur}'  class='input' value='{$data["inputlig{$compteur5}cel{$compteur}"]}' ></td>";
-                                   }else if( $compteur5 != 0 && $compteur <= 4) {
+                                   }else if( $compteur5 != 0 && $compteur <= $sim_day+3 ) {
                                        echo "<td id='lig{$compteur5}cel{$compteur}'  class='tdAdd'><input type='number' name='inputlig{$compteur5}cel{$compteur}'  class='input' value=''></td>";
-                                   }else if($compteur5 == 0 && $compteur <= 4){
+                                   }else if($compteur5 == 0 && $compteur <= $sim_day +3){
                                        echo "<td id='lig{$compteur5}cel{$buff_compteur}'  class='tdAdd'><input type='text' name='inputlig{$compteur5}cel{$buff_compteur}'  class='input'  value='{$data["inputlig{$compteur5}cel{$buff_compteur}"]}'></td>";
-                                   }elseif($compteur5 == 1){
+                                   }elseif($compteur5 == 1 && $compteur == $sim_day+4){
                                        echo "<td>Morphine</td>";
-                                   }elseif($compteur5 == 11){
+                                   }elseif($compteur5 == 11 && $compteur == $sim_day+4){
 
                                        echo "<td>Fentanyl</td>";
-                                   }elseif($compteur5 == 21){
+                                   }elseif($compteur5 == 21 && $compteur == $sim_day+4  ){
 
                                        echo "<td>TEMESTA</td>";
                                    }

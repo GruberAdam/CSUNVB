@@ -24,42 +24,42 @@ ob_start()
             <!-- Base -->
             <div class="col-md-4 mb-3">
                 <label for="base">Base</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="base" placeholder="base" name="mjbasemodifier" required>
+                <input type="text" class="form-control" id="base" placeholder="base" name="base" required>
             </div>
             <!-- Date -->
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" value=<?php $basemodify ?> id="date" placeholder="00/00/0000" name="date" required>
+                <input type="date" class="form-control" id="date" placeholder="00/00/0000" name="date" required>
             </div>
             <!-- Responsable de jour -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledejour">Responsable de jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledejour" placeholder="Responsable de jour" name="responsablejour" required>
+                <input type="text" class="form-control"  id="responsabledejour" placeholder="Responsable de jour" name="responsablejour" required>
             </div>
             <!-- Responsable de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledenuit">Responsable de nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledenuit" placeholder="Responsable de nuit" name="responsablenuit" required>
+                <input type="text" class="form-control" id="responsabledenuit" placeholder="Responsable de nuit" name="responsablenuit" required>
             </div>
             <!-- Équipage de jour -->
             <div class="col-md-4 mb-3">
                 <label for="equipedejour">Équipage de jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedejour" placeholder="Équipage de jour" name="equipedejour" required>
+                <input type="text" class="form-control" id="equipedejour" placeholder="Équipage de jour" name="equipedejour" required>
             </div>
             <!-- Équipage de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="equipedenuit">Équipage de nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedenuit" placeholder="Équipage de nuit" name="equipedenuit" required>
+                <input type="text" class="form-control" id="equipedenuit" placeholder="Équipage de nuit" name="equipedenuit" required>
             </div>
             <!-- Véhicule de service jour -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesjour">Véhicule de service jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesjour" placeholder="Véhicule de service jour" name="vehiculedesjour" required>
+                <input type="text" class="form-control" id="vehiculedesjour" placeholder="Véhicule de service jour" name="vehiculedesjour" required>
             </div>
             <!-- Véhicule de service nuit -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesnuit">Véhicule de service nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="vehiculedesnuit" required>
+                <input type="text" class="form-control" id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="vehiculedesnuit" required>
             </div>
 
         </div>
@@ -169,7 +169,7 @@ ob_start()
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjannonceremarque">Remarques</label>
-                    <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" name="remaequegtinfoavise" required>
+                    <input type="text" class="form-control" id="remarquegtinfoavise" placeholder="Remarques" name="remarqueannonce" required>
                 </div>
                 <br>
 
@@ -266,7 +266,7 @@ ob_start()
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="mjremarquegtvhcavise">Remarques</label>
-                        <input type="text" class="form-control" id="mjremarquegtvhcavise" placeholder="Remarques" name="mjremarquegtvhcavise" required>
+                        <input type="text" class="form-control" id="mjremarquegtvhcavise" placeholder="Remarques" name="remarquegtvhcavise" required>
                     </div>
                 </div>
             </div>

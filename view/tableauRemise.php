@@ -2,11 +2,10 @@
 $_GET['action']= 'tableauRemise';
 
 $counter = 0;
-ob_start()
-
+ob_start();
 ?>
 
-    <table id="user-table">
+   <table id="user-table" style="width: 100%">
         <tr>
             <th>Date</th>
             <th>Base</th>
@@ -16,10 +15,10 @@ ob_start()
                 <td class="td-data"><?= $remiseaffich['date'] ?></td>
                 <td class="td-data"><?= $remiseaffich['base'] ?></td>
                 <td><a class="btn btn-primary m-1 pull-right modify-button" style="color: white"
-                       href="index.php?action=userManagement&id=<?= $counter ?>">Modifier</a>
+                       href="index.php?action=modifyremise&id=<?= $counter ?>">Modifier</a>
                 </td>
                 <td><a class="btn btn-danger m-1 pull-right modify-button" style="color: white"
-                       href="index.php?action=deleteAccount&deletedId=<?= $counter ?>">Suprimer</a>
+                       href="index.php?action=deleteremise&deletedId=<?= $counter ?>">Suprimer</a>
                 </td>
             </tr>
             <?php $counter++; endforeach; ?>

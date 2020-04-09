@@ -62,59 +62,82 @@ function remiseformjour(){
         require "view/FormulaireJour.php";
     }
     else {
-        registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
+        registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
         require "view/home.php";
     }
 }
 
 function remiseformnuit(){
     $_GET['action'] = "remiseformnuit";
-    require "view/RemiseFormulaireNuit.php";
+    require "view/home.php";
 }
 
 function tableauRemise(){
-
     $_GET['action'] = "tableauRemise";
+    $tonObjJson = file_get_contents("model/dataStorage/remise.json");
+    $remise = json_decode($tonObjJson,true);
+
     require 'view/tableauRemise.php';
 
-    $tonObjJson = file_get_contents("model/dataStorage/remise.json");
-    $result = json_decode($tonObjJson,true);
 
-    echo "<table>";
-    foreach($result  as $R=>$D){
-        echo "<tr id='Tr_".$R."'>";
-        foreach($D as $key=>$Value){
-            echo "<td id='Td_".$R."_".$key."'>".$Value."</td>";
-        }
-        echo "</tr>";
-    }
-    echo "</table>";
+
+
 }
 
 function modifyRemise($id){
-    $base = $_POST['modify'];
 
-    test($id);
-}
+    $_GET['action'] = "remiseformjour";
 
-function remiseManagement($id)
-{
-    /* Checks if user is an admin */
-    if (adminCheck($_SESSION['mail'])) {
-        $remise = displayJson();
-        /* Checks if the user clicked on a mdofiy button */
-        if (isset($id)) {
-            $remises = getUserById($id);
-            require_once "view/tableauRemise.php";
-        } else {
-            require_once "view/tableauRemise.php";
-        }
-    } else {
-        require_once "view/adminError.php";
+
+    $date = @$_POST['mjdate'];
+    $base = @$_POST['mjbase'];
+    $responsablejour = @$_POST['mjresponsablejour'];
+    $equipedejour = @$_POST['mjequipedejour'];
+    $vehiculedesjour = @$_POST['mjvehiculedesjour'];
+    $responsablenuit = @$_POST['mjresponsablenuit'];
+    $equipedenuit = @$_POST['mjequipedenuit'];
+    $vehiculedesnuit = @$_POST['mjvehiculedesnuit'];
+    $radiochx = @$_POST['mjradioRadio1'];
+    $remarqueradio = @$_POST['mjremarqueradio'];
+    $detecteurchx = @$_POST['mjdetecteurRadio'];
+    $remarquedetecteur = @$_POST['mjremarquedetecteurco'];
+    $telephonechx = @$_POST['mjtelephoneRadio'];
+    $remarquetelephone = @$_POST['mjremarquetelephone'];
+    $gtinfoavisechx = @$_POST['mjgtinfoaviseRadio'];
+    $remarquegtinfoavise = @$_POST['mjremarquegtinfoavise'];
+    $annoncechx = @$_POST['mjannonceRadio'];
+    $remarqueannonce = @$_POST['mjremarqueannonce'];
+
+    $pleinessencechx = @$_POST['mjpleinessenceRadio'];
+    $remarquepleinessence = @$_POST['mjremarquepleinessence'];
+    $operationnelchx = @$_POST['mjoperationnelRadio'];
+    $remarqueoperationnel = @$_POST['mjremarqueoperationnel'];
+    $rdvgaragechx = @$_POST['mjrdvgarageRadio'];
+    $remarquerdvgarage = @$_POST['mjremarquerdvgarage'];
+    $gtvhcavisechx = @$_POST['mjgtvhcaviseRadio'];
+    $remarquegtvhcavise = @$_POST['mjremarquegtvhcavise'];
+    $fiftychfpresentchx = @$_POST['mjfiftychfpresentRadio'];
+    $remarquefiftychfpresent = @$_POST['mjremarquefiftychfpresent'];
+    $probinterchx = @$_POST['mjprobinterRadio'];
+    $remarqueprobinter = @$_POST['mjremarqueprobinter'];
+
+    if (!isset($date) || !isset($remarqueprobinter) || !isset($remarquetelephone)){
+        $remise = jsonDecodeRemise();
+        require_once "view/FromulaireJourModifier.php";
+    }else{
+        echo $base;
+        modifyRemiseById($id, $radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
     }
 
 
 }
+
+function deleteRemise($id){
+    deleteARemise($id);
+
+    tableauRemise();
+}
+
 
 
 ?>

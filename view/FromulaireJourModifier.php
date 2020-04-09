@@ -1,5 +1,5 @@
 <?php
-ob_start()
+ob_start();
 
 ?>
 
@@ -19,47 +19,48 @@ ob_start()
     </ul>
 
     <h2>Jour</h2>
-    <form action="index.php?action=remiseformjour" method="post">
+    <form action="index.php?action=modifyremise&id=<?=$_GET['id']?>" method="post">
         <div class="form-row">
             <!-- Base -->
             <div class="col-md-4 mb-3">
                 <label for="base">Base</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="base" placeholder="base" name="mjbasemodifier" required>
+
+                <input type="text" class="form-control" value="<?= $remise[$id]['base'] ?>" id="base" name="mjbase" required>
             </div>
             <!-- Date -->
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" value=<?php $basemodify ?> id="date" placeholder="00/00/0000" name="mjdate" required>
+                <input type="date" class="form-control" value="<?= $remise[$id]['date'] ?>" id="date" name="mjdate" required>
             </div>
             <!-- Responsable de jour -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledejour">Responsable de jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledejour" placeholder="Responsable de jour" name="mjresponsablejour" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['responsable jour'] ?>" id="responsabledejour" name="mjresponsablejour" required>
             </div>
             <!-- Responsable de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="responsabledenuit">Responsable de nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="responsabledenuit" placeholder="Responsable de nuit" name="mjresponsablenuit" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['responsable nuit'] ?>" id="responsabledenuit" placeholder="Responsable de nuit" name="mjresponsablenuit" required>
             </div>
             <!-- Équipage de jour -->
             <div class="col-md-4 mb-3">
                 <label for="equipedejour">Équipage de jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedejour" placeholder="Équipage de jour" name="mjequipedejour" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['equipage de jour'] ?>" id="equipedejour" placeholder="Équipage de jour" name="mjequipedejour" required>
             </div>
             <!-- Équipage de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="equipedenuit">Équipage de nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="equipedenuit" placeholder="Équipage de nuit" name="mjequipedenuit" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['equipage de nuit'] ?>" id="equipedenuit" placeholder="Équipage de nuit" name="mjequipedenuit" required>
             </div>
             <!-- Véhicule de service jour -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesjour">Véhicule de service jour</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesjour" placeholder="Véhicule de service jour" name="mjvehiculedesjour" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['vehicule de service / jour'] ?>" id="vehiculedesjour" placeholder="Véhicule de service jour" name="mjvehiculedesjour" required>
             </div>
             <!-- Véhicule de service nuit -->
             <div class="col-md-4 mb-3">
                 <label for="vehiculedesnuit">Véhicule de service nuit</label>
-                <input type="text" class="form-control" value=<?php $basemodify ?> id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="mjvehiculedesnuit" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['vehicule de service / nuit'] ?>" id="vehiculedesnuit" placeholder="Véhicule de service nuit" name="mjvehiculedesnuit" required>
             </div>
 
         </div>
@@ -74,18 +75,18 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjradioRadio1" name="mjradioRadio" class="custom-control-input">
+                            <input type="radio" id="mjradioRadio1" name="mjradioRadio" value="<?= $remise[$id]['radio'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjradioRadio1" nmae>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjradioRadio2" name="mjradioRadio" class="custom-control-input">
+                            <input type="radio" id="mjradioRadio2" name="mjradioRadio" value="<?= $remise[$id]['radio'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjradioRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjremarqueradio">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarqueradio" placeholder="Remarques" name="mjremarqueradio" required>
+                    <input type="text" class="form-control" value="<?= $remise[$id]['radio remarques'] ?>" id="mjremarqueradio" placeholder="Remarques" name="mjremarqueradio" required>
                 </div>
             </div>
             <br>
@@ -95,18 +96,18 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjdetecteurRadio1" name="mjdetecteurRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="mjdetecteurRadio1" nmae>Oui</label>
+                            <input type="radio" id="mjdetecteurRadio1" name="mjdetecteurRadio" value="<?= $remise[$id]['detecteur'] ?>" class="custom-control-input">
+                            <label class="custom-control-label" for="mjdetecteurRadio1" name>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjdetecteurRadio2" name="mjdetecteurRadio" class="custom-control-input">
+                            <input type="radio" id="mjdetecteurRadio2" name="mjdetecteurRadio" value="<?= $remise[$id]['detecteur'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjdetecteurRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjremarquedetecteurco">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquedetecteurco" placeholder="Remarques" name="mjremarquedetecteurco" required>
+                    <input type="text" class="form-control" id="mjremarquedetecteurco" value="<?= $remise[$id]['detecteur remarques'] ?>" placeholder="Remarques" name="mjremarquedetecteurco" required>
                 </div>
             </div>
             <br>
@@ -116,18 +117,18 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjtelephoneRadio1" name="mjtelephoneRadio" class="custom-control-input">
-                            <label class="custom-control-label" for="mjtelephoneRadio1" nmae>Oui</label>
+                            <input type="radio" id="mjtelephoneRadio1" name="mjtelephoneRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
+                            <label class="custom-control-label" for="mjtelephoneRadio1" name>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjtelephoneRadio2" name="mjtelephoneRadio" class="custom-control-input">
+                            <input type="radio" id="mjtelephoneRadio2" name="mjtelephoneRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjtelephoneRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjremarquedetecteurco">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquetelephone" placeholder="Remarques" name="mjremarquetelephone" required>
+                    <input type="text" class="form-control" id="mjremarquetelephone" value="<?= $remise[$id]['telephone remarques'] ?>" placeholder="Remarques" name="mjremarquetelephone" required>
                 </div>
             </div>
             <br>
@@ -137,18 +138,18 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjgtinfoaviseRadio1" name="mjgtinfoaviseRadio" class="custom-control-input">
+                            <input type="radio" id="mjgtinfoaviseRadio1" name="mjgtinfoaviseRadio" value="<?= $remise[$id]['Gt info avsie'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjgtinfoaviseRadio1">Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjgtinfoaviseRadio2" name="mjgtinfoaviseRadio" class="custom-control-input">
+                            <input type="radio" id="mjgtinfoaviseRadio2" name="mjgtinfoaviseRadio" value="<?= $remise[$id]['Gt info avise'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjgtinfoaviseRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjremarquegtinfoavise">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" name="mjremaequegtinfoavise" required>
+                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['Gt info avise remarques'] ?>" name="mjremaequegtinfoavise" required>
                 </div>
             </div>
             <br>
@@ -158,18 +159,18 @@ ob_start()
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjannonceRadio1" name="mjannonceRadio" class="custom-control-input">
+                            <input type="radio" id="mjannonceRadio1" name="mjannonceRadio" value="<?= $remise[$id]['annonce 144'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjannonceRadio1">Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjannonceRadio2" name="mjannonceRadio" class="custom-control-input">
+                            <input type="radio" id="mjannonceRadio2" name="mjannonceRadio" value="<?= $remise[$id]['annonce 144'] ?>" class="custom-control-input">
                             <label class="custom-control-label" for="mjannonceRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjannonceremarque">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" name="mjremaequegtinfoavise" required>
+                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['annonce 144 remarques'] ?>" name="mjremaequegtinfoavise" required>
                 </div>
                 <br>
 
@@ -191,17 +192,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjpleinessenceRadio1" name="mjpleinessenceRadio" class="custom-control-input">
+                                <input type="radio" id="mjpleinessenceRadio1" name="mjpleinessenceRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjpleinessenceRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjpleinessenceRadio2" name="mjpleinessenceRadio" class="custom-control-input">
+                                <input type="radio" id="mjpleinessenceRadio2" name="mjpleinessenceRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjpleinessenceRadio2">Non</label>
                             </div>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="mjremarquepleinessence">Remarques</label>
-                        <input type="text" class="form-control" id="mjremarquepleinessence" placeholder="Remarques" name="mjremarquepleinessence" required>
+                        <input type="text" class="form-control" id="mjremarquepleinessence" placeholder="Remarques" value="<?= $remise[$id]['telephone remarques'] ?>" name="mjremarquepleinessence" required>
                     </div>
                     </div>
                 </div>
@@ -213,17 +214,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjoperationnelRadio1" name="mjoperationnelRadio" class="custom-control-input">
+                                <input type="radio" id="mjoperationnelRadio1" name="mjoperationnelRadio" value="<?= $remise[$id]['operationnel'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjoperationnelRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjoperationnelRadio2" name="mjoperationnelRadio" class="custom-control-input">
+                                <input type="radio" id="mjoperationnelRadio2" name="mjoperationnelRadio" value="<?= $remise[$id]['operationnel'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjoperationnelRadio2">Non</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="mjremarqueoperationnel">Remarques</label>
-                            <input type="text" class="form-control" id="mjremarqueoperationnel" placeholder="Remarques" name="mjremarqueoperationnel" required>
+                            <input type="text" class="form-control" id="mjremarqueoperationnel" placeholder="Remarques" value="<?= $remise[$id]['operationnel remarques'] ?>" name="mjremarqueoperationnel" required>
                         </div>
                     </div>
                 </div>
@@ -235,17 +236,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjrdvgarageRadio1" name="mjrdvgarageRadio" class="custom-control-input">
+                                <input type="radio" id="mjrdvgarageRadio1" name="mjrdvgarageRadio" value="<?= $remise[$id]['rdv garage'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjrdvgarageRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjrdvgarageRadio2" name="mjrdvgarageRadio" class="custom-control-input">
+                                <input type="radio" id="mjrdvgarageRadio2" name="mjrdvgarageRadio" value="<?= $remise[$id]['rdv garage'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjrdvgarageRadio2">Non</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="mjremarquerdvgarage">Remarques</label>
-                            <input type="text" class="form-control" id="mjremarquerdvgarage" placeholder="Remarques" name="mjremarquerdvgarage" required>
+                            <input type="text" class="form-control" id="mjremarquerdvgarage" placeholder="Remarques" name="mjremarquerdvgarage" value="<?= $remise[$id]['rdv garage remarques'] ?>" required>
                         </div>
                     </div>
                 </div>
@@ -256,17 +257,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjgtvhcaviseRadio1" name="mjgtvhcaviseRadio" class="custom-control-input">
+                                <input type="radio" id="mjgtvhcaviseRadio1" name="mjgtvhcaviseRadio" value="<?= $remise[$id]['Gt vhc avise'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjgtvhcaviseRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjgtvhcaviseRadio2" name="mjgtvhcaviseRadio" class="custom-control-input">
+                                <input type="radio" id="mjgtvhcaviseRadio2" name="mjgtvhcaviseRadio" value="<?= $remise[$id]['Gt vhc avise'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjgtvhcaviseRadio2">Non</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="mjremarquegtvhcavise">Remarques</label>
-                            <input type="text" class="form-control" id="mjremarquegtvhcavise" placeholder="Remarques" name="mjremarquegtvhcavise" required>
+                            <input type="text" class="form-control" id="mjremarquegtvhcavise" placeholder="Remarques" value="<?= $remise[$id]['Gt vhc avise remarques'] ?>" name="mjremarquegtvhcavise" required>
                         </div>
                     </div>
                 </div>
@@ -277,17 +278,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjfiftychfpresentRadio1" name="mjfiftychfpresentRadio" class="custom-control-input">
+                                <input type="radio" id="mjfiftychfpresentRadio1" name="mjfiftychfpresentRadio" value="<?= $remise[$id]['50 chf present'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjfiftychfpresentRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjfiftychfpresentRadio2" name="mjfiftychfpresentRadio" class="custom-control-input">
+                                <input type="radio" id="mjfiftychfpresentRadio2" name="mjfiftychfpresentRadio" value="<?= $remise[$id]['50 chf present'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjfiftychfpresentRadio2">Non</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="mjremarquefiftych">Remarques</label>
-                            <input type="text" class="form-control" id="mjremarquefiftychfpresent" placeholder="Remarques" name="mjremarquefiftychfpresent" required>
+                            <input type="text" class="form-control" id="mjremarquefiftychfpresent" placeholder="Remarques" value="<?= $remise[$id]['50 chf present remarques'] ?>" name="mjremarquefiftychfpresent" required>
                         </div>
                     </div>
                 </div>
@@ -298,17 +299,17 @@ ob_start()
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjprobinterRadio1" name="mjprobinterRadio" class="custom-control-input">
+                                <input type="radio" id="mjprobinterRadio1" name="mjprobinterRadio" value="<?= $remise[$id]['probleme intervention hors vehicules'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjprobinterRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjprobinterRadio2" name="mjprobinterRadio" class="custom-control-input">
+                                <input type="radio" id="mjprobinterRadio2" name="mjprobinterRadio" value="<?= $remise[$id]['probleme intervention hors vehicules'] ?>" class="custom-control-input">
                                 <label class="custom-control-label" for="mjprobinterRadio2">Non</label>
                             </div>
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="mjremarqueprobinter">Remarques</label>
-                            <input type="text" class="form-control" id="mjremarqueprobinter" placeholder="Remarques" name="mjremarqueprobinter" required>
+                            <input type="text" class="form-control" id="mjremarqueprobinter" placeholder="Remarques" value="<?= $remise[$id]['probleme intervention hors vehicules remarques'] ?>" name="mjremarqueprobinter" required>
                         </div>
                     </div>
                 </div>

@@ -42,6 +42,10 @@ switch ($action)
         $id = @$_GET['id'];
         modifyRemise($id);
         break;
+    case 'deleteremise':
+        $id = $_GET['deletedId'];
+        deleteRemise($id);
+        break;
     default: // unknown action
         require_once 'view/home.php';
         break;

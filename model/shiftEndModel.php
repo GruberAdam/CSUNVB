@@ -89,7 +89,7 @@ function registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetec
 
 
         $dataArray = array([
-            'jour',
+            'partie de la journee' => 'jour',
             'base' => $base,
             'date' => $date,
             'responsable jour' => $responsablejour,
@@ -130,7 +130,7 @@ function registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetec
 
 
         $dataArray = array(
-            'jour',
+            'partie de la journee' => 'jour',
             'base' => $base,
             'date' => $date,
             'responsable jour' => $responsablejour,
@@ -178,100 +178,53 @@ function modifyRemiseById($id, $radiochx, $remarqueradio, $detecteurchx, $remarq
     $file = 'model/dataStorage/remise.json';
     $values = file_get_contents($file);
     $values = json_decode($values, true);
-    echo 'id ='. $id;
-    unset($values[$id]);
 
-    if (file_get_contents($file) == "") {
-
-        $dataArray = array([
-            'jour',
-            'base' => $base,
-            'date' => $date,
-            'responsable jour' => $responsablejour,
-            'equipe de jour' => $equipedejour,
-            'vehicule de service / jour' => $vehiculedesjour,
-            'responsable nuit' => $responsablenuit,
-            'equipe de nuit' => $equipedenuit,
-            'vehicule de service / nuit' => $vehiculedesnuit,
-            'radio' => $radiochx,
-            'radio remarques' => $remarqueradio,
-            'detecteur' => $detecteurchx,
-            'detecteur remarques' => $remarquedetecteur,
-            'telephone' => $telephonechx,
-            'telephone remarques' => $remarquetelephone,
-            'Gt info avise' => $gtinfoavisechx,
-            'Gt info avise remarques' => $remarquegtinfoavise,
-            'annonce 144' => $annoncechx,
-            'annonce 144 remarques' => $remarqueannonce,
-            'plein essence' => $pleinessencechx,
-            'plein essence remarques' => $remarquepleinessence,
-            'operationnel' => $operationnelchx,
-            'operationnel remarques' => $remarqueoperationnel,
-            'rdv garage' => $rdvgaragechx,
-            'rdv garage remarques' => $remarquerdvgarage,
-            'Gt vhc avise' => $gtvhcavisechx,
-            'Gt vhc avise remarques' => $remarquegtvhcavise,
-            '50 chf present' => $fiftychfpresentchx,
-            '50 chf present remarques' => $remarquefiftychfpresent,
-            'probleme intervention hors vehicules' => $probinterchx,
-            'probleme intervention hors vehicules remarques' => $remarqueprobinter
-        ]);
-
-        $dataArray = json_encode($dataArray, true);
-        file_put_contents($file, $dataArray);
-
-    } else {
-
-
-        $dataArray = array(
-            'jour',
-            'base' => $base,
-            'date' => $date,
-            'responsable jour' => $responsablejour,
-            'equipe de jour' => $equipedejour,
-            'vehicule de service / jour' => $vehiculedesjour,
-            'responsable nuit' => $responsablenuit,
-            'equipe de nuit' => $equipedenuit,
-            'vehicule de service / nuit' => $vehiculedesnuit,
-            'radio' => $radiochx,
-            'radio remarques' => $remarqueradio,
-            'detecteur' => $detecteurchx,
-            'detecteur remarques' => $remarquedetecteur,
-            'telephone' => $telephonechx,
-            'telephone remarques' => $remarquetelephone,
-            'Gt info avise' => $gtinfoavisechx,
-            'Gt info avise remarques' => $remarquegtinfoavise,
-            'annonce 144' => $annoncechx,
-            'annonce 144 remarques' => $remarqueannonce,
-            'plein essence' => $pleinessencechx,
-            'plein essence remarques' => $remarquepleinessence,
-            'operationnel' => $operationnelchx,
-            'operationnel remarques' => $remarqueoperationnel,
-            'rdv garage' => $rdvgaragechx,
-            'rdv garage remarques' => $remarquerdvgarage,
-            'Gt vhc avise' => $gtvhcavisechx,
-            'Gt vhc avise remarques' => $remarquegtvhcavise,
-            '50 chf present' => $fiftychfpresentchx,
-            '50 chf present remarques' => $remarquefiftychfpresent,
-            'probleme intervention hors vehicules' => $probinterchx,
-            'probleme intervention hors vehicules remarques' => $remarqueprobinter);
-
-
-        $tempArray = file_get_contents($file);
-        $tempArray = json_decode($tempArray, true);
-        array_push($tempArray, $dataArray);
-        $dataArray = json_encode($tempArray, true);
-        file_put_contents($file, $dataArray);
-    }
+    $values[$id]['base'] = $base;
+    $values[$id]['date'] = $date;
+    $values[$id]['responsable jour'] = $responsablejour;
+    $values[$id]['equipe de jour'] = $equipedejour;
+    $values[$id]['vehicule de service / jour'] = $vehiculedesjour;
+    $values[$id]['responsable nuit'] = $responsablenuit;
+    $values[$id]['equipe de nuit'] = $equipedenuit;
+    $values[$id]['vehicule de service / nuit'] = $vehiculedesnuit;
+    $values[$id]['radio'] = $radiochx;
+    $values[$id]['radio remarques'] = $remarqueradio;
+    $values[$id]['detecteur'] = $detecteurchx;
+    $values[$id]['detecteur remarques'] = $remarquedetecteur;
+    $values[$id]['telephone'] = $telephonechx;
+    $values[$id]['telephone remarques'] = $remarquetelephone;
+    $values[$id]['Gt info avise'] = $gtinfoavisechx;
+    $values[$id]['Gt info avise remarques'] = $remarquegtinfoavise;
+    $values[$id]['annonce 144'] = $annoncechx;
+    $values[$id]['annonce 144 remarques'] = $remarqueannonce;
+    $values[$id]['plein essence'] = $pleinessencechx;
+    $values[$id]['plein essence remarques'] = $remarquepleinessence;
+    $values[$id]['operationnel'] = $operationnelchx;
+    $values[$id]['operationnel remarques'] = $remarqueoperationnel;
+    $values[$id]['rdv garage'] = $rdvgaragechx;
+    $values[$id]['rdv garage remarques'] = $remarquerdvgarage;
+    $values[$id]['Gt vhc avise'] = $gtvhcavisechx;
+    $values[$id]['Gt vhc avise remarques'] = $remarquegtvhcavise;
+    $values[$id]['50 chf present'] = $fiftychfpresentchx;
+    $values[$id]['50 chf present remarques'] = $remarquefiftychfpresent;
+    $values[$id]['probleme intervention hors vehicules'] = $probinterchx;
+    $values[$id]['probleme intervention hors vehicules remarques'] = $remarqueprobinter;
+    file_put_contents('model/dataStorage/remise.json', json_encode($values));
 }
 
 /* This deletes a remise ny id */
 function deleteARemise($id){
     $result = jsonDecodeRemise();
-    unset($result[$id]);
+    array_splice($result, $id, 1);
 
     $array = json_encode($result, true);
     file_put_contents("model/dataStorage/remise.json", $array);
+}
+
+function tableauJSON(){
+
+
+
 }
 
 

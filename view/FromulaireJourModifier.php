@@ -45,12 +45,12 @@ ob_start();
             <!-- Équipage de jour -->
             <div class="col-md-4 mb-3">
                 <label for="equipedejour">Équipage de jour</label>
-                <input type="text" class="form-control" value="<?= $remise[$id]['equipage de jour'] ?>" id="equipedejour" placeholder="Équipage de jour" name="mjequipedejour" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['equipe de jour'] ?>" id="equipedejour" placeholder="Équipage de jour" name="mjequipedejour" required>
             </div>
             <!-- Équipage de nuit -->
             <div class="col-md-4 mb-3">
                 <label for="equipedenuit">Équipage de nuit</label>
-                <input type="text" class="form-control" value="<?= $remise[$id]['equipage de nuit'] ?>" id="equipedenuit" placeholder="Équipage de nuit" name="mjequipedenuit" required>
+                <input type="text" class="form-control" value="<?= $remise[$id]['equipe de nuit'] ?>" id="equipedenuit" placeholder="Équipage de nuit" name="mjequipedenuit" required>
             </div>
             <!-- Véhicule de service jour -->
             <div class="col-md-4 mb-3">
@@ -75,11 +75,15 @@ ob_start();
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjradioRadio1" name="mjradioRadio" value="<?= $remise[$id]['radio'] ?>" class="custom-control-input">
-                            <label class="custom-control-label" for="mjradioRadio1" nmae>Oui</label>
+                            <input type="radio" id="mjradioRadio1" name="mjradioRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['radio'] == "oui") : ?>
+                                checked
+                            <?php endif; ?>>
+                            <label class="custom-control-label" for="mjradioRadio1">Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjradioRadio2" name="mjradioRadio" value="<?= $remise[$id]['radio'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjradioRadio2" name="mjradioRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['radio'] == "non") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjradioRadio2">Non</label>
                         </div>
                     </div>
@@ -96,11 +100,15 @@ ob_start();
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjdetecteurRadio1" name="mjdetecteurRadio" value="<?= $remise[$id]['detecteur'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjdetecteurRadio1" name="mjdetecteurRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['detecteur'] == "oui") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjdetecteurRadio1" name>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjdetecteurRadio2" name="mjdetecteurRadio" value="<?= $remise[$id]['detecteur'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjdetecteurRadio2" name="mjdetecteurRadio" value="non" class="custom-control-input"<?php if ($remise[$id]['detecteur'] == "non") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjdetecteurRadio2">Non</label>
                         </div>
                     </div>
@@ -117,11 +125,15 @@ ob_start();
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjtelephoneRadio1" name="mjtelephoneRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjtelephoneRadio1" name="mjtelephoneRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['telephone'] == "oui") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjtelephoneRadio1" name>Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjtelephoneRadio2" name="mjtelephoneRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjtelephoneRadio2" name="mjtelephoneRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['telephone'] == "non") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjtelephoneRadio2">Non</label>
                         </div>
                     </div>
@@ -138,18 +150,22 @@ ob_start();
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjgtinfoaviseRadio1" name="mjgtinfoaviseRadio" value="<?= $remise[$id]['Gt info avsie'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjgtinfoaviseRadio1" name="mjgtinfoaviseRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['Gt info avise'] == "oui") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjgtinfoaviseRadio1">Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjgtinfoaviseRadio2" name="mjgtinfoaviseRadio" value="<?= $remise[$id]['Gt info avise'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjgtinfoaviseRadio2" name="mjgtinfoaviseRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['Gt info avise'] == "non") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjgtinfoaviseRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjremarquegtinfoavise">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['Gt info avise remarques'] ?>" name="mjremaequegtinfoavise" required>
+                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['Gt info avise remarques'] ?>" name="mjremarquegtinfoavise" required>
                 </div>
             </div>
             <br>
@@ -159,18 +175,22 @@ ob_start();
                 <div class="container" style="margin-top: 10px">
                     <div class="row">
                         <div class="custom-control custom-radio">
-                            <input type="radio" id="mjannonceRadio1" name="mjannonceRadio" value="<?= $remise[$id]['annonce 144'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjannonceRadio1" name="mjannonceRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['annonce 144'] == "oui") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjannonceRadio1">Oui</label>
                         </div>
                         <div class="custom-control custom-radio" style="margin-left: 50px">
-                            <input type="radio" id="mjannonceRadio2" name="mjannonceRadio" value="<?= $remise[$id]['annonce 144'] ?>" class="custom-control-input">
+                            <input type="radio" id="mjannonceRadio2" name="mjannonceRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['annonce 144'] == "non") : ?>
+                                checked
+                            <?php endif; ?>>
                             <label class="custom-control-label" for="mjannonceRadio2">Non</label>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 mb-3">
                     <label for="mjannonceremarque">Remarques</label>
-                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['annonce 144 remarques'] ?>" name="mjremaequegtinfoavise" required>
+                    <input type="text" class="form-control" id="mjremarquegtinfoavise" placeholder="Remarques" value="<?= $remise[$id]['annonce 144 remarques'] ?>" name="mjremarqueannonce" required>
                 </div>
                 <br>
 
@@ -192,11 +212,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjpleinessenceRadio1" name="mjpleinessenceRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjpleinessenceRadio1" name="mjpleinessenceRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['plein essence'] == "oui") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjpleinessenceRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjpleinessenceRadio2" name="mjpleinessenceRadio" value="<?= $remise[$id]['telephone'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjpleinessenceRadio2" name="mjpleinessenceRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['plein essence'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjpleinessenceRadio2">Non</label>
                             </div>
                     </div>
@@ -214,11 +238,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjoperationnelRadio1" name="mjoperationnelRadio" value="<?= $remise[$id]['operationnel'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjoperationnelRadio1" name="mjoperationnelRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['operationnel'] == "oui") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjoperationnelRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjoperationnelRadio2" name="mjoperationnelRadio" value="<?= $remise[$id]['operationnel'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjoperationnelRadio2" name="mjoperationnelRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['operationnel'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjoperationnelRadio2">Non</label>
                             </div>
                         </div>
@@ -236,11 +264,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjrdvgarageRadio1" name="mjrdvgarageRadio" value="<?= $remise[$id]['rdv garage'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjrdvgarageRadio1" name="mjrdvgarageRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['rdv garage'] == "oui") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjrdvgarageRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjrdvgarageRadio2" name="mjrdvgarageRadio" value="<?= $remise[$id]['rdv garage'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjrdvgarageRadio2" name="mjrdvgarageRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['rdv garage'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjrdvgarageRadio2">Non</label>
                             </div>
                         </div>
@@ -257,11 +289,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjgtvhcaviseRadio1" name="mjgtvhcaviseRadio" value="<?= $remise[$id]['Gt vhc avise'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjgtvhcaviseRadio1" name="mjgtvhcaviseRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['Gt vhc avise'] == "oui") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjgtvhcaviseRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjgtvhcaviseRadio2" name="mjgtvhcaviseRadio" value="<?= $remise[$id]['Gt vhc avise'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjgtvhcaviseRadio2" name="mjgtvhcaviseRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['Gt vhc avise'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjgtvhcaviseRadio2">Non</label>
                             </div>
                         </div>
@@ -278,11 +314,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjfiftychfpresentRadio1" name="mjfiftychfpresentRadio" value="<?= $remise[$id]['50 chf present'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjfiftychfpresentRadio1" name="mjfiftychfpresentRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['50 chf present'] == "oui") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjfiftychfpresentRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjfiftychfpresentRadio2" name="mjfiftychfpresentRadio" value="<?= $remise[$id]['50 chf present'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjfiftychfpresentRadio2" name="mjfiftychfpresentRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['50 chf present'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjfiftychfpresentRadio2">Non</label>
                             </div>
                         </div>
@@ -299,11 +339,15 @@ ob_start();
                     <div class="container" style="margin-top: 10px">
                         <div class="row">
                             <div class="custom-control custom-radio">
-                                <input type="radio" id="mjprobinterRadio1" name="mjprobinterRadio" value="<?= $remise[$id]['probleme intervention hors vehicules'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjprobinterRadio1" name="mjprobinterRadio" value="oui" class="custom-control-input" <?php if ($remise[$id]['probleme intervention hors vehicules'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjprobinterRadio1">Oui</label>
                             </div>
                             <div class="custom-control custom-radio" style="margin-left: 50px">
-                                <input type="radio" id="mjprobinterRadio2" name="mjprobinterRadio" value="<?= $remise[$id]['probleme intervention hors vehicules'] ?>" class="custom-control-input">
+                                <input type="radio" id="mjprobinterRadio2" name="mjprobinterRadio" value="non" class="custom-control-input" <?php if ($remise[$id]['probleme intervention hors vehicules'] == "non") : ?>
+                                    checked
+                                <?php endif; ?>>
                                 <label class="custom-control-label" for="mjprobinterRadio2">Non</label>
                             </div>
                         </div>

@@ -1,14 +1,1 @@
-[
-  {
-    "status": "membre",
-    "email": "adamgruber@bluewin.ch",
-    "password": "$2y$10$qG9fzQGS5YNjtE001IjVi.2Faxj2W70gNcMQIXmuefxJPE\/icAnmG",
-    "admin": true
-  },
-  {
-    "status": "nouveau",
-    "email": "test@gmail.com",
-    "password": "$2y$10$.a10gNwBC2TJC45eDTvXBu1sFTZZW.c4c6x17uqKjLN7GtVIF0xPC",
-    "admin": false
-  }
-]
+[{"status":"membre","email":"adamgruber@bluewin.ch","password":"$2y$10$qG9fzQGS5YNjtE001IjVi.2Faxj2W70gNcMQIXmuefxJPE\/icAnmG","admin":true}]

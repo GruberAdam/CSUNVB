@@ -242,9 +242,16 @@ function getUserById($id)
 function deleteAccountById($id)
 {
     $result = jsonDecodeUsers();
-    array_splice($result, $id, 1);
 
-    jsonPutFiles($result);
+    if ($result[$id]['email'] == $_SESSION['mail']){
+        $_GET['error-delete-own-account'] = true;
+    }
+    else{
+        $_GET['settings-success'] = true;
+        array_splice($result, $id, 1);
+        jsonPutFiles($result);
+    }
+
 }
 
 ?>

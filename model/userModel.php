@@ -242,7 +242,7 @@ function getUserById($id)
 function deleteAccountById($id)
 {
     $result = jsonDecodeUsers();
-    unset($result[$id]);
+    array_splice($result, $id, 1);
 
     jsonPutFiles($result);
 }

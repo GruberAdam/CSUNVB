@@ -30,7 +30,7 @@ $title = "CSU-NVB - Stupéfiants";
                 $data = $_POST;
 
 
-                echo "Semaine N°";   echo "<input id='semaine' type='text' name='semaine' required>";  echo"<select id='site' size='1'><option name='1'>Saint-loup<option name='2'>Payerne<option name='3'>Valley-de-Joux<option name='4'>Yverdon</select>";
+                echo "Semaine N°";   echo "<input id='semaine' type='text' name='semaine' required>";  echo"<select id='site' size='1' name='site'><option name='Saintloup'>Saint-loup<option name='Payerne'>Payerne<option name='ValleydeJoux'>Valley-de-Joux<option name='Yverdon'>Yverdon</select>";
                 echo " <td id='rowh1cel0' height='100' ><p class='' onmouseover='getDate(this)' ></p></td>";
                 setlocale(LC_TIME, "fr");
                 $dateday = -1;

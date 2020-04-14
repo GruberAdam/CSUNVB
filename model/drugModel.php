@@ -44,11 +44,17 @@ function writedrugItems($json_decode, $day)
 }
 
 function writeFinish($data){
+
     $week = $data["semaine"];
-
-        $file = "model/dataStorage/fullstups{$week}.json";
+    $site = ltrim($data["site"]);
+mkdir("model/dataStorage/{$site}");
+        $file = "model/dataStorage/{$site}/fullstups{$week}.json";
         file_put_contents($file, json_encode($data, JSON_UNESCAPED_UNICODE));
+        for ($compteur = 1; $compteur <=25; $compteur = $compteur + 4) {
+            $file = "model/dataStorage/daystups{$compteur}.json";
 
+            file_put_contents($file, "");
+        }
 }
 
 

@@ -239,12 +239,20 @@ function getUserById($id)
     return false; /* ERROR */
 }
 
+/* Deletes an account by the id given (Can not delete account using at the moment) */
 function deleteAccountById($id)
 {
     $result = jsonDecodeUsers();
-    unset($result[$id]);
 
-    jsonPutFiles($result);
+    if ($result[$id]['email'] == $_SESSION['mail']){
+        $_GET['error-delete-own-account'] = true;
+    }
+    else{
+        $_GET['settings-success'] = true;
+        array_splice($result, $id, 1); // Deletes the id give in the json
+        jsonPutFiles($result);
+    }
+
 }
 
 ?>

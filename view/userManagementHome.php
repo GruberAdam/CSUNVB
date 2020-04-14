@@ -1,8 +1,16 @@
 <?php
+/*  Autor : Adam Gruber
+    Date : Insert date
+    Version : 1.0
+    Project : Insert Project Name
+*/
 ob_start();
 $title = "CSU-NVB - Modifications des comptes";
 $counter = 0;
 ?>
+<?php if (@$_GET['error-delete-own-account']) : ?>
+    <div class="alert alert-danger" role="alert">Vous ne pouvez pas supprimer votre propre compte</div>
+<?php endif; ?>
 
 <?php if (@$_GET['settings-success']) : ?>
     <div class="alert alert-success" role="alert" style="margin-top: 30px">
@@ -38,7 +46,7 @@ $counter = 0;
                 <td><a class="btn btn-primary m-1 pull-right modify-button" style="color: white"
                        href="index.php?action=userManagement&id=<?= $counter ?>">Modifier</a>
                 </td>
-                <td><a class="btn btn-danger m-1 pull-right modify-button" style="color: white"
+                <td><a class="btn btn-danger m-1 pull-right modify-button <?php if ($_SESSION['mail'] == $person['email'])  :?> disabled <?php endif; ?>" style="color: white"
                        href="index.php?action=deleteAccount&deletedId=<?= $counter ?>">Suprimer</a>
                 </td>
             </tr>

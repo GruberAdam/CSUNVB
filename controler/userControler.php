@@ -146,7 +146,6 @@ function accountChanges($status, $email, $password, $admin, $id)
 function deleteAccount($id)
 {
     deleteAccountById($id);
-    $_GET['settings-success'] = true;
     unset($_GET['id']);
     userManagement(@$_GET['id']);
 }

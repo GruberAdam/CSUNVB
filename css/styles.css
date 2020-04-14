@@ -1,4 +1,4 @@
-.banner {
+﻿.banner {
     background-color: lightblue;
     width: 100%;
 }
@@ -7,3 +7,146 @@
     background-color: aliceblue;
     font-size: xx-large;
 }
+
+
+#user-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.td-data, #user-table th{
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#user-table th{
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ADD8E6;
+    color: #007bff  ;
+}
+
+.div-spaces{
+    margin-bottom: 30px;
+}
+#dialog-window{
+    padding: 10px;
+    position: fixed;
+    left: 25%;
+    right: 30%;
+    bottom: 27%;
+    top: 25%;
+    background-color: white;
+    border: solid 2px gray;
+    z-index: 1000;
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+#overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+@keyframes fade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes defade {
+    from{ opacity: 1;}
+    to{opacity: 0;}
+}
+
+.sideway{
+    transform: rotate(-90deg);
+    width: 60%;
+    color: crimson;
+}
+
+
+.cellh100{
+    height: 100%;
+}
+.center{
+
+    text-align: center;
+
+}
+.trh{
+
+    height: 80%;
+}
+
+.big-text{
+
+    font-size: 300%;
+}
+.input2{
+    width: 100%;
+}
+
+.FirstCase{
+    border: 2px solid black;
+width: 100%;
+
+}
+
+
+table{
+
+    width: 100%;
+}
+th{
+    font-size: 70%;
+
+}
+
+#site{
+    margin-left:100px;
+}
+
+.cel0 > input{
+    width: 100%;
+
+
+}
+td > input{
+    width: 100%;
+}
+
+.tdAdd{
+    width: 100%;
+}
+#tableAdd{
+    table-layout: fixed;
+    width: 100%;
+}
+.celsmall{
+    font-size: 70%;
+    text-align: center;
+
+
+}
+
+#dtHorizontalVerticalExample th, td {
+    white-space: nowrap;
+}
+table.dataTable thead .sorting:after,
+table.dataTable thead .sorting:before,
+table.dataTable thead .sorting_asc:after,
+table.dataTable thead .sorting_asc:before,
+table.dataTable thead .sorting_asc_disabled:after,
+table.dataTable thead .sorting_asc_disabled:before,
+table.dataTable thead .sorting_desc:after,
+table.dataTable thead .sorting_desc:before,
+table.dataTable thead .sorting_desc_disabled:after,
+table.dataTable thead .sorting_desc_disabled:before {
+    bottom: .5em;
+}
+

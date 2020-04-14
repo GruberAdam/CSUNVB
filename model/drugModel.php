@@ -17,7 +17,10 @@ function readDrugItems($day)
 
     if(file_exists (  $path )) {
     $read = fopen($path, 'r');
-    $itemLecture = fread($read, filesize($path));
+    $size = filesize($path);
+    if(isset($size)){
+        $itemLecture = fread($read, $size);
+    }
     $json_decode = json_decode($itemLecture);
         $array = (array) $json_decode;
     }else{

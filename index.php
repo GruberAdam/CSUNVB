@@ -19,8 +19,14 @@ switch ($action) {
     case 'todolist':
         todoListHomePage();
         break;
+    case 'drugAdd':
+        drugAdd();
+        break;
     case 'drugs':
         drugHomePage();
+        break;
+    case 'finish':
+        finish($_POST);
         break;
     case 'login':
         login();

@@ -10,10 +10,54 @@
  * Des points seront également retirés au groupe qui osera laisser une des fonctions de ce fichier telle quelle
  * sans l'adapter au niveau de son nom et de son code pour qu'elle dise plus précisément de quelles données elle traite
  */
-function readDrugItems()
+function readDrugItems($day)
 {
-    return json_decode(file_get_contents("model/dataStorage/items.json"),true);
+
+    $path = "model/dataStorage/daystups{$day}.json";
+
+    if(file_exists (  $path )) {
+    $read = fopen($path, 'r');
+    $itemLecture = fread($read, filesize($path));
+    $json_decode = json_decode($itemLecture);
+        $array = (array) $json_decode;
+    }else{
+        $fr=  fopen($path, "x");
+        fclose($fr);
+    }
+
+    return $array;
+
 }
+function writedrugItems($json_decode, $day)
+{
+
+    $file = "model/dataStorage/daystups{$day}.json";
+    if(file_exists (  $file )) {
+        $write = fopen($file, 'w')
+        or die ("Error opening output file");
+        fwrite($write, json_encode($json_decode, JSON_UNESCAPED_UNICODE));
+        fclose($write);
+    }else{
+       $fr = fopen($file, "x");
+        fclose($fr);
+    }
+}
+
+function writeFinish($data){
+
+    $week = $data["semaine"];
+    $site = ltrim($data["site"]);
+mkdir("model/dataStorage/{$site}");
+        $file = "model/dataStorage/{$site}/fullstups{$week}.json";
+        file_put_contents($file, json_encode($data, JSON_UNESCAPED_UNICODE));
+        for ($compteur = 1; $compteur <=25; $compteur = $compteur + 4) {
+            $file = "model/dataStorage/daystups{$compteur}.json";
+
+            file_put_contents($file, "");
+        }
+}
+
+
 
 /**
  * Retourne un item précis, identifié par son id
@@ -71,6 +115,7 @@ function createDrugItem($item)
     saveDrugItem($items);
     return ($item); // Pour que l'appelant connaisse l'id qui a été donné
 }
+
 
 
 ?>

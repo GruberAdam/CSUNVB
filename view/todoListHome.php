@@ -20,6 +20,17 @@ $date = getdate();
 <article>
 
     <br>
+    <div>
+        <div class="jumbotron">
+
+            <h3 style="color: darkred" align="center"> <img src="assets/images/Layer-10_48px.png" alt=""> Vous devez vous connecter pour valider des tâches ! <img src="assets/images/Layer-10_48px.png" alt=""></h3>
+
+        </div>
+        <?php if (isset($_SESSION['mail'])) { ?>
+
+        <?php } ?>
+    </div>
+    <br>
 
     <div class="divTable">
 
@@ -134,12 +145,16 @@ $date = getdate();
                                                value="<?= $values["value"] ?>"/>
                                     </form>
 
-                                    <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?=$_SESSION["mail"]?>&currentValue=<?= $values["value"] ?>">
+                                    <?php if (isset($_SESSION['mail'])) { ?>
 
-                                        <input id="submitFormData" onclick="SubmitFormData();" value="Submit"
-                                               type="image" src="assets/images/check.png" alt="Submit" width="48"
-                                               height="48">
-                                    </a>
+
+                                        <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?= $_SESSION["mail"] ?>&currentValue=<?= $values["value"] ?>">
+                                            <input id="submitFormData" onclick="SubmitFormData();" value="Submit"
+                                                   type="image" src="assets/images/check.png" alt="Submit" width="48"
+                                                   height="48">
+                                        </a>
+                                    <?php } ?>
+
                                 <?php elseif ($values["value"] == 0) : ?>
 
 
@@ -155,11 +170,15 @@ $date = getdate();
                                     </form>
 
 
-                                    <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?=$_SESSION["mail"]?>&currentValue=<?= $values["value"] ?>">
-                                        <input id="input" type="image" src="assets/images/uncheck.png" alt="Submit"
-                                               width="48"
-                                               height="48">
-                                    </a>
+                                    <?php if (isset($_SESSION['mail'])) { ?>
+                                        <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?= $_SESSION["mail"] ?>&currentValue=<?= $values["value"] ?>">
+                                            <input id="input" type="image" src="assets/images/uncheck.png" alt="Submit"
+                                                   width="48"
+                                                   height="48">
+                                        </a>
+                                    <?php } ?>
+
+
                                 <?php endif; ?>
 
                             </div>
@@ -205,7 +224,7 @@ $date = getdate();
 
                                 if ($value == 0) {
 
-                                  echo '<img src="assets/images/Layer-93_48px.png" alt=""><br>';
+                                    echo '<img src="assets/images/Layer-93_48px.png" alt=""><br>';
                                 }
                             }
 
@@ -221,16 +240,21 @@ $date = getdate();
                             <?php }
                         }
                     } ?>
-                    <?php if ($values["value"] == 1): ?>
-                        <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?=$_SESSION["mail"]?>&currentValue=<?= $values["value"] ?>#someanchor">
-                            <input type="image" src="assets/images/check.png" alt="Submit" width="48" height="48">
-                        </a>
-                    <?php elseif ($values["value"] == 0) : ?>
-                        <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?=$_SESSION["mail"]?>&currentValue=<?= $values["value"] ?>#someanchor">
-                            <input id="input" type="image" src="assets/images/uncheck.png" alt="Submit" width="48"
-                                   height="48">
-                        </a>
-                    <?php endif; ?>
+
+                    <?php if (isset($_SESSION['mail'])) {
+                        if ($values["value"] == 1): ?>
+                            <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?= $_SESSION["mail"] ?>&currentValue=<?= $values["value"] ?>#someanchor">
+                                <input type="image" src="assets/images/check.png" alt="Submit" width="48" height="48">
+                            </a>
+                        <?php elseif ($values["value"] == 0) : ?>
+                            <a href="index.php?action=toggleItem&idItem=<?= $values["id"] ?>&base=<?= $values["base"] ?>&day=<?= $auj ?>&user=<?= $_SESSION["mail"] ?>&currentValue=<?= $values["value"] ?>#someanchor">
+                                <input id="input" type="image" src="assets/images/uncheck.png" alt="Submit" width="48"
+                                       height="48">
+                            </a>
+
+                        <?php endif;
+                    }
+                    ?>
                 </div>
             <?php } ?>
         <?php } ?>

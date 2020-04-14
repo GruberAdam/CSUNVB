@@ -21,13 +21,13 @@ $date = getdate();
 
     <br>
     <div>
-        <div class="jumbotron">
 
-            <h3 style="color: darkred" align="center"> <img src="assets/images/Layer-10_48px.png" alt=""> Vous devez vous connecter pour valider des tâches ! <img src="assets/images/Layer-10_48px.png" alt=""></h3>
+        <?php if (!isset($_SESSION['mail'])) { ?>
+            <div class="jumbotron">
 
-        </div>
-        <?php if (isset($_SESSION['mail'])) { ?>
+                <h3 style="color: darkred" align="center"> <img src="assets/images/Layer-10_48px.png" alt=""> Vous devez vous connecter pour valider des tâches ! <img src="assets/images/Layer-10_48px.png" alt=""></h3>
 
+            </div>
         <?php } ?>
     </div>
     <br>

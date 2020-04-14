@@ -56,7 +56,6 @@
             ?action=login
             <?php endif; ?>
             " class="btn btn-primary m-1 pull-right">
-
                 <!-- Write Logout if connected -->
                 <?php if (isset($_SESSION['mail'])) : ?>
                     Logout

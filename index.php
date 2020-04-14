@@ -80,6 +80,43 @@ switch ($action) {
         deleteRemise($id);
         break;
 
+    case 'selctedItem':
+        search();
+        break;
+
+    case 'base':
+        base();
+        break;
+
+    case 'modificationItem' :
+        modificationItem($_GET);
+        break;
+
+    case 'toggleItem' :
+        toggleItem();
+        break;
+
+    case 'updatedItem' :
+        updatedItem($_GET);
+        break;
+
+    case 'adminPage' :
+        adminPage($_GET);
+        break;
+
+    case 'delItem' :
+        delteAnItem();
+        break;
+
+    case 'resetAllTasks' :
+        resetAllTasks($_GET);
+        break;
+
+    case 'download' :
+        download();
+        break;
+
+
     default: // unknown action
         require_once 'view/home.php';
         break;

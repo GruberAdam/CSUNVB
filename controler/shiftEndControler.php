@@ -21,6 +21,7 @@ function remiseformnuitjour(){
 function remiseformjour(){
     $_GET['action'] = "remiseformjour";
 
+    $prtdelajournee = @$_POST['prtjourneRadio'];
     $date = @$_POST['date'];
     $base = @$_POST['base'];
     $responsablejour = @$_POST['responsablejour'];
@@ -61,13 +62,48 @@ function remiseformjour(){
         require "view/FormulaireJour.php";
     }
     else {
-        registerToJson($radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
+        registerToJson($prtdelajournee, $radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
         require "view/home.php";
     }
 }
 
 function remiseformnuit(){
     $_GET['action'] = "remiseformnuit";
+    require "view/RemiseFormulaireNuit.php";
+
+    $date = @$_POST['ndate'];
+    $base = @$_POST['nbase'];
+    $responsablejour = @$_POST['nresponsablejour'];
+    $equipedejour = @$_POST['nequipedejour'];
+    $vehiculedesjour = @$_POST['nvehiculedesjour'];
+    $responsablenuit = @$_POST['nresponsablenuit'];
+    $equipedenuit = @$_POST['nequipedenuit'];
+    $vehiculedesnuit = @$_POST['nvehiculedesnuit'];
+    $radiochx = @$_POST['nradioRadio'];
+    $remarqueradio = @$_POST['nremarqueradio'];
+    $detecteurchx = @$_POST['ndetecteurRadio'];
+    $remarquedetecteur = @$_POST['nremarquedetecteurco'];
+    $telephonechx = @$_POST['ntelephoneRadio'];
+    $remarquetelephone = @$_POST['nremarquetelephone'];
+    $gtinfoavisechx = @$_POST['ngtinfoaviseRadio'];
+    $remarquegtinfoavise = @$_POST['nremarquegtinfoavise'];
+    $annoncechx = @$_POST['nannonceRadio'];
+    $remarqueannonce = @$_POST['nremarqueannonce'];
+
+    $pleinessencechx = @$_POST['npleinessenceRadio'];
+    $remarquepleinessence = @$_POST['nremarquepleinessence'];
+    $operationnelchx = @$_POST['noperationnelRadio'];
+    $remarqueoperationnel = @$_POST['nremarqueoperationnel'];
+    $rdvgaragechx = @$_POST['nrdvgarageRadio'];
+    $remarquerdvgarage = @$_POST['nremarquerdvgarage'];
+    $gtvhcavisechx = @$_POST['ngtvhcaviseRadio'];
+    $remarquegtvhcavise = @$_POST['nremarquegtvhcavise'];
+    $fiftychfpresentchx = @$_POST['nfiftychfpresentRadio'];
+    $remarquefiftychfpresent = @$_POST['nremarquefiftychfpresent'];
+    $probinterchx = @$_POST['nprobinterRadio'];
+    $remarqueprobinter = @$_POST['nremarqueprobinter'];
+
+    registerToJsonNuit($radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
     require "view/home.php";
 }
 
@@ -83,7 +119,7 @@ function modifyRemise($id){
 
     $_GET['action'] = "remiseformjour";
 
-
+    $prtdelajournee = @$_POST['mjprtjourneRadio'];
     $date = @$_POST['mjdate'];
     $base = @$_POST['mjbase'];
     $responsablejour = @$_POST['mjresponsablejour'];
@@ -123,7 +159,7 @@ function modifyRemise($id){
         require_once "view/FromulaireJourModifier.php";
     }else{
         echo $base;
-        modifyRemiseById($id, $radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
+        modifyRemiseById($id, $prtdelajournee, $radiochx, $remarqueradio, $detecteurchx, $remarquedetecteur, $telephonechx, $remarquetelephone, $gtinfoavisechx, $remarquegtinfoavise, $annoncechx, $remarqueannonce, $pleinessencechx, $remarquepleinessence, $operationnelchx, $remarqueoperationnel, $rdvgaragechx, $remarquerdvgarage, $gtvhcavisechx, $remarquegtvhcavise, $fiftychfpresentchx, $remarquefiftychfpresent, $probinterchx, $remarqueprobinter, $base, $date, $responsablejour, $equipedejour, $vehiculedesjour, $responsablenuit, $equipedenuit, $vehiculedesnuit);
         tableauRemise();
     }
 

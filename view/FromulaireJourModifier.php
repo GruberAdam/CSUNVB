@@ -20,6 +20,20 @@ ob_start();
 
     <h2>Jour</h2>
     <form action="index.php?action=modifyremise&id=<?=$_GET['id']?>" method="post">
+        <div class="row">
+            <div class="custom-control custom-radio">
+                <input type="radio" id="jourRadio" name="mjprtjourneRadio" class="custom-control-input" value="jour" <?php if ($remise[$id]['partie de la journee'] == "jour") : ?>
+                    checked
+                <?php endif; ?>>>
+                <label class="custom-control-label" for="mjradioRadio1">Jour</label>
+            </div>
+            <div class="custom-control custom-radio" style="margin-left: 50px">
+                <input type="radio" id="nuitRadio" name="mjprtjourneRadio" class="custom-control-input" value="nuit" <?php if ($remise[$id]['radio'] == "oui") : ?>
+                    checked
+                <?php endif; ?>>>
+                <label class="custom-control-label" for="nuitRadio">Nuit</label>
+            </div>
+        </div>
         <div class="form-row">
             <!-- Base -->
             <div class="col-md-4 mb-3">
@@ -30,7 +44,7 @@ ob_start();
             <!-- Date -->
             <div class="col-md-6 mb-3">
                 <label for="date">Date</label>
-                <input type="date" class="form-control" value="<?= $remise[$id]['date'] ?>" id="date" name="mjdate" required>
+                <input type="date" class="form-control" value="<?= $remise[$id]['date'] ?>" id="date" name="mjdate" min="1990-01-01" max="2100-01-01" required>
             </div>
             <!-- Responsable de jour -->
             <div class="col-md-4 mb-3">

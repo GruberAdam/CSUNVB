@@ -25,10 +25,10 @@ ob_start();
                 <input type="radio" id="jourRadio" name="mjprtjourneRadio" class="custom-control-input" value="jour" <?php if ($remise[$id]['partie de la journee'] == "jour") : ?>
                     checked
                 <?php endif; ?>>>
-                <label class="custom-control-label" for="mjradioRadio1">Jour</label>
+                <label class="custom-control-label" for="jourRadio">Jour</label>
             </div>
             <div class="custom-control custom-radio" style="margin-left: 50px">
-                <input type="radio" id="nuitRadio" name="mjprtjourneRadio" class="custom-control-input" value="nuit" <?php if ($remise[$id]['radio'] == "oui") : ?>
+                <input type="radio" id="nuitRadio" name="mjprtjourneRadio" class="custom-control-input" value="nuit" <?php if ($remise[$id]['partie de la journee'] == "nuit") : ?>
                     checked
                 <?php endif; ?>>>
                 <label class="custom-control-label" for="nuitRadio">Nuit</label>

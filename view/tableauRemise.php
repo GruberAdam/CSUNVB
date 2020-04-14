@@ -1,5 +1,5 @@
 <?php
-$_GET['action']= 'tableauRemise';
+$_GET['action'] = 'tableauRemise';
 
 $counter = 0;
 ob_start();

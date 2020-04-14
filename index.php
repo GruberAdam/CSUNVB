@@ -5,7 +5,15 @@ require "controler/adminControler.php";
 require "controler/shiftEndControler.php";
 require "controler/todoListControler.php";
 require "controler/drugControler.php";
+
 require "controler/userControler.php";
+
+
+require "controler/loginControler.php";
+
+
+require "controler/remiseControler.php";
+
 
 $action = @$_GET['action'];
 
@@ -25,6 +33,7 @@ switch ($action) {
     case 'drugs':
         drugHomePage();
         break;
+
     case 'finish':
         finish($_POST);
         break;
@@ -52,6 +61,28 @@ switch ($action) {
     case 'deleteAccount':
         $id = $_GET['deletedId'];
         deleteAccount($id);
+        break;
+
+    case 'login':
+        login();
+        break;
+    case 'remiseformjour':
+        remiseformjour();
+        break;
+    case 'tableauRemise':
+        tableauRemise();
+        break;
+    case 'remiseManagement' :
+        $id = @$_GET['id'];
+        remiseManagement($id);
+        break;
+    case 'modifyremise' :
+        $id = @$_GET['id'];
+        modifyRemise($id);
+        break;
+    case 'deleteremise':
+        $id = $_GET['deletedId'];
+        deleteRemise($id);
         break;
 
     default: // unknown action
